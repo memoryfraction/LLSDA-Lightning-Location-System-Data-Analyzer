@@ -41,6 +41,6 @@ Lightning strike related classes
 
 ## Thanks to
 * Wen'an Xiao(Supervisor)
-* [Nanjing University of Information Science and Technology(NUIST)](http://www.nuist.edu.cn)
+* [Nanjing University of Information Science and Technology(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [LeaderTech Co., Ltd](http://www.leader-tech.net)
