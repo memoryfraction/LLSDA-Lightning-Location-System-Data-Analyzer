@@ -12,7 +12,7 @@ using System.Text;
 namespace LLSDA.Entities
 {
     
-    public class LightningStrike_Basic : IStrike_Basic
+    public class LightningStrike_Basic
     {
         public LightningStrike_Basic() { }
         public LightningStrike_Basic(DateTime dateTime, double longitude, double latitude)
@@ -53,9 +53,9 @@ namespace LLSDA.Entities
             get { return _Longitude; }
             set { _Longitude = value; }
         }
-        public IStrike_Standard ConvertToIStrike_Standard()
+        public LightningStrike_Standard ConvertToIStrike_Standard()
         {
-            IStrike_Standard strikeStandard = new LightningStrike_Standard();
+            var strikeStandard = new LightningStrike_Standard();
             strikeStandard.DateAndTime = this.DateAndTime;
             strikeStandard.Longitude = this.Longitude;
             strikeStandard.Latitude = this.Latitude;
@@ -117,7 +117,7 @@ namespace LLSDA.Entities
     }
 
     
-    public class LightningStrike_Standard : LightningStrike_Basic, IStrike_Standard
+    public class LightningStrike_Standard : LightningStrike_Basic
     {
         public LightningStrike_Standard() { }
 
