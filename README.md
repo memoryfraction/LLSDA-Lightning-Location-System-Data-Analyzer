@@ -32,6 +32,10 @@ Glad you like it.
 * V1.0.0(2019-6-4)
 Lightning strike related classes
 
+## Reference & Academic support
+* Abstract
+![image](/Images/Abstract.png)
+
 ## License
 [Creative Commons Licenses](https://creativecommons.org/share-your-work/licensing-types-examples/)
 
