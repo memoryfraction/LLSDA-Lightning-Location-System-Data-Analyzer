@@ -32,6 +32,9 @@ Glad you like it.
 * V1.0.0(2019-6-4)
 Lightning strike related classes
 
+* V1.0.1(2019-6-5)
+Removed unnecessary interfaces
+
 ## Reference & Academic support
 * Abstract
 [![image](/Images/Abstract.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
