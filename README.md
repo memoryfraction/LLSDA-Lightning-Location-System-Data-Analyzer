@@ -81,7 +81,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * 复制“LLSDA.dll”到目标项目，添加引用，并使用
 
 
-## Change Log
+## 版本
 * V1.0.0(2019-6-4)
 新增LightningStrike相关类
 
@@ -89,17 +89,17 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * V1.0.1(2019-6-5)
 新增StrikesDistributionStatistic 类, 内含多种时间、空间统计方法
 
-## Reference & Academic support
+## 学术支撑
 * Abstract
 [![image](/Images/%E6%91%98%E8%A6%81.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
-## License
+## 知识产权
 [署名-非商业性使用-禁止演绎 3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)
 
 ## Donation
 * 支付宝:
 
-## Thanks to
+## 鸣谢
 * 导师：肖稳安
 * [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
