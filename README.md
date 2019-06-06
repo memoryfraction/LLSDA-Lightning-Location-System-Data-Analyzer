@@ -63,3 +63,44 @@ StrikesDistributionStatistic class added, which contains dozens of distribution 
 闪电定位仪又称雷电监测定位仪，是指利用闪电回击辐射的声、光、电磁场特性来遥测闪电回击放电参数的一种监测雷电发生的自动化的气象探测设备，它可检测雷电发生的时间、位置、强度、极性等。人们一直在致力于闪电探测设各与雷暴灾害早期检侧、预报技术和方法的研究。
 
 LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者的数据分析的基础类库。 基于闪电定位系统的数据开发的软件将必不可少的依赖于闪电定位系统的基础类库开发。 可以大幅度提高开发效率、避免重复劳动。
+
+## 特性
+* 编译通过
+* 基于 .NET STANDARD 2.0 
+* 跨平台
+
+
+## 依赖项
+* .NET Core 2.0版本及以上
+* Newtonsoft
+
+
+## 使用方法
+* 下载源码并编译
+* bin文件夹，Debug子文件夹，找到“LLSDA.dll”
+* 复制“LLSDA.dll”到目标项目，添加引用，并使用
+
+
+## Change Log
+* V1.0.0(2019-6-4)
+新增LightningStrike相关类
+
+
+* V1.0.1(2019-6-5)
+新增StrikesDistributionStatistic 类, 内含多种时间、空间统计方法
+
+## Reference & Academic support
+* Abstract
+[![image](/Images/Abstract.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
+
+## License
+[署名-非商业性使用-禁止演绎 3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)
+
+## Donation
+* alipay:
+
+## Thanks to
+* 导师：肖稳安
+* [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
+* [Maharishi University of Management](https://www.mum.edu/)
+* [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
