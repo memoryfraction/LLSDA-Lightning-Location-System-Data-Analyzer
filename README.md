@@ -33,7 +33,7 @@ Glad you like it.
 Lightning strike related classes
 
 * V1.0.1(2019-6-5)
-Removed unnecessary interfaces
+StrikesDistributionStatistic class added, which contains dozens of distribution statistic methods
 
 ## Reference & Academic support
 * Abstract
