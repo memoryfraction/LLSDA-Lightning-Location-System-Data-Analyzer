@@ -1,6 +1,6 @@
 # LLSDA - Lightning Location System Data Analyzer
 
-Readme: English | [中文](## 简介)
+Readme: English | [中文](#简介)
 
 ## Brief Introduction
 LLSDA is a public benefit project helps lightning protection engineer and lightning scientist to analyze lightning distribution. 
