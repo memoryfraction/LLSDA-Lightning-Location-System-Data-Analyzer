@@ -97,7 +97,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 [署名-非商业性使用-禁止演绎 3.0](https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)
 
 ## Donation
-* 支付宝:
+[支付宝二维码](/Images/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%BA%8C%E7%BB%B4%E7%A0%81.JPG)
 
 ## 鸣谢
 * 导师：肖稳安
