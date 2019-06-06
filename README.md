@@ -1,4 +1,7 @@
 # LLSDA - Lightning Location System Data Analyzer
+
+Readme: English | [中文](## 简介)
+
 ## Brief Introduction
 LLSDA is a public benefit project helps lightning protection engineer and lightning scientist to analyze lightning distribution. 
 LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# following .NET Standard 2.0 . It is the necessary part of all lightning time and spatial distribution analysis software.
@@ -52,3 +55,11 @@ StrikesDistributionStatistic class added, which contains dozens of distribution 
 * [Nanjing University of Information Science and Technology(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [LeaderTech Co., Ltd](http://www.leader-tech.net)
+
+
+## 简介
+闪电，在大气科学中指大气中的强放电现象。在夏季的雷雨天气，雷电现象较为常见。它的发生与云层中气流的运动强度有关。有资料显示，冬季下雪时也可能发生雷电现象，即雷雪，但是发生机会相当微小。若有严重的火山爆发时，或是原子弹爆炸产生蘑菇云时，空中可能因短路而发生闪电。
+
+闪电定位仪又称雷电监测定位仪，是指利用闪电回击辐射的声、光、电磁场特性来遥测闪电回击放电参数的一种监测雷电发生的自动化的气象探测设备，它可检测雷电发生的时间、位置、强度、极性等。人们一直在致力于闪电探测设各与雷暴灾害早期检侧、预报技术和方法的研究。
+
+LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者的数据分析的基础类库。 基于闪电定位系统的数据开发的软件将必不可少的依赖于闪电定位系统的基础类库开发。 可以大幅度提高开发效率、避免重复劳动。
