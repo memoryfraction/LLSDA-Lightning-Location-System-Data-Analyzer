@@ -3,7 +3,7 @@
 Readme: English | [中文](#简介)
 
 ## Part of the Result | 部分效果图
-[![image](/Images/LightningTimeDistributionChart-%E9%9B%B7%E7%94%B5%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E5%9B%BE.png)]
+![image](/Images/LightningTimeDistributionChart-%E9%9B%B7%E7%94%B5%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E5%9B%BE.png)
 
 
 ## Brief Introduction
