@@ -2,6 +2,10 @@
 
 Readme: English | [中文](#简介)
 
+## Part of the Result | 部分效果图
+[![image](/Images/LightningTimeDistributionChart-%E9%9B%B7%E7%94%B5%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E5%9B%BE.png)]
+
+
 ## Brief Introduction
 LLSDA is a public benefit project helps lightning protection engineer and lightning scientist to analyze lightning distribution. 
 LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# following .NET Standard 2.0 . It is the necessary part of all lightning time and spatial distribution analysis software.
