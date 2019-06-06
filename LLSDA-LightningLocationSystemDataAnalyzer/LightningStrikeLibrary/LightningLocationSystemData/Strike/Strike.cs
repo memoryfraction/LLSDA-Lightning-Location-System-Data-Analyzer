@@ -91,32 +91,6 @@ namespace LLSDA.Entities
     }
 
     
-    public class LightningStrike_Wwlln : LightningStrike_Basic
-    {
-        double error;
-
-        public double Error
-        {
-            get { return error; }
-            set { error = value; }
-        }
-        string locationMode;
-
-        public string LocationMode
-        {
-            get { return locationMode; }
-            set { locationMode = value; }
-        }
-        public override int GetHashCode()
-        {
-            return 17 * this.DateAndTime.GetHashCode()
-                + 19 * this.Longitude.GetHashCode()
-                + 23 * this.Latitude.GetHashCode()
-                + 29 * this.error.GetHashCode();
-        }
-    }
-
-    
     public class LightningStrike_Standard : LightningStrike_Basic
     {
         public LightningStrike_Standard() { }
@@ -240,7 +214,33 @@ namespace LLSDA.Entities
         }
     }
 
-    
+
+    public class LightningStrike_Wwlln : LightningStrike_Basic
+    {
+        double error;
+
+        public double Error
+        {
+            get { return error; }
+            set { error = value; }
+        }
+        string locationMode;
+
+        public string LocationMode
+        {
+            get { return locationMode; }
+            set { locationMode = value; }
+        }
+        public override int GetHashCode()
+        {
+            return 17 * this.DateAndTime.GetHashCode()
+                + 19 * this.Longitude.GetHashCode()
+                + 23 * this.Latitude.GetHashCode()
+                + 29 * this.error.GetHashCode();
+        }
+    }
+
+
     public class LightningStrike_China : LightningStrike_Standard
     {
         public LightningStrike_China() { }

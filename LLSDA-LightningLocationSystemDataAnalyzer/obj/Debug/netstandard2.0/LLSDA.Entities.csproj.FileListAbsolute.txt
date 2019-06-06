@@ -1,0 +1,8 @@
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\bin\Debug\netstandard2.0\LLSDA.Entities.deps.json
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\bin\Debug\netstandard2.0\LLSDA.Entities.dll
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\bin\Debug\netstandard2.0\LLSDA.Entities.pdb
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\obj\Debug\netstandard2.0\LLSDA.Entities.csproj.CoreCompileInputs.cache
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\obj\Debug\netstandard2.0\LLSDA.Entities.AssemblyInfoInputs.cache
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\obj\Debug\netstandard2.0\LLSDA.Entities.AssemblyInfo.cs
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\obj\Debug\netstandard2.0\LLSDA.Entities.dll
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\LLSDA-LightningLocationSystemDataAnalyzer\obj\Debug\netstandard2.0\LLSDA.Entities.pdb

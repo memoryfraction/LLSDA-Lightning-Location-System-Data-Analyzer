@@ -185,9 +185,9 @@
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.csproj",
-      "projectName": "LLSDA",
-      "projectPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.csproj",
+      "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.Entities.csproj",
+      "projectName": "LLSDA.Entities",
+      "projectPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.Entities.csproj",
       "packagesPath": "C:\\Users\\T480\\.nuget\\packages\\",
       "outputPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\LLSDA-LightningLocationSystemDataAnalyzer\\obj\\",
       "projectStyle": "PackageReference",

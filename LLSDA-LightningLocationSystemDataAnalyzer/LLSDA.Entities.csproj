@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,10 +9,7 @@
     <Copyright>Creative Commons Licenses</Copyright>
     <PackageProjectUrl>https://github.com/memoryfraction/LLSDA--LightningLocationSystemDataAnalyzer</PackageProjectUrl>
     <Version>1.0.1</Version>
+    <RootNamespace>LLSDA.Entities</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="LightningStrikeLibrary\LightningLocationSystemData\Strikes\" />
-  </ItemGroup>
 
 </Project>
