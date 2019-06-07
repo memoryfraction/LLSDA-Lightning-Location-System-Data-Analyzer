@@ -1,6 +1,10 @@
 # LLSDA - Lightning Location System Data Analyzer
 
-Readme: English | 中文(#简介)
+Readme: English | [中文](#简介)
+
+## Part of the Result | 部分效果图
+![image](/Images/LightningTimeDistributionChart-%E9%9B%B7%E7%94%B5%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E5%9B%BE.png)
+
 
 ## Brief Introduction
 LLSDA is a public benefit project helps lightning protection engineer and lightning scientist to analyze lightning distribution. 
@@ -44,7 +48,8 @@ StrikesDistributionStatistic class added, which contains dozens of distribution 
 [![image](/Images/Abstract.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
 ## License
-[Creative Commons Licenses](https://creativecommons.org/share-your-work/licensing-types-examples/)
+[Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 
 ## Donation
 * Paypal: rong.fan1031@gmail.com
@@ -59,5 +64,51 @@ StrikesDistributionStatistic class added, which contains dozens of distribution 
 
 ## 简介
 闪电，在大气科学中指大气中的强放电现象。在夏季的雷雨天气，雷电现象较为常见。它的发生与云层中气流的运动强度有关。有资料显示，冬季下雪时也可能发生雷电现象，即雷雪，但是发生机会相当微小。若有严重的火山爆发时，或是原子弹爆炸产生蘑菇云时，空中可能因短路而发生闪电。
+
 闪电定位仪又称雷电监测定位仪，是指利用闪电回击辐射的声、光、电磁场特性来遥测闪电回击放电参数的一种监测雷电发生的自动化的气象探测设备，它可检测雷电发生的时间、位置、强度、极性等。人们一直在致力于闪电探测设各与雷暴灾害早期检侧、预报技术和方法的研究。
-闪电定位系统数据分析器, 一款数据分析的基础类库。 基于闪电定位系统的数据开发将必不可少的依赖于闪电定位系统的基础类库开发。 为了防止重复劳动，提高开发效率，为开源社区和防雷事业做出个人贡献， 特开源此类库。
+
+LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者的数据分析的基础类库。 基于闪电定位系统的数据开发的软件将必不可少的依赖于闪电定位系统的基础类库开发。 可以大幅度提高开发效率、避免重复劳动。
+
+## 特性
+* 编译通过
+* 基于 .NET STANDARD 2.0 
+* 跨平台
+
+
+## 依赖项
+* .NET Core 2.0版本及以上
+* Newtonsoft
+
+
+## 使用方法
+* 下载源码并编译
+* bin文件夹，Debug子文件夹，找到“LLSDA.dll”
+* 复制“LLSDA.dll”到目标项目，添加引用，并使用
+
+
+## 版本
+* V1.0.0(2019-6-4)
+新增LightningStrike相关类
+
+
+* V1.0.1(2019-6-5)
+新增StrikesDistributionStatistic 类, 内含多种时间、空间统计方法
+
+## 学术支撑
+* Abstract
+[![image](/Images/%E6%91%98%E8%A6%81.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
+
+## 知识产权
+[署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
+* 解释: [谈谈创作共用许可证（Creative Commons licenses）- 阮一峰](http://www.ruanyifeng.com/blog/2008/04/creative_commons_licenses.html)
+
+
+
+## Donation
+[支付宝二维码](/Images/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%BA%8C%E7%BB%B4%E7%A0%81.JPG)
+
+## 鸣谢
+* 导师：肖稳安
+* [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
+* [Maharishi University of Management](https://www.mum.edu/)
+* [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
