@@ -14,7 +14,7 @@ using System.Text;
 namespace LLSDA.Entities
 {
     /// <summary>
-    /// 统计strikes中各类属性、字符串等的静态方法
+    /// 统计strikes中各类属性、字符串等的静态方法| Statistic methods for lightning strikes
     /// </summary>
     public static class StrikesDistributionStatistic
     {
