@@ -113,7 +113,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 ## 声明
 由于知识有限，时间有限，不对开源版本提供任何使用质量保障和服务。
-欢迎在Issue(https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues)区提出宝贵的修改和改进建议，我会尽力解答您的问题。
+欢迎在[Issue](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues)区提出，我会尽力解答您的问题。
 
 
 ## 捐赠与支持
