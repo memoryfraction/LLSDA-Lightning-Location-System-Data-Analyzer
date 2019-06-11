@@ -105,13 +105,15 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * Abstract
 [![image](/Images/%E6%91%98%E8%A6%81.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
+
 ## 知识产权
 [署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 * 解释: [谈谈创作共用许可证（Creative Commons licenses）- 阮一峰](http://www.ruanyifeng.com/blog/2008/04/creative_commons_licenses.html)
 
+
 ## 声明
-由于知识有限，时间有限，无法对开源版本提供任何使用质量保障服务。
-欢迎在Issue区提出宝贵的修改和改进建议。
+由于知识有限，时间有限，不对开源版本提供任何使用质量保障和服务。
+欢迎在Issue(https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues)区提出宝贵的修改和改进建议，我会尽力解答您的问题。
 
 
 ## 捐赠与支持
@@ -120,7 +122,6 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 ## 合作伙伴
 如您对雷电有兴趣。 正在攻读相关学位，从事相关研究，或者是相关行业从业人员， 或有意向成为项目的贡献者， 欢迎联系我:1470269034@qq.com
-
 
 
 
