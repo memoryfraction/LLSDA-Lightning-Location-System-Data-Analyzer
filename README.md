@@ -109,10 +109,20 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 [署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 * 解释: [谈谈创作共用许可证（Creative Commons licenses）- 阮一峰](http://www.ruanyifeng.com/blog/2008/04/creative_commons_licenses.html)
 
+## 声明
+由于知识有限，时间有限，无法对开源版本提供任何使用质量保障服务。
+欢迎在Issue区提出宝贵的修改和改进建议。
 
 
-## Donation
+## 捐赠与支持
 [支付宝二维码](/Images/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%BA%8C%E7%BB%B4%E7%A0%81.JPG)
+
+
+## 合作伙伴
+如您对雷电有兴趣。 正在攻读相关学位，从事相关研究，或者是相关行业从业人员， 或有意向成为项目的贡献者， 欢迎联系我:1470269034@qq.com
+
+
+
 
 ## 鸣谢
 * 导师：肖稳安
