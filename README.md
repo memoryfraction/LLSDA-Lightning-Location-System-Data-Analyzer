@@ -36,8 +36,8 @@ Glad you like it.
 * copy *.dll file to the target address and use it
 
 ## TODO List
-LLSDA.Service
-LLSDA.Form
+* LLSDA.Service
+* LLSDA.Form
 
 ## Change Log
 * V1.0.0(2019-6-4)
