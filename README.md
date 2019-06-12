@@ -35,6 +35,9 @@ Glad you like it.
 * go to bin, debug and find the *.dll file
 * copy *.dll file to the target address and use it
 
+## TODO List
+LLSDA.Service
+LLSDA.Form
 
 ## Change Log
 * V1.0.0(2019-6-4)
@@ -45,6 +48,9 @@ StrikesDistributionStatistic class added, which contains dozens of distribution 
 
 * V1.0.3(2019-6-10)
 Add File Operator classes
+
+* V1.0.4(2019-6-11)
+Add angle classes, shape, shapeType
 
 
 ## Reference & Academic support
@@ -101,6 +107,9 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * V1.0.3(2019-6-10)
 新增文件操作类，用于识别LLS数据库文件; 和持久化内存数据到硬盘;
 
+* V1.0.4(2019-6-11)
+添加以下类: angle classes, shape 和 shapeType
+
 ## 学术支撑
 * Abstract
 [![image](/Images/%E6%91%98%E8%A6%81.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
@@ -121,7 +130,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 合作伙伴
-如您对雷电有兴趣。 正在攻读相关学位，从事相关研究，或者是相关行业从业人员， 或有意向成为项目的贡献者， 欢迎联系我:1470269034@qq.com
+如您对雷电有兴趣， 正在攻读相关学位，从事相关研究，相关行业从业人员或有意向成为项目的贡献者， 欢迎联系我: 1470269034@qq.com
 
 
 
