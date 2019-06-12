@@ -1,4 +1,11 @@
-﻿using LLSDA.Entities;
+﻿/*****************************************************************
+** License|知识产权:  Creative Commons| 知识共享
+** License Desc: https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh
+** Author|创建人:     Rong(Rex) Fan|樊荣
+** DESC|描述:
+******************************************************************/
+
+using LLSDA.Entities;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;

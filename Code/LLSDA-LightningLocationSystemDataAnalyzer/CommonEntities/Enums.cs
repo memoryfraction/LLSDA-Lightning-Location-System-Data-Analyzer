@@ -87,4 +87,56 @@ namespace LLSDA.Entities
         }
 
     }
+
+    /// <summary>
+    /// 雷电方向，配合雷电主次导图使用 | Lightning Direction
+    /// </summary>
+    public enum LightningStrikeDirectionEnum
+    {
+        North = 0,
+        
+        NorthEast = 1,
+        
+        East = 2,
+        
+        SouthEast = 3,
+        
+        South = 4,
+        
+        SouthWest = 5,
+        
+        West = 6,
+        
+        NorthWest = 7,
+        
+        CenteralPoint
+    }
+
+    /// <summary>
+    /// 点，包含一个经度、纬度
+    /// </summary>
+    public class PointLocation
+    {
+        public PointLocation(double lng, double lat)
+        {
+            longitude = lng;
+            latitude = lat;
+        }
+        public PointLocation()
+        {
+        }
+        double longitude, latitude;
+
+        public double Latitude
+        {
+            get { return latitude; }
+            set { latitude = value; }
+        }
+
+        public double Longitude
+        {
+            get { return longitude; }
+            set { longitude = value; }
+        }
+    }
 }

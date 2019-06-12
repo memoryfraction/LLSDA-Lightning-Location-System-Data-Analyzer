@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.Entities.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.4",
       "restore": {
         "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.Entities.csproj",
         "projectName": "LLSDA.Entities",
