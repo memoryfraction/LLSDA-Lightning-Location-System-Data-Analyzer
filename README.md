@@ -28,6 +28,7 @@ Glad you like it.
 ## Dependencies
 * .NET Standard 2.0
 * Newtonsoft
+* Nuget: System.Drawing.Common
 
 
 ## How to use it
@@ -88,6 +89,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 ## 依赖项
 * .NET Core 2.0版本及以上
 * Newtonsoft
+* Nuget: System.Drawing.Common
 
 
 ## 使用方法
