@@ -6,6 +6,7 @@
 ******************************************************************/
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -239,5 +240,249 @@ namespace LLSDA.Entities
 
         private bool m_disposed;
         #endregion
+    }
+
+    public class Square : Shape
+    {
+        public Square(double lng, double lat, double _years, string _areaName) : base(lng, lat, _years) { name = _areaName; }
+        public Square(double lng, double lat, double _years) : base(lng, lat, _years) { }
+        public Square(double lng, double lat) : base(lng, lat) { }
+        public Square() : base() { }
+
+
+        #region 属性、变量
+        double length = 3;
+
+        public new LightningStrikes_Standard Strikes
+        {
+            get { return strikes_Standard; }
+            set { strikes_Standard = value; }
+        }
+        public double Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
+        #endregion
+
+
+        #region PublicMethods
+
+        public override void CalcuSize()
+        {
+            Size = length * length;
+        }
+
+
+        /// <summary>
+        /// 输入经纬度，判断点是否在范围内
+        /// </summary>
+        /// <param name="_lng"></param>
+        /// <param name="_lat"></param>
+        /// <returns></returns>
+        public bool JudgePointInRange(double _lng, double _lat)
+        {
+            try
+            {
+                bool strikeInShape = false;
+                double leftLng, rightLng, downLat, upLat, intervalLng, intervalLat;
+                double perDegreeLngdistance = Distance.DistanceOfTwoPoints(CenterPoint.Longitude, CenterPoint.Latitude, CenterPoint.Longitude + 1, CenterPoint.Latitude);
+                intervalLng = length / perDegreeLngdistance;
+                leftLng = centerPoint.Longitude - intervalLng / 2;
+                rightLng = centerPoint.Longitude + intervalLng / 2;
+                if (_lng >= leftLng && _lng <= rightLng)
+                {
+                    double perDegreeLatdistance = Distance.DistanceOfTwoPoints(CenterPoint.Longitude, CenterPoint.Latitude, CenterPoint.Longitude, CenterPoint.Latitude + 1);
+                    intervalLat = length / perDegreeLatdistance;
+                    downLat = centerPoint.Latitude - intervalLat / 2;
+                    upLat = centerPoint.Latitude + intervalLat / 2;
+                    if (_lat >= downLat && _lat <= upLat)
+                    {
+                        strikeInShape = true;
+                    }
+                }
+                return strikeInShape;
+            }
+            catch { return false; }
+        }
+
+
+        /// <summary>
+        /// 计算边界
+        /// </summary>
+        public override void CalcuShapeBorder()
+        {
+            MinLongitude = centerPoint.Longitude - Distance.LongitudeDegreeOfPerKm(centerPoint.Latitude) * length / 2.0;
+            MaxLongitude = centerPoint.Longitude + Distance.LongitudeDegreeOfPerKm(centerPoint.Latitude) * length / 2.0;
+
+            MinLatitude = centerPoint.Latitude - Distance.LatitudeDegreeOfPerKm() * length / 2.0;
+            MaxLatitude = centerPoint.Latitude + Distance.LatitudeDegreeOfPerKm() * length / 2.0;
+        }
+
+        public override bool AddStrikeToShapeWithJudgment(LightningStrike_Basic strike)
+        {
+            return AddStrikeToShapeWithJudgment(strike.ConvertToIStrike_Standard());
+        }
+
+        public override bool AddStrikeToShapeWithJudgment(LightningStrike_Standard strike)
+        {
+            try
+            {
+                bool strikeInShape = false;
+                strikeInShape = JudgePointInRange(strike.Longitude, strike.Latitude);
+                if (strikeInShape)
+                    strikes_Standard.Strikes.Add(strike);
+                return strikeInShape;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
+        /// <summary>
+        /// 判断闪电是否在边界内，是则加入；内存中只存1000个闪电，节约内存
+        /// </summary>
+        /// <param name="_strikes"></param>
+        public void AddStrikeToShapeWithJudgment(IEnumerable<LightningStrike_Standard> _strikes)
+        {
+            int count = _strikes.Count();
+            strikes_Standard = new LightningStrikes_Standard();//重新初始化核心列表
+            var tmpStrikeList = new ConcurrentBag<LightningStrike_Standard>();
+            int spanNum = 1000;//分段的个数
+            if (count > spanNum)//个数超过1000
+            {
+                int sumTimes = count / spanNum + 1;
+                for (int cicledTimes = 0; cicledTimes < sumTimes; cicledTimes++)
+                {
+                    foreach (var tmpStrike in _strikes.Skip(cicledTimes * spanNum).Take(spanNum))
+                    {
+                        if (JudgePointInRange(tmpStrike.Longitude, tmpStrike.Latitude))
+                            strikes_Standard.Strikes.Add(tmpStrike);
+                    }
+                }
+            }
+            else//个数不足spanNum
+            {
+                foreach (var tmpStrike in _strikes)
+                    if (JudgePointInRange(tmpStrike.Longitude, tmpStrike.Latitude))
+                        strikes_Standard.Strikes.Add(tmpStrike);
+            }
+        }
+        #endregion
+    }
+
+
+    public class Circle : Shape
+    {
+        public Circle() : base() { }
+        public Circle(double lng, double lat, double _r) : base(lng, lat) { r = _r; }
+        public Circle(double lng, double lat, double _r, double _years) : base(lng, lat, _years) { r = _r; }
+        public Circle(double lng, double lat, double _r, double _years, string _areaName) : base(lng, lat, _years) { r = _r; name = _areaName; }
+
+
+        #region 属性、变量
+        double r = 0;
+        //LightningStrikes_Standard strikes_Standard=new LightningStrikes_Standard ();
+
+        
+        public new LightningStrikes_Standard Strikes
+        {
+            get { return strikes_Standard; }
+            set { strikes_Standard = value; }
+        }
+
+        
+        public double R
+        {
+            get { return r; }
+            set { r = value; }
+        }
+        #endregion
+
+
+
+        public override void CalcuSize()
+        {
+            Size = Math.PI * r * r;
+        }
+        public override void CalcuShapeBorder()
+        {
+            MinLongitude = centerPoint.Longitude - Distance.LongitudeDegreeOfPerKm(centerPoint.Latitude) * r;
+            MaxLongitude = centerPoint.Longitude + Distance.LongitudeDegreeOfPerKm(centerPoint.Latitude) * r;
+
+            MinLatitude = centerPoint.Latitude - Distance.LatitudeDegreeOfPerKm() * r;
+            MaxLatitude = centerPoint.Latitude + Distance.LatitudeDegreeOfPerKm() * r;
+        }
+        /// <summary>
+        /// 输入经纬度，判断点是否在范围内
+        /// </summary>
+        /// <param name="_lng"></param>
+        /// <param name="_lat"></param>
+        /// <returns></returns>
+        public bool JudgePointInRange(double _lng, double _lat)
+        {
+            try
+            {
+                bool strikeInShape = false;
+                double distance = Distance.DistanceOfTwoPoints(this.CenterPoint.Longitude, this.CenterPoint.Latitude, _lng, _lat);
+                if (distance <= r)
+                {
+                    strikeInShape = true;
+                }
+                return strikeInShape;
+            }
+            catch { return false; }
+        }
+        public override bool AddStrikeToShapeWithJudgment(LightningStrike_Basic strike)
+        {
+            return AddStrikeToShapeWithJudgment(strike.ConvertToIStrike_Standard());
+        }
+        public override bool AddStrikeToShapeWithJudgment(LightningStrike_Standard strike)
+        {
+            try
+            {
+                bool strikeInShape = JudgePointInRange(strike.Longitude, strike.Latitude);
+                if (strikeInShape)
+                {
+                    strikes_Standard.Strikes.Add(strike);
+                }
+                return strikeInShape;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+        /// <summary>
+        /// 判断闪电是否在边界内，是则加入；内存中只存1000个闪电，节约内存
+        /// </summary>
+        /// <param name="_strikes"></param>
+        public void AddStrikeToShapeWithJudgment(IEnumerable<LightningStrike_Standard> _strikes)
+        {
+            Int64 count = _strikes.LongCount();
+            strikes_Standard = new LightningStrikes_Standard();//重新初始化核心列表
+            int spanNum = 1000;//分段的个数 
+            var tmpStrikeList = new ConcurrentBag<LightningStrike_Standard>();
+            if (count > spanNum)//个数超过1000
+            {
+                Int64 sumTimes = count / spanNum + 1;
+                for (int cicledTimes = 0; cicledTimes < sumTimes; cicledTimes++)
+                {
+                    foreach (var tmpStrike in strikes_Standard.Strikes.Skip(cicledTimes * spanNum).Take(spanNum))
+                    {
+                        if (JudgePointInRange(tmpStrike.Longitude, tmpStrike.Latitude))
+                            strikes_Standard.Strikes.Add(tmpStrike);
+                    }
+                }
+            }
+            else//个数不足spanNum
+            {
+                foreach (var tmpStrike in _strikes)
+                    if (JudgePointInRange(tmpStrike.Longitude, tmpStrike.Latitude))
+                        strikes_Standard.Strikes.Add(tmpStrike);
+            }
+        }
     }
 }
