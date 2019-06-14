@@ -53,6 +53,9 @@ Add File Operator classes
 * V1.0.4(2019-6-11)
 Add angle classes, shape, shapeType
 
+* V1.0.5(2019-6-13)
+Add PointAnalysis
+
 
 ## Reference & Academic support
 * Abstract
@@ -111,6 +114,9 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 * V1.0.4(2019-6-11)
 添加以下类: angle classes, shape 和 shapeType
+
+* V1.0.5(2019-6-13)
+新增点分析相关类。 点分析，用于输入经纬度点后得到相关分析结果;
 
 ## 学术支撑
 * Abstract
