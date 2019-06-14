@@ -226,7 +226,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.4",
+    "version": "1.0.5",
     "restore": {
       "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.Entities.csproj",
       "projectName": "LLSDA.Entities",

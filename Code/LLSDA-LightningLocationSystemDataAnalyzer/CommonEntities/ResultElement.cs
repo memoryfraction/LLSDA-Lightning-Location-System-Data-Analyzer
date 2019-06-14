@@ -17,28 +17,9 @@ namespace LLSDA.Entities
         double longitude, latitude, value;
         Color color;
 
-        
-        public double Value
-        {
-            get { return this.value; }
-            set { this.value = value; }
-        }
-
-        
-        public double Latitude
-        {
-            get { return latitude; }
-            set { latitude = value; }
-        }
-
-        
-        public double Longitude
-        {
-            get { return longitude; }
-            set { longitude = value; }
-        }
-
-
-
+        public Color Color { get => color; set => color = value; }
+        public double Longitude { get => longitude; set => longitude = value; }
+        public double Latitude { get => latitude; set => latitude = value; }
+        public double Value { get => value; set => this.value = value; }
     }
 }
