@@ -1,3 +1,13 @@
 
 README.md
 Images/支付宝二维码.JPG
+
+# ignore an entire directory
+/Debug/
+
+# ignore a file type
+*.pdb
+*.dll
+*.cache
+*.assets.cache
+*.sqlite
