@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.Entities.csproj": {
-      "version": "1.0.5",
+      "version": "1.0.6",
       "restore": {
         "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA-LightningLocationSystemDataAnalyzer\\LLSDA.Entities.csproj",
         "projectName": "LLSDA.Entities",
@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
             },
             "System.Drawing.Common": {
               "target": "Package",
