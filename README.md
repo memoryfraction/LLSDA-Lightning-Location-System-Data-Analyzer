@@ -56,6 +56,10 @@ Add angle classes, shape, shapeType
 * V1.0.5(2019-6-13)
 Add PointAnalysis
 
+* V1.0.6(2019-6-16)
+Add UserDefinedAnalysis
+
+
 
 ## Reference & Academic support
 * Abstract
@@ -117,6 +121,9 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 * V1.0.5(2019-6-13)
 新增点分析相关类。 点分析，用于输入经纬度点后得到相关分析结果;
+
+* V1.0.6(2019-6-16)
+新增 UserDefinedAnalysis
 
 ## 学术支撑
 * Abstract
