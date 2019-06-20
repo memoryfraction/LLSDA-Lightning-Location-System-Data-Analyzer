@@ -37,8 +37,7 @@ Glad you like it.
 * copy *.dll file to the target address and use it
 
 ## TODO List
-* LLSDA.Service
-* LLSDA.Form
+* LLSDA.App (Plan to use Avalonia)
 
 ## Change Log
 * V1.0.0(2019-6-4)
@@ -109,7 +108,6 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * V1.0.0(2019-6-4)
 新增LightningStrike相关类
 
-
 * V1.0.1(2019-6-5)
 新增StrikesDistributionStatistic 类, 内含多种时间、空间统计方法;
 
@@ -124,6 +122,9 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 * V1.0.6(2019-6-16)
 新增 UserDefinedAnalysis
+
+## 待完成
+* LLSDA.App (范例代码项目。 计划使用跨平台UI:Avalonia，调用LLSDA.Entities来生成产品图。 欢迎推荐其他的跨平台UI项目。)
 
 ## 学术支撑
 * Abstract
