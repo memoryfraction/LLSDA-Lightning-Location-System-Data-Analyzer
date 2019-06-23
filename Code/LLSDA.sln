@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLSDA.Entities", "LLSDA-LightningLocationSystemDataAnalyzer\LLSDA.Entities.csproj", "{E7BCB621-E319-4E3D-86E0-C3D109770B3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLSDA.Service", "LLSDA.Service\LLSDA.Service.csproj", "{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLSDA.Entities", "LLSDA.Entities\LLSDA.Entities.csproj", "{A5268D0F-DB1D-412B-B36F-135128BE6CF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLSDA.Interface", "LLSDA.Interface\LLSDA.Interface\LLSDA.Interface.csproj", "{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E7BCB621-E319-4E3D-86E0-C3D109770B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7BCB621-E319-4E3D-86E0-C3D109770B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7BCB621-E319-4E3D-86E0-C3D109770B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7BCB621-E319-4E3D-86E0-C3D109770B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5268D0F-DB1D-412B-B36F-135128BE6CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5268D0F-DB1D-412B-B36F-135128BE6CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5268D0F-DB1D-412B-B36F-135128BE6CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5268D0F-DB1D-412B-B36F-135128BE6CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

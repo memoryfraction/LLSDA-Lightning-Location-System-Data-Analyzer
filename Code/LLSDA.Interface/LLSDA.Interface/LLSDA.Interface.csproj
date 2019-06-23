@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Rong(Rex) Fan</Authors>
+    <Product>LightningLocationSystemDataAnalyzer.Interface</Product>
+    <Company />
+  </PropertyGroup>
+
+</Project>
