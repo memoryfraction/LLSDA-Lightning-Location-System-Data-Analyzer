@@ -4,10 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLSDA.Service", "LLSDA.Service\LLSDA.Service.csproj", "{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A5268D0F-DB1D-412B-B36F-135128BE6CF2} = {A5268D0F-DB1D-412B-B36F-135128BE6CF2}
+		{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C} = {E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLSDA.Entities", "LLSDA.Entities\LLSDA.Entities.csproj", "{A5268D0F-DB1D-412B-B36F-135128BE6CF2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C} = {E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLSDA.Interface", "LLSDA.Interface\LLSDA.Interface\LLSDA.Interface.csproj", "{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLSDA.Interface", "LLSDA.Interface\LLSDA.Interface.csproj", "{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +30,10 @@ Global
 		{A5268D0F-DB1D-412B-B36F-135128BE6CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5268D0F-DB1D-412B-B36F-135128BE6CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5268D0F-DB1D-412B-B36F-135128BE6CF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFB79D62-C1FD-4F55-B25A-98A16582AD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

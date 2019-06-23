@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LLSDA.Entities\LLSDA.Entities.csproj" />
-    <ProjectReference Include="..\LLSDA.Interface\LLSDA.Interface\LLSDA.Interface.csproj" />
+    <Reference Include="LLSDA.Entities">
+      <HintPath>..\LLSDA.Entities\bin\Debug\netstandard2.0\LLSDA.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="LLSDA.Interface">
+      <HintPath>..\LLSDA.Interface\bin\Debug\netstandard2.0\LLSDA.Interface.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

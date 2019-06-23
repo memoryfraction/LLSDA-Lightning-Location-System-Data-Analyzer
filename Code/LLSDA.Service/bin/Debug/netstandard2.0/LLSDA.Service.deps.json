@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "9e1c3e72024a6004aaabd9af70140538b538e17b"
+    "signature": "cfe1dc2a80602aef150a12815387068463a61a0d"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,9 +9,9 @@
     ".NETStandard,Version=v2.0/": {
       "LLSDA.Service/1.0.0": {
         "dependencies": {
-          "LLSDA.Entities": "1.0.6",
-          "LLSDA.Interface": "1.0.0",
-          "NETStandard.Library": "2.0.3"
+          "NETStandard.Library": "2.0.3",
+          "LLSDA.Entities": "1.0.6.0",
+          "LLSDA.Interface": "1.0.0.0"
         },
         "runtime": {
           "LLSDA.Service.dll": {}
@@ -23,35 +23,20 @@
           "Microsoft.NETCore.Platforms": "1.1.0"
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "LLSDA.Entities/1.0.6.0": {
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.2.23222"
+          "LLSDA.Entities.dll": {
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
           }
         }
       },
-      "System.Drawing.Common/4.5.1": {
+      "LLSDA.Interface/1.0.0.0": {
         "runtime": {
-          "lib/netstandard2.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "4.0.0.1",
-            "fileVersion": "4.6.26919.2"
+          "LLSDA.Interface.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
-        }
-      },
-      "LLSDA.Entities/1.0.6": {
-        "dependencies": {
-          "LLSDA.Interface": "1.0.0",
-          "Newtonsoft.Json": "12.0.2",
-          "System.Drawing.Common": "4.5.1"
-        },
-        "runtime": {
-          "LLSDA.Entities.dll": {}
-        }
-      },
-      "LLSDA.Interface/1.0.0": {
-        "runtime": {
-          "LLSDA.Interface.dll": {}
         }
       }
     }
@@ -76,27 +61,13 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "path": "newtonsoft.json/12.0.2",
-      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
-    },
-    "System.Drawing.Common/4.5.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
-      "path": "system.drawing.common/4.5.1",
-      "hashPath": "system.drawing.common.4.5.1.nupkg.sha512"
-    },
-    "LLSDA.Entities/1.0.6": {
-      "type": "project",
+    "LLSDA.Entities/1.0.6.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "LLSDA.Interface/1.0.0": {
-      "type": "project",
+    "LLSDA.Interface/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

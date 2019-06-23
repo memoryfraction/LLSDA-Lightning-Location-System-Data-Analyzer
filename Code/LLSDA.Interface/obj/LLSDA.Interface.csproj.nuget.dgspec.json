@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Service\\LLSDA.Service.csproj": {}
+    "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Interface\\LLSDA.Interface.csproj": {}
   },
   "projects": {
-    "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Service\\LLSDA.Service.csproj": {
+    "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Interface\\LLSDA.Interface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Service\\LLSDA.Service.csproj",
-        "projectName": "LLSDA.Service",
-        "projectPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Service\\LLSDA.Service.csproj",
+        "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Interface\\LLSDA.Interface.csproj",
+        "projectName": "LLSDA.Interface",
+        "projectPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Interface\\LLSDA.Interface.csproj",
         "packagesPath": "C:\\Users\\T480\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Service\\obj\\",
+        "outputPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Interface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
