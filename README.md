@@ -62,7 +62,7 @@ Add UserDefinedAnalysis
 Follow SOLID Principle to rely on Interfaces instead of Entities
 
 ## Architecture
-[![image](/Images/Architecture.png)]
+![image](/Images/Architecture.png)
 
 ## Reference & Academic support
 * Abstract
