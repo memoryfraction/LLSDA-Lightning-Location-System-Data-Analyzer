@@ -58,6 +58,8 @@ Add PointAnalysis
 * V1.0.6(2019-6-16)
 Add UserDefinedAnalysis
 
+* V1.0.7(2019-6-23)
+Follow SOLID Principle to rely on Interfaces instead of Entities
 
 
 ## Reference & Academic support
@@ -122,6 +124,9 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 * V1.0.6(2019-6-16)
 新增 UserDefinedAnalysis
+
+* V1.0.7(2019-6-23)
+遵循SOLID原则，依赖于接口，而不是依赖于实体。 有利于解耦和开发、维护
 
 ## 待完成
 * LLSDA.App (范例代码项目。 计划使用跨平台UI:Avalonia，调用LLSDA.Entities来生成产品图。 欢迎推荐其他的跨平台UI项目。)
