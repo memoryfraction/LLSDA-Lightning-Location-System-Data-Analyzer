@@ -61,6 +61,9 @@ Add UserDefinedAnalysis
 * V1.0.7(2019-6-23)
 Follow SOLID Principle to rely on Interfaces instead of Entities
 
+## OOP Design
+![image](/Images/ObjectOrientedDesign.jpg)
+
 ## Architecture
 ![image](/Images/Architecture.png)
 
