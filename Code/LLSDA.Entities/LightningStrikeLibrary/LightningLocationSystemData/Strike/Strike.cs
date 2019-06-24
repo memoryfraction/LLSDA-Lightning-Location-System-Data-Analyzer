@@ -15,7 +15,13 @@ namespace LLSDA.Entities
     
     public class LightningStrike_Basic : AbstractStrike_Basic
     {
+        private IStrikeFormatConvertService iStrikeFormatConvertService;
+        public LightningStrike_Basic(IStrikeFormatConvertService _iStrikeFormatConvertService)
+        {
+            IStrikeFormatConvertService = _iStrikeFormatConvertService;
+        }
         public LightningStrike_Basic() { }
+
         public LightningStrike_Basic(DateTime dateTime, double longitude, double latitude)
         {
             this._DateAndTime = dateTime;
@@ -54,6 +60,8 @@ namespace LLSDA.Entities
             get { return _Longitude; }
             set { _Longitude = value; }
         }
+
+        public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
 
         public override AbstractStrike_Standard ConvertToIStrike_Standard()
         {
@@ -101,6 +109,11 @@ namespace LLSDA.Entities
     
     public class LightningStrike_Standard : AbstractStrike_Standard
     {
+        private IStrikeFormatConvertService iStrikeFormatConvertService;
+        public LightningStrike_Standard(IStrikeFormatConvertService _iStrikeFormatConvertService)
+        {
+            IStrikeFormatConvertService = _iStrikeFormatConvertService;
+        }
         public LightningStrike_Standard() { }
 
         //public LightningStrike_Standard(DateTime dateTime, double longitude, double latitude, double intensity) : base(dateTime, longitude, latitude)
@@ -134,13 +147,11 @@ namespace LLSDA.Entities
             set { _LocationMode = value; }
         }
 
+        public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
+
         public override AbstractStrike_Basic ConvertThisToStrikeBasic()
         {
-            AbstractStrike_Basic strikeBasic = new LightningStrike_Basic();
-            strikeBasic.DateAndTime = this.DateAndTime;
-            strikeBasic.Longitude = this.Longitude;
-            strikeBasic.Latitude = this.Latitude;
-            return strikeBasic;
+            return iStrikeFormatConvertService.ConvertStandardStrikToBasic(this);
         }
 
         public override AbstractStrike_Standard ConvertToIStrike_Standard()
@@ -156,15 +167,7 @@ namespace LLSDA.Entities
         /// <returns></returns>
         public override AbstractStrike_China ConvertThisToStrikeChina()
         {
-            AbstractStrike_China strikeChina = new LightningStrike_China();
-            strikeChina.DateAndTime = this.DateAndTime;
-            strikeChina.Longitude = this.Longitude;
-            strikeChina.Latitude = this.Latitude;
-            strikeChina.Intensity = this.Intensity;
-            strikeChina.Slope = strikeChina.Slope;
-            strikeChina.Error = strikeChina.Error;
-            strikeChina.LocationMode = strikeChina.LocationMode;
-            return strikeChina;
+            return iStrikeFormatConvertService.ConvertStandardStrikToChina(this);
         }
 
 
@@ -237,6 +240,12 @@ namespace LLSDA.Entities
 
     public class LightningStrike_China : AbstractStrike_China
     {
+        private IStrikeFormatConvertService iStrikeFormatConvertService;
+        public LightningStrike_China(IStrikeFormatConvertService _iStrikeFormatConvertService)
+        {
+            IStrikeFormatConvertService = _iStrikeFormatConvertService;
+        }
+
         public LightningStrike_China() { }
 
         //public LightningStrike_China(DateTime dateTime, double longitude, double latitude, double intensity)
@@ -270,7 +279,7 @@ namespace LLSDA.Entities
             get { JudgeWhetherWithLocation(); return withFullLocation; }
         }
 
-
+        public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
 
         private void JudgeWhetherWithLocation()
         {
@@ -317,13 +326,7 @@ namespace LLSDA.Entities
 
         public override AbstractStrike_Basic ConvertThisToStrikeBasic()
         {
-            AbstractStrike_Basic strike = new LightningStrike_Basic() {
-                ID = this.ID,
-                DateAndTime = this.DateAndTime,
-                Longitude = this.Longitude,
-                Latitude =this.Latitude
-            };
-            return strike;
+            return iStrikeFormatConvertService.ConvertChineseStrikToBasic(this);
         }
 
         public override AbstractStrike_China ConvertThisToStrikeChina()
@@ -333,15 +336,7 @@ namespace LLSDA.Entities
 
         public override AbstractStrike_Standard ConvertToIStrike_Standard()
         {
-            AbstractStrike_Standard strikeStandard = new LightningStrike_Standard();
-            strikeStandard.DateAndTime = this.DateAndTime;
-            strikeStandard.Intensity = this.Intensity;
-            strikeStandard.Longitude = this.Longitude;
-            strikeStandard.Latitude = this.Latitude;
-            strikeStandard.Slope = this.Slope;
-            strikeStandard.Error = this.Error;
-            strikeStandard.LocationMode = this.LocationMode;
-            return strikeStandard;
+            return iStrikeFormatConvertService.ConvertChineseStrikToStandard(this);
         }
     }
 }

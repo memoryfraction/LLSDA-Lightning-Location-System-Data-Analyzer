@@ -30,8 +30,11 @@ namespace LLSDA.Interface
         public LightningType LightningType { get; set; }
     }
 
-    public abstract class AbstractStrike_Intensity : AbstractStrike_CompactEdition
+    public abstract class AbstractStrike_Standard : AbstractStrike_CompactEdition
     {
+        public double Slope { get; set; }
+        public double Error { get; set; }
+        public string LocationMode { get; set; }
         public double Intensity { get; set; }
         public new LightningType LightningType
         {
@@ -41,14 +44,8 @@ namespace LLSDA.Interface
                 else if (Intensity < 0) return LightningType.Negative;
                 else throw new ArgumentOutOfRangeException("Invalid 0 intensity.");
             }
+            set { LightningType = value; }
         }
-    }
-
-    public abstract class AbstractStrike_Standard : AbstractStrike_Intensity
-    {
-        public double Slope { get; set; }
-        public double Error { get; set; }
-        public string LocationMode { get; set; }
         public abstract AbstractStrike_Basic ConvertThisToStrikeBasic();
         public abstract AbstractStrike_China ConvertThisToStrikeChina();
     }

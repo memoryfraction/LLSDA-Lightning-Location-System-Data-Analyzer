@@ -10,3 +10,5 @@ Images/支付宝二维码.JPG
 *.cache
 *.assets.cache
 *.sqlite
+*.dtbcache
+*.lut

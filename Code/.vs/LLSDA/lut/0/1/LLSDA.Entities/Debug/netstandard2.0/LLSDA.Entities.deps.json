@@ -9,10 +9,10 @@
     ".NETStandard,Version=v2.0/": {
       "LLSDA.Entities/1.0.6": {
         "dependencies": {
-          "LLSDA.Interface": "1.0.0",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
           "System.Drawing.Common": "4.5.1",
+          "LLSDA.Interface": "1.0.0.0",
           "Microsoft.CodeAnalysis.LiveUnitTesting.Runtime": "2.0.0.0"
         },
         "runtime": {
@@ -41,9 +41,12 @@
           }
         }
       },
-      "LLSDA.Interface/1.0.0": {
+      "LLSDA.Interface/1.0.0.0": {
         "runtime": {
-          "LLSDA.Interface.dll": {}
+          "LLSDA.Interface.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Microsoft.CodeAnalysis.LiveUnitTesting.Runtime/2.0.0.0": {
@@ -90,8 +93,8 @@
       "path": "system.drawing.common/4.5.1",
       "hashPath": "system.drawing.common.4.5.1.nupkg.sha512"
     },
-    "LLSDA.Interface/1.0.0": {
-      "type": "project",
+    "LLSDA.Interface/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
