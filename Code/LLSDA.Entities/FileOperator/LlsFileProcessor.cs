@@ -1,5 +1,5 @@
 ﻿/*****************************************************************
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
@@ -112,7 +112,7 @@ namespace LLSDA.Entities
         #endregion
 
 
-        #region 公开函数|public methods
+        #region 公开函数 | public methods
         /// <summary>
         /// 读取某文件，获取其总行数 | Get sum line number from text
         /// </summary>
@@ -147,9 +147,9 @@ namespace LLSDA.Entities
         /// 返回LightningStrike_China列表，强制赋值省份信息。市县信息为空 
         /// </summary>
         /// <returns></returns>
-        public List<LightningStrike_China> ReturnStrikesChinaByProcess(string provinceName)
+        public List<LightningStrikeChina> ReturnStrikesChinaByProcess(string provinceName)
         {
-            List<LightningStrike_China> strikes = new List<LightningStrike_China>();
+            List<LightningStrikeChina> strikes = new List<LightningStrikeChina>();
             strikes = ReturnStrikesChinaByProcess();
             for (int i = 0; i < strikes.Count; i++)
             {
@@ -167,13 +167,13 @@ namespace LLSDA.Entities
         /// 返回LightningStrike_China列表
         /// </summary>
         /// <returns></returns>
-        public List<LightningStrike_China> ReturnStrikesChinaByProcess()
+        public List<LightningStrikeChina> ReturnStrikesChinaByProcess()
         {
             DateTime dtStart = DateTime.Now;
             string strBuffer;//
             GetSumLineNumFromText();
             curRow = 1;
-            List<LightningStrike_China> StrikesList = new List<LightningStrike_China>();
+            List<LightningStrikeChina> StrikesList = new List<LightningStrikeChina>();
             using (StreamReader strReader = new StreamReader(SourceLlsFilePathName, Encoding.Default))
             {
                 while ((strBuffer = strReader.ReadLine()) != null)
@@ -184,7 +184,7 @@ namespace LLSDA.Entities
                         currentPercent = 100 * curRow / sumLineNum;
                         LlsRowProcessor rowProcessor = new LlsRowProcessor(strBuffer);
                         rowProcessor.SrcFileName = sourceLlsFilePathName;
-                        LightningStrike_China strike = rowProcessor.ReturnStrike();
+                        LightningStrikeChina strike = rowProcessor.ReturnStrike();
                         if (strike != null)
                             StrikesList.Add(strike);
                     }
@@ -235,8 +235,6 @@ namespace LLSDA.Entities
 
         private bool m_disposed;
         #endregion
-
-
     }
 
 
@@ -298,6 +296,7 @@ namespace LLSDA.Entities
             return fileName;
         }
     }
+
     public class LlsTxtFileFormatRecognizer2 : LlsTxtFileFormatRecognizer
     {
         public LlsTxtFileFormatRecognizer2(DateTime _dt) : base(_dt) { }

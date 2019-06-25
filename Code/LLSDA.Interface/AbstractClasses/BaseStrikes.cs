@@ -1,6 +1,6 @@
 ﻿/*****************************************************************
-** License|知识产权:  Creative Commons| 知识共享
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
+
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 ******************************************************************/
@@ -13,20 +13,20 @@ using System.Text;
 
 namespace LLSDA.Interface
 {
-    public abstract class AbstractStrikes_Basic
+    public abstract class BaseStrikesBasic
     {
         #region Variables&Properties
 
         internal Int64 sumStrikesNum;
         internal Dictionary<int, int> hourDistribution, monthDistribution, yearDistribution;
         internal string hourDistributionDesc, monthDistributionDesc, yearDistributionDesc;
-        internal AbstractLightningStrikeDays lightningStrikeDays;
+        internal BaseLightningStrikeDays lightningStrikeDays;
         internal string areaName;
         internal List<int> _yearList;
 
         IStrikesDistributionStatisticService iStrikesDistributionStatisticService;
 
-        public ConcurrentBag<AbstractStrike_Basic> Strikes { get; set; }
+        public ConcurrentBag<BaseStrikeBasic> Strikes { get; set; }
 
 
         public List<int> YearList
@@ -44,7 +44,7 @@ namespace LLSDA.Interface
         /// 得到雷电日类型，调用此属性前应调用CalcuLightningStrikeDays()方法
         /// </summary>
 
-        public AbstractLightningStrikeDays LightningStrikeDays
+        public BaseLightningStrikeDays LightningStrikeDays
         {
             get
             {
@@ -123,7 +123,7 @@ namespace LLSDA.Interface
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public AbstractStrike_Basic this[int index]
+        public BaseStrikeBasic this[int index]
         {
             get { return Strikes.ElementAt(index); }
         }
@@ -143,7 +143,7 @@ namespace LLSDA.Interface
     }
 
 
-    public abstract class AbstractStrikes_Standard: AbstractStrikes_Basic
+    public abstract class BaseStrikesStandard: BaseStrikesBasic
     {
         public Int64 SumNumPositive, SumNumNegative;
         public double IntensityPositiveAvg, IntensityNegativeAvg, IntensityAvg, MinNegativeIntensity, MaxNegativeIntensity, MinPositiveIntensity, MaxPositiveIntensity;
@@ -151,7 +151,7 @@ namespace LLSDA.Interface
         public Dictionary<int, int> MonthDistributionPositive, MonthDistributionNegative, HourDistributionPositive, HourDistributionNegative;
         public String ProbabilityDistributioDisc;
 
-        public new  ConcurrentBag<AbstractStrike_Standard> Strikes { get; set; }
+        public new  ConcurrentBag<BaseStrikeStandard> Strikes { get; set; }
         public Dictionary<int, int> YearDistributionPositive { get; set; }
         public Dictionary<int, int> YearDistributionNegative { get; set; }
 
@@ -163,9 +163,9 @@ namespace LLSDA.Interface
     }
 
 
-    public abstract class AbstractStrikes_China: AbstractStrikes_Standard
+    public abstract class BaseStrikesChina: BaseStrikesStandard
     {
         public string LightningBulletinDesc;
-        public new ConcurrentBag<AbstractStrike_China> Strikes { get; set; }
+        public new ConcurrentBag<BaseStrikeChina> Strikes { get; set; }
     }
 }

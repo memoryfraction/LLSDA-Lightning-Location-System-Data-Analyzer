@@ -16,7 +16,7 @@ namespace LLSDA.Entities
         public PointAnalysisResults()
             : base()
         {
-            strikesStandard = new List<LightningStrike_Standard>();
+            strikesStandard = new List<LightningStrikeStandard>();
             ngList = new List<ResultElement>();
             intensityAvgList = new List<ResultElement>();
         }
@@ -24,10 +24,10 @@ namespace LLSDA.Entities
         private List<ResultElement> ngList, intensityAvgList;
         private Dictionary<LightningStrikeDirectionEnum, double> roseDistribution;
         private LongitudeOrLatitude longitudeInput, latitudeInput;
-        private List<LightningStrike_Standard> strikesStandard;
+        private List<LightningStrikeStandard> strikesStandard;
 
         
-        public List<LightningStrike_Standard> Strikes
+        public List<LightningStrikeStandard> Strikes
         {
             get { return strikesStandard; }
             set { strikesStandard = value; }
@@ -94,7 +94,7 @@ namespace LLSDA.Entities
                 if (disposing)
                 {
                     // Release managed resources
-                    strikesStandard = new List<LightningStrike_Standard>();
+                    strikesStandard = new List<LightningStrikeStandard>();
                     ngList = new List<ResultElement>();
                     intensityAvgList = new List<ResultElement>();
                 }

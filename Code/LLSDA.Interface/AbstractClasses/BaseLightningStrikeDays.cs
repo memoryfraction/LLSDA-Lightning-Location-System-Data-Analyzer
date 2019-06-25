@@ -1,6 +1,6 @@
 ﻿/*****************************************************************
-** License|知识产权:  Creative Commons| 知识共享
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
+
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 ******************************************************************/
@@ -13,18 +13,18 @@ using System.Text;
 
 namespace LLSDA.Interface
 {
-    public abstract class AbstractLightningStrikeDays
+    public abstract class BaseLightningStrikeDays
     {
         #region Variables
         public string AdministrativeRegionName { get; set; }
 
-        public ConcurrentBag<AbstractLightningStrikeDay> LightningStrikesDayList { get; set; }
+        public ConcurrentBag<BaseLightningStrikeDay> LightningStrikesDayList { get; set; }
 
         #endregion
 
         #region Index
 
-        public AbstractLightningStrikeDay this[int index]
+        public BaseLightningStrikeDay this[int index]
         {
             get
             {
@@ -53,13 +53,13 @@ namespace LLSDA.Interface
         /// </summary>
         /// <param name="_lightningStrikesDayList"></param>
         /// <returns></returns>
-        public abstract List<int> StatisticYearList(IEnumerable<AbstractLightningStrikeDay> _lightningStrikesDayList);
+        public abstract List<int> StatisticYearList(IEnumerable<BaseLightningStrikeDay> _lightningStrikesDayList);
 
         /// <summary>
         /// 输入已经统计完毕的LightningStrikeDay，按年分类,返回List<Dictionary<int, LightningStrikeDay>>
         /// </summary>
         /// <returns></returns>
-        public abstract List<Dictionary<int, AbstractLightningStrikeDay>> StatisticLightningStrikesDayYearly(IEnumerable<AbstractLightningStrikeDay> _lightningStrikeDays);
+        public abstract List<Dictionary<int, BaseLightningStrikeDay>> StatisticLightningStrikesDayYearly(IEnumerable<BaseLightningStrikeDay> _lightningStrikeDays);
         #endregion
     }
 }

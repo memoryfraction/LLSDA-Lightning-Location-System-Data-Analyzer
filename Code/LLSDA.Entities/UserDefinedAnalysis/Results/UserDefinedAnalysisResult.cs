@@ -11,13 +11,13 @@ namespace LLSDA.Entities
     {
         public UserDefinedAnalysisResult()
         {
-            strikesChina = new List<LightningStrike_China>();
+            strikesChina = new List<LightningStrikeChina>();
         }
 
-        List<LightningStrike_China> strikesChina;
+        List<LightningStrikeChina> strikesChina;
 
         [JsonIgnore]
-        public List<LightningStrike_China> StrikesChina
+        public List<LightningStrikeChina> StrikesChina
         {
             get { return strikesChina; }
             set { strikesChina = value; }

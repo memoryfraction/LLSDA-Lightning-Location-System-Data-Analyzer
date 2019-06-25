@@ -1,6 +1,6 @@
 ﻿/*****************************************************************
-** License|知识产权:  Creative Commons| 知识共享
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
+
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 ******************************************************************/
@@ -15,22 +15,22 @@ using System.Text;
 
 namespace LLSDA.Entities
 {
-    public class LightningStrikes_Basic: AbstractStrikes_Basic
+    public class LightningStrikes_Basic: BaseStrikesBasic
     {
         #region 构造函数
-        public LightningStrikes_Basic(IEnumerable<AbstractStrike_Basic> _lightningStrikes_Basic, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
+        public LightningStrikes_Basic(IEnumerable<BaseStrikeBasic> _lightningStrikes_Basic, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
         {
             IStrikesDistributionStatisticService = _iStrikesDistributionStatisticService;
             foreach (var tmpStrike in _lightningStrikes_Basic)
                 Strikes.Add(tmpStrike);
         }
-        public LightningStrikes_Basic(IEnumerable<AbstractStrike_Standard> _lightningStrikes_Standard, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
+        public LightningStrikes_Basic(IEnumerable<BaseStrikeStandard> _lightningStrikes_Standard, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
         {
             IStrikesDistributionStatisticService = _iStrikesDistributionStatisticService;
             foreach (var tmpStrike in _lightningStrikes_Standard)
                 Strikes.Add(tmpStrike);
         }
-        public LightningStrikes_Basic(IEnumerable<AbstractStrike_China> _lightningStrikes_China, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
+        public LightningStrikes_Basic(IEnumerable<BaseStrikeChina> _lightningStrikes_China, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
         {
             IStrikesDistributionStatisticService = _iStrikesDistributionStatisticService;
             foreach (var tmpStrike in _lightningStrikes_China)
@@ -52,7 +52,7 @@ namespace LLSDA.Entities
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public AbstractStrike_Basic this[int index]
+        public BaseStrikeBasic this[int index]
         {
             get { return Strikes.ElementAt(index); }
         }

@@ -1,6 +1,6 @@
 ﻿/*****************************************************************
-** License|知识产权:  Creative Commons| 知识共享
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
+
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 * ******************************************************************/
@@ -44,9 +44,9 @@ namespace LLSDA.Entities.CommonEntities
             set { curStrike = value; }
         }
 
-        public abstract void ProcessStrikes(AbstractStrike_Basic strike);
-        public abstract void ProcessStrikes(AbstractStrike_Standard strike);
-        public abstract void ProcessStrikes(AbstractStrike_China strike);
+        public abstract void ProcessStrikes(BaseStrikeBasic strike);
+        public abstract void ProcessStrikes(BaseStrikeStandard strike);
+        public abstract void ProcessStrikes(BaseStrikeChina strike);
 
 
         #region 析构函数
@@ -110,15 +110,15 @@ namespace LLSDA.Entities.CommonEntities
             shapes = new Squares(_centerLongitude, _centerLatitude, _eachBoxLength, _eachSideBoxNum);
             this.centerShape = shapes.CenterShape;
         }
-        public override void ProcessStrikes(AbstractStrike_Basic strike)
+        public override void ProcessStrikes(BaseStrikeBasic strike)
         {
             shapes.AddStrikeToShapesWithJudgment(strike.ConvertToIStrike_Standard());
         }
-        public override void ProcessStrikes(AbstractStrike_Standard strike)
+        public override void ProcessStrikes(BaseStrikeStandard strike)
         {
             shapes.AddStrikeToShapesWithJudgment(strike);
         }
-        public override void ProcessStrikes(AbstractStrike_China strike)
+        public override void ProcessStrikes(BaseStrikeChina strike)
         {
             shapes.AddStrikeToShapesWithJudgment(strike.ConvertToIStrike_Standard());
         }
@@ -148,15 +148,15 @@ namespace LLSDA.Entities.CommonEntities
             shapes = new Circles(_centerLongitude, _centerLatitude, _r, _circlesEachSideNum, _areaName);
             this.centerShape = shapes.CenterShape;
         }
-        public override void ProcessStrikes(AbstractStrike_Basic strike)
+        public override void ProcessStrikes(BaseStrikeBasic strike)
         {
             shapes.AddStrikeToShapesWithJudgment(strike.ConvertToIStrike_Standard());
         }
-        public override void ProcessStrikes(AbstractStrike_Standard strike)
+        public override void ProcessStrikes(BaseStrikeStandard strike)
         {
             shapes.AddStrikeToShapesWithJudgment(strike);
         }
-        public override void ProcessStrikes(AbstractStrike_China strike)
+        public override void ProcessStrikes(BaseStrikeChina strike)
         {
             shapes.AddStrikeToShapesWithJudgment(strike.ConvertToIStrike_Standard());
         }

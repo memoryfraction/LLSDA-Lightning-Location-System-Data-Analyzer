@@ -1,5 +1,5 @@
 ﻿/*****************************************************************
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
@@ -25,7 +25,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 计算年分布情况，耗时操作。
         /// </summary>
-        public  Dictionary<int, int> CalcuYearDistribution(IEnumerable<AbstractStrike_Basic> _strikes)
+        public  Dictionary<int, int> CalcuYearDistribution(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -50,7 +50,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  List<int> CalcuYearList(IEnumerable<AbstractStrike_Basic> _strikes)
+        public  List<int> CalcuYearList(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -65,7 +65,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 计算正闪年分布情况，耗时操作。
         /// </summary>
-        public  Dictionary<int, int> CalcuYearDistributionPositive(IEnumerable<AbstractStrike_CompactEdition> _strikes)
+        public  Dictionary<int, int> CalcuYearDistributionPositive(IEnumerable<BaseStrikeCompactEdition> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -90,7 +90,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 计算负闪年分布情况，耗时操作。
         /// </summary>
-        public  Dictionary<int, int> CalcuYearDistributionNegative(IEnumerable<AbstractStrike_CompactEdition> _strikes)
+        public  Dictionary<int, int> CalcuYearDistributionNegative(IEnumerable<BaseStrikeCompactEdition> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -119,7 +119,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 统计月份分布情况，耗时操作。
         /// </summary>
-        public  Dictionary<int, int> CalcuMonthDistribution(IEnumerable<AbstractStrike_Basic> _strikes)
+        public  Dictionary<int, int> CalcuMonthDistribution(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -144,7 +144,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  Dictionary<int, int> CalcuMonthDistributionPosive(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<int, int> CalcuMonthDistributionPosive(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -169,7 +169,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  Dictionary<int, int> CalcuMonthDistributionNegative(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<int, int> CalcuMonthDistributionNegative(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -197,7 +197,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 统计时间分布情况，耗时操作。
         /// </summary>
-        public  Dictionary<int, int> CalcuHourDistribution(IEnumerable<AbstractStrike_Basic> _strikes)
+        public  Dictionary<int, int> CalcuHourDistribution(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -229,7 +229,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  Dictionary<int, int> CalcuHourDistribution_Positive(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<int, int> CalcuHourDistribution_Positive(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -258,7 +258,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  Dictionary<int, int> CalcuHourDistribution_Negative(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<int, int> CalcuHourDistribution_Negative(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -291,7 +291,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="limitedCurValue"></param>
         /// <returns></returns>
-        private  double CacuLJProbability(IEnumerable<AbstractStrike_Standard> _strikes, int limitedCurValue)
+        private  double CacuLJProbability(IEnumerable<BaseStrikeStandard> _strikes, int limitedCurValue)
         {
             double resultProbability;
             Int64 conditionedStrikeNumber = _strikes.Where(strike => Math.Abs(strike.Intensity) >= limitedCurValue).LongCount();
@@ -302,7 +302,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 为probabilityDistribution赋值
         /// </summary>
-        public  Dictionary<int, double> CalcuProbabilityDistribution(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<int, double> CalcuProbabilityDistribution(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -324,7 +324,7 @@ namespace LLSDA.Service
         #region 文字描述
         //文字描述
         //生成年分布文字描述
-        public string GenerateYearDistributionText(IEnumerable<AbstractStrike_Basic> _strikes)
+        public string GenerateYearDistributionText(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -363,7 +363,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 生成HourDistributionText
         /// </summary>
-        public  string GenerateHourDistributionText(IEnumerable<AbstractStrike_Basic> _strikes)
+        public  string GenerateHourDistributionText(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -397,7 +397,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 生成MonthDistributionText
         /// </summary>
-        public  string GenerateMonthDistributionText(IEnumerable<AbstractStrike_Basic > _strikes)
+        public  string GenerateMonthDistributionText(IEnumerable<BaseStrikeBasic > _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -425,7 +425,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 生成ProbabilityDistributionText
         /// </summary>
-        public  string GenerateProbabilityDistributionText(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  string GenerateProbabilityDistributionText(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -467,7 +467,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 统计雷电流强度区间概率
         /// </summary>
-        public  Dictionary<string, double> CalcuIntensityProbabilityDistribution(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<string, double> CalcuIntensityProbabilityDistribution(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -492,7 +492,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  Dictionary<string, double> CalcuIntensityProbabilityDistributionPositive(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<string, double> CalcuIntensityProbabilityDistributionPositive(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -517,7 +517,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  Dictionary<string, double> CalcuIntensityProbabilityDistributionNegative(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Dictionary<string, double> CalcuIntensityProbabilityDistributionNegative(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -541,7 +541,7 @@ namespace LLSDA.Service
         ///输入闪电序列和section，计算对应的概率（0-100）
         /// </summary>
         /// <returns></returns>
-        private  double CalcuProbability(Section _section, IEnumerable<AbstractStrike_Standard> _strikes)
+        private  double CalcuProbability(Section _section, IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -566,7 +566,7 @@ namespace LLSDA.Service
         /// <param name="_strike"></param>
         /// <param name="_section"></param>
         /// <returns></returns>
-        private  bool WhetherStrikeInSection(AbstractStrike_Standard _strike, Section _section)
+        private  bool WhetherStrikeInSection(BaseStrikeStandard _strike, Section _section)
         {
 
             bool result = false;
@@ -639,7 +639,7 @@ namespace LLSDA.Service
         /// <summary>
         /// 计算平均年雷电日并返回
         /// </summary>
-        public  double GetLightningDaysPerYear(IEnumerable<AbstractStrike_Basic> _strikes, double _years) 
+        public  double GetLightningDaysPerYear(IEnumerable<BaseStrikeBasic> _strikes, double _years) 
         {
             if (_strikes!=null && _strikes.Any())
             {
@@ -670,11 +670,11 @@ namespace LLSDA.Service
         /// 输入指定信息，根据LLS数据统计雷电日信息。
         /// </summary>
         /// <returns></returns>
-        public AbstractLightningStrikeDays GetLightningStrikesDays(IEnumerable<AbstractStrike_Basic> _strikes, string _administrativeRegionName)
+        public BaseLightningStrikeDays GetLightningStrikesDays(IEnumerable<BaseStrikeBasic> _strikes, string _administrativeRegionName)
         {
             if (_strikes!=null && _strikes!=null && _strikes.Any())
             {
-                AbstractLightningStrikeDays resultDays = new LightningStrikeDays(_strikes, _administrativeRegionName);
+                BaseLightningStrikeDays resultDays = new LightningStrikeDays(_strikes, _administrativeRegionName);
                 return resultDays;
             }
             else
@@ -684,7 +684,7 @@ namespace LLSDA.Service
 
 
         #region 最大、最小雷电流强度、数量
-        public  double CalcuMaxPositiveIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuMaxPositiveIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity >= 0).Any())
@@ -694,7 +694,7 @@ namespace LLSDA.Service
             else
                 throw new ArgumentNullException("正闪最大雷电流计算，序列中不包含闪电。");
         }
-        public  double CalcuMinPositiveIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuMinPositiveIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity >= 0).Any())
@@ -704,7 +704,7 @@ namespace LLSDA.Service
             else
                 throw new ArgumentNullException("正闪最小雷电流计算，序列中不包含闪电。");
         }
-        public  double CalcuMaxNegativeIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuMaxNegativeIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity <= 0).Any())
@@ -714,7 +714,7 @@ namespace LLSDA.Service
             else
                 throw new ArgumentNullException("负闪最大雷电流计算，序列中不包含闪电。");
         }
-        public  double CalcuMinNegativeIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuMinNegativeIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity <= 0).Any())
@@ -725,7 +725,7 @@ namespace LLSDA.Service
                 throw new ArgumentNullException("负闪最小雷电流强度计算，序列中不包含闪电。");
         }
 
-        public  double CalcuPositiveAvgIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuPositiveAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity >= 0).Any())
@@ -735,7 +735,7 @@ namespace LLSDA.Service
             else
                 throw new ArgumentNullException("正闪平均雷电流强度计算，序列中不包含闪电。");
         }
-        public  double CalcuNegativeAvgIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuNegativeAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity <= 0).Any())
@@ -745,14 +745,14 @@ namespace LLSDA.Service
             else
                 throw new ArgumentNullException("负闪平均雷电流强度计算，序列中不包含闪电。");
         }
-        public  double CalcuAbsAvgIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuAbsAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes.Where(x => x.Intensity <= 300 && x.Intensity >= -300).Any())
                 return _strikes.Where(x => x.Intensity <= 300 && x.Intensity >= -300).Select(r => Math.Abs(r.Intensity)).Average();
             else
                 throw new ArgumentNullException("绝对值雷电流强度计算，序列中不包含闪电。");
         }
-        public  double CalcuAbsMinIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuAbsMinIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             //超过300KA的数据是没有意义的
             if (_strikes!=null && _strikes.Any())
@@ -761,7 +761,7 @@ namespace LLSDA.Service
                 throw new ArgumentNullException("绝对值雷电流强度计算，序列中不包含闪电。");
         }
 
-        public  double CalcuAbsMaxIntensity(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  double CalcuAbsMaxIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             //超过300KA的数据是没有意义的
             if (_strikes!=null && _strikes.Any())
@@ -770,7 +770,7 @@ namespace LLSDA.Service
                 throw new ArgumentNullException("绝对值雷电流强度计算，序列中不包含闪电。");
         }
 
-        public  Int64 CalcuPositiveSumNum(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Int64 CalcuPositiveSumNum(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity >= 0).Any())
@@ -780,7 +780,7 @@ namespace LLSDA.Service
             else
                 throw new ArgumentNullException("正闪总数计算，序列中不包含闪电。");
         }
-        public  Int64 CalcuNegativeSumNum(IEnumerable<AbstractStrike_Standard> _strikes)
+        public  Int64 CalcuNegativeSumNum(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 if (_strikes.Where(r => r.Intensity <= 0).Any())
@@ -790,7 +790,7 @@ namespace LLSDA.Service
             else
                 throw new ArgumentNullException("负闪总数计算，序列中不包含闪电。");
         }
-        public  Int64 CalcuSumNum(IEnumerable<AbstractStrike_Basic> _strikes)
+        public  Int64 CalcuSumNum(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 return _strikes.LongCount();
@@ -805,7 +805,7 @@ namespace LLSDA.Service
         /// 处理雷电公报的描述,需要在计算完雷电日以后再提出
         /// </summary>
         /// <returns></returns>
-        public  string ProcessLightningBulletinDesc(IEnumerable<AbstractStrike_China> _strikes, string _administrativeRegionName)
+        public  string ProcessLightningBulletinDesc(IEnumerable<BaseStrikeChina> _strikes, string _administrativeRegionName)
         {
             string resultString = string.Empty;
             //xx地区初雷日为x月x日，终雷日为y月y日。
@@ -815,9 +815,9 @@ namespace LLSDA.Service
             //平均雷电日数：xx.xx天。
             if (_strikes!=null && _strikes.Any())
             {
-                AbstractStrike_Standard strikeStandardFirst, strikeStandardLast;
-                strikeStandardFirst = (AbstractStrike_Standard)_strikes.OrderBy(r => r.DateAndTime).Select(r => r).FirstOrDefault();
-                strikeStandardLast = (AbstractStrike_Standard)_strikes.OrderBy(r => r.DateAndTime).Select(r => r).LastOrDefault();
+                BaseStrikeStandard strikeStandardFirst, strikeStandardLast;
+                strikeStandardFirst = (BaseStrikeStandard)_strikes.OrderBy(r => r.DateAndTime).Select(r => r).FirstOrDefault();
+                strikeStandardLast = (BaseStrikeStandard)_strikes.OrderBy(r => r.DateAndTime).Select(r => r).LastOrDefault();
                 resultString = _administrativeRegionName + "地区初雷日为" + strikeStandardFirst.DateAndTime.Month + "月" + strikeStandardFirst.DateAndTime.Day + "日。终雷日为"
                     + strikeStandardLast.DateAndTime.Month + "月"
                     + strikeStandardLast.DateAndTime
@@ -837,7 +837,7 @@ namespace LLSDA.Service
         /// 处理雷电公报的描述,需要在计算完雷电日以后再提出
         /// </summary>
         /// <returns></returns>
-        public  string ProcessLightningBulletinDesc(IEnumerable<AbstractStrike_China> _strikes)
+        public  string ProcessLightningBulletinDesc(IEnumerable<BaseStrikeChina> _strikes)
         {
             string resultString = string.Empty;
             //xx地区初雷日为x月x日，终雷日为y月y日。
@@ -869,7 +869,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        public  Dictionary<string, int> ProcessAreaDistribution(IEnumerable<AbstractStrike_China> _strikes, AdministrativeLevel _administrativeLevelEnum)
+        public  Dictionary<string, int> ProcessAreaDistribution(IEnumerable<BaseStrikeChina> _strikes, AdministrativeLevel _administrativeLevelEnum)
         {
             //if (_administrativeLevelEnum)
             //{
@@ -900,7 +900,7 @@ namespace LLSDA.Service
         /// <param name="_strikes"></param>
         /// <param name="_administrativeLevelEnum"></param>
         /// <returns></returns>
-        private  List<string> ProcessAreaList(IEnumerable<AbstractStrike_China> _strikes, AdministrativeLevel _administrativeLevelEnum)
+        private  List<string> ProcessAreaList(IEnumerable<BaseStrikeChina> _strikes, AdministrativeLevel _administrativeLevelEnum)
         {
             List<string> areaList = new List<string>();
             if (_administrativeLevelEnum == AdministrativeLevel.Country)
@@ -933,7 +933,7 @@ namespace LLSDA.Service
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        private  int CalculateNumber(IEnumerable<AbstractStrike_China> _strikes, AdministrativeLevel _administrativeLevelEnum, string _areaName)
+        private  int CalculateNumber(IEnumerable<BaseStrikeChina> _strikes, AdministrativeLevel _administrativeLevelEnum, string _areaName)
         {
             int resultNum = 0;
             switch (_administrativeLevelEnum)

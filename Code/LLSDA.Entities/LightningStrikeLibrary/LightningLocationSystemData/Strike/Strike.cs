@@ -1,6 +1,6 @@
 ﻿/*****************************************************************
-** License|知识产权:  Creative Commons| 知识共享
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
+
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 ******************************************************************/
@@ -13,16 +13,16 @@ using System.Text;
 namespace LLSDA.Entities
 {
     
-    public class LightningStrike_Basic : AbstractStrike_Basic
+    public class LightningStrikeBasic : BaseStrikeBasic
     {
         private IStrikeFormatConvertService iStrikeFormatConvertService;
-        public LightningStrike_Basic(IStrikeFormatConvertService _iStrikeFormatConvertService)
+        public LightningStrikeBasic(IStrikeFormatConvertService _iStrikeFormatConvertService)
         {
             IStrikeFormatConvertService = _iStrikeFormatConvertService;
         }
-        public LightningStrike_Basic() { }
+        public LightningStrikeBasic() { }
 
-        public LightningStrike_Basic(DateTime dateTime, double longitude, double latitude)
+        public LightningStrikeBasic(DateTime dateTime, double longitude, double latitude)
         {
             this._DateAndTime = dateTime;
             this._Longitude = longitude;
@@ -63,9 +63,9 @@ namespace LLSDA.Entities
 
         public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
 
-        public override AbstractStrike_Standard ConvertToIStrike_Standard()
+        public override BaseStrikeStandard ConvertToIStrike_Standard()
         {
-            AbstractStrike_Standard strike = new LightningStrike_Standard()
+            BaseStrikeStandard strike = new LightningStrikeStandard()
             {
                 ID = this.ID,
                 DateAndTime = this.DateAndTime,
@@ -84,12 +84,12 @@ namespace LLSDA.Entities
 
         public override bool Equals(object obj)
         {
-            if (obj == null || !(obj is LightningStrike_Basic))
+            if (obj == null || !(obj is LightningStrikeBasic))
                 return false;
             else
             {
-                LightningStrike_Basic o = new LightningStrike_Basic();
-                o = (LightningStrike_Basic)obj;
+                LightningStrikeBasic o = new LightningStrikeBasic();
+                o = (LightningStrikeBasic)obj;
                 if (o.DateAndTime == this.DateAndTime && o.Latitude == this.Latitude && o.Longitude == this.Longitude)
                     return true;
                 else
@@ -107,14 +107,14 @@ namespace LLSDA.Entities
     }
 
     
-    public class LightningStrike_Standard : AbstractStrike_Standard
+    public class LightningStrikeStandard : BaseStrikeStandard
     {
         private IStrikeFormatConvertService iStrikeFormatConvertService;
-        public LightningStrike_Standard(IStrikeFormatConvertService _iStrikeFormatConvertService)
+        public LightningStrikeStandard(IStrikeFormatConvertService _iStrikeFormatConvertService)
         {
             IStrikeFormatConvertService = _iStrikeFormatConvertService;
         }
-        public LightningStrike_Standard() { }
+        public LightningStrikeStandard() { }
 
         //public LightningStrike_Standard(DateTime dateTime, double longitude, double latitude, double intensity) : base(dateTime, longitude, latitude)
         //{
@@ -149,12 +149,12 @@ namespace LLSDA.Entities
 
         public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
 
-        public override AbstractStrike_Basic ConvertThisToStrikeBasic()
+        public override BaseStrikeBasic ConvertThisToStrikeBasic()
         {
             return iStrikeFormatConvertService.ConvertStandardStrikToBasic(this);
         }
 
-        public override AbstractStrike_Standard ConvertToIStrike_Standard()
+        public override BaseStrikeStandard ConvertToIStrike_Standard()
         {
             return this;
         }
@@ -165,7 +165,7 @@ namespace LLSDA.Entities
         /// 需要地图支持，如果失败，则返回null
         /// </summary>
         /// <returns></returns>
-        public override AbstractStrike_China ConvertThisToStrikeChina()
+        public override BaseStrikeChina ConvertThisToStrikeChina()
         {
             return iStrikeFormatConvertService.ConvertStandardStrikToChina(this);
         }
@@ -184,12 +184,12 @@ namespace LLSDA.Entities
 
         public override bool Equals(object obj)
         {
-            if (obj == null || !(obj is LightningStrike_Standard))
+            if (obj == null || !(obj is LightningStrikeStandard))
                 return false;
             else
             {
-                LightningStrike_Standard o = new LightningStrike_Standard();
-                o = (LightningStrike_Standard)obj;
+                LightningStrikeStandard o = new LightningStrikeStandard();
+                o = (LightningStrikeStandard)obj;
                 if (o.DateAndTime == this.DateAndTime && o.Latitude == this.Latitude && o.Longitude == this.Longitude && o.Intensity == this.Intensity)
                     return true;
                 else
@@ -212,7 +212,7 @@ namespace LLSDA.Entities
     }
 
 
-    public class LightningStrike_Wwlln : LightningStrike_Basic
+    public class LightningStrikeWwlln : LightningStrikeBasic
     {
         double error;
 
@@ -238,15 +238,15 @@ namespace LLSDA.Entities
     }
 
 
-    public class LightningStrike_China : AbstractStrike_China
+    public class LightningStrikeChina : BaseStrikeChina
     {
         private IStrikeFormatConvertService iStrikeFormatConvertService;
-        public LightningStrike_China(IStrikeFormatConvertService _iStrikeFormatConvertService)
+        public LightningStrikeChina(IStrikeFormatConvertService _iStrikeFormatConvertService)
         {
             IStrikeFormatConvertService = _iStrikeFormatConvertService;
         }
 
-        public LightningStrike_China() { }
+        public LightningStrikeChina() { }
 
         //public LightningStrike_China(DateTime dateTime, double longitude, double latitude, double intensity)
         //    : base(dateTime, longitude, latitude, intensity) { }
@@ -324,17 +324,17 @@ namespace LLSDA.Entities
                 + 51 * this.District.GetHashCode();
         }
 
-        public override AbstractStrike_Basic ConvertThisToStrikeBasic()
+        public override BaseStrikeBasic ConvertThisToStrikeBasic()
         {
             return iStrikeFormatConvertService.ConvertChineseStrikToBasic(this);
         }
 
-        public override AbstractStrike_China ConvertThisToStrikeChina()
+        public override BaseStrikeChina ConvertThisToStrikeChina()
         {
             return this;
         }
 
-        public override AbstractStrike_Standard ConvertToIStrike_Standard()
+        public override BaseStrikeStandard ConvertToIStrike_Standard()
         {
             return iStrikeFormatConvertService.ConvertChineseStrikToStandard(this);
         }

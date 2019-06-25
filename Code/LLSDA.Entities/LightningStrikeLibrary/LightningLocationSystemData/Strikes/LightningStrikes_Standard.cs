@@ -1,6 +1,6 @@
 ﻿/*****************************************************************
-** License|知识产权:  Creative Commons| 知识共享
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
+
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 ******************************************************************/
@@ -14,22 +14,22 @@ using System.Text;
 
 namespace LLSDA.Entities
 {
-    public class LightningStrikes_Standard: AbstractStrikes_Standard
+    public class LightningStrikes_Standard: BaseStrikesStandard
     {
 
-        public LightningStrikes_Standard(IEnumerable<AbstractStrike_Standard> _strikes_Standard, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
+        public LightningStrikes_Standard(IEnumerable<BaseStrikeStandard> _strikes_Standard, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
         {
             IStrikesDistributionStatisticService = _iStrikesDistributionStatisticService;
-            Strikes = new ConcurrentBag<AbstractStrike_Standard>();
+            Strikes = new ConcurrentBag<BaseStrikeStandard>();
             foreach (var tmpStrike in _strikes_Standard)
                 Strikes.Add(tmpStrike);
             CalcuIntensity();
         }
 
-        public LightningStrikes_Standard(IEnumerable<LightningStrike_China> _strikes_China, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
+        public LightningStrikes_Standard(IEnumerable<LightningStrikeChina> _strikes_China, IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
         {
             IStrikesDistributionStatisticService = _iStrikesDistributionStatisticService;
-            Strikes = new ConcurrentBag<AbstractStrike_Standard>();
+            Strikes = new ConcurrentBag<BaseStrikeStandard>();
             foreach (var tmpStrike in _strikes_China)
                 Strikes.Add(tmpStrike);
             CalcuIntensity();
@@ -38,12 +38,12 @@ namespace LLSDA.Entities
         public LightningStrikes_Standard(IStrikesDistributionStatisticService _iStrikesDistributionStatisticService)
         {
             IStrikesDistributionStatisticService = _iStrikesDistributionStatisticService;
-            Strikes = new ConcurrentBag<AbstractStrike_Standard>();
+            Strikes = new ConcurrentBag<BaseStrikeStandard>();
         }
 
         public LightningStrikes_Standard()
         {
-            Strikes = new ConcurrentBag<AbstractStrike_Standard>();
+            Strikes = new ConcurrentBag<BaseStrikeStandard>();
         }
 
 
@@ -146,7 +146,7 @@ namespace LLSDA.Entities
 
         public override bool Equals(object obj)
         {
-            if (obj == null || !(obj is AbstractStrike_Standard))
+            if (obj == null || !(obj is BaseStrikeStandard))
                 return false;
             else
             {

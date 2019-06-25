@@ -1,5 +1,5 @@
 ﻿/*****************************************************************
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
@@ -14,7 +14,7 @@ namespace LLSDA.Interface
     /// <summary>
     /// 包含闪击：时间、经度、纬度 || DateTime,  Longitude ,  Latitude
     /// </summary>
-    public abstract class AbstractStrike_Basic
+    public abstract class BaseStrikeBasic
     {
         public string ID { get; set;  }
         public DateTime DateAndTime { get; set; }
@@ -22,15 +22,15 @@ namespace LLSDA.Interface
         public double Latitude { get; set; }
 
         public double Longitude { get; set; }
-        public abstract AbstractStrike_Standard ConvertToIStrike_Standard();
+        public abstract BaseStrikeStandard ConvertToIStrike_Standard();
     }
 
-    public abstract class AbstractStrike_CompactEdition : AbstractStrike_Basic
+    public abstract class BaseStrikeCompactEdition : BaseStrikeBasic
     {
         public LightningType LightningType { get; set; }
     }
 
-    public abstract class AbstractStrike_Standard : AbstractStrike_CompactEdition
+    public abstract class BaseStrikeStandard : BaseStrikeCompactEdition
     {
         public double Slope { get; set; }
         public double Error { get; set; }
@@ -46,11 +46,11 @@ namespace LLSDA.Interface
             }
             set { LightningType = value; }
         }
-        public abstract AbstractStrike_Basic ConvertThisToStrikeBasic();
-        public abstract AbstractStrike_China ConvertThisToStrikeChina();
+        public abstract BaseStrikeBasic ConvertThisToStrikeBasic();
+        public abstract BaseStrikeChina ConvertThisToStrikeChina();
     }
 
-    public abstract class AbstractStrike_China : AbstractStrike_Standard
+    public abstract class BaseStrikeChina : BaseStrikeStandard
     {
         public string Province { get; set; }
         public string City { get; set; }

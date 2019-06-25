@@ -1,5 +1,5 @@
 ﻿/*****************************************************************
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
@@ -14,7 +14,7 @@ using System.Text;
 
 namespace LLSDA.Entities
 {
-    public class LightningStrikeDay : AbstractLightningStrikeDay
+    public class LightningStrikeDay : BaseLightningStrikeDay
     {
         DateTime dateTime;
         string administrativeRegionName;
@@ -32,35 +32,35 @@ namespace LLSDA.Entities
         }
 
 
-        public LightningStrikeDay(AbstractStrike_Basic _strike, string _administrativeRegionName)
+        public LightningStrikeDay(BaseStrikeBasic _strike, string _administrativeRegionName)
         {
             if (_administrativeRegionName != null)
                 administrativeRegionName = _administrativeRegionName;
             dateTime = _strike.DateAndTime;
         }
 
-        public LightningStrikeDay(LightningStrike_Basic _strike)
+        public LightningStrikeDay(LightningStrikeBasic _strike)
         {
             dateTime = _strike.DateAndTime;
         }
     }
 
 
-    public class LightningStrikeDays: AbstractLightningStrikeDays
+    public class LightningStrikeDays: BaseLightningStrikeDays
     {
         #region 构造函数
 
-        public LightningStrikeDays(IEnumerable<AbstractStrike_Basic> _strikes, string _administrativeRegionName)
+        public LightningStrikeDays(IEnumerable<BaseStrikeBasic> _strikes, string _administrativeRegionName)
         {
             if (_administrativeRegionName != null)
                 administrativeRegionName = _administrativeRegionName;
-            lightningStrikesDayList = new ConcurrentBag<AbstractLightningStrikeDay>();
+            lightningStrikesDayList = new ConcurrentBag<BaseLightningStrikeDay>();
             lightningStrikesDayList = Initiate(_strikes, _administrativeRegionName, parallel);
         }
 
-        public LightningStrikeDays(IEnumerable<AbstractStrike_Basic> _strikes)
+        public LightningStrikeDays(IEnumerable<BaseStrikeBasic> _strikes)
         {
-            lightningStrikesDayList = new ConcurrentBag<AbstractLightningStrikeDay>();
+            lightningStrikesDayList = new ConcurrentBag<BaseLightningStrikeDay>();
             lightningStrikesDayList = Initiate(_strikes, administrativeRegionName, parallel);
         }
         #endregion
@@ -70,11 +70,11 @@ namespace LLSDA.Entities
 
 
         
-        ConcurrentBag<AbstractLightningStrikeDay> lightningStrikesDayList;
+        ConcurrentBag<BaseLightningStrikeDay> lightningStrikesDayList;
 
 
         
-        public ConcurrentBag<AbstractLightningStrikeDay> LightningStrikesDayList
+        public ConcurrentBag<BaseLightningStrikeDay> LightningStrikesDayList
         {
             get { return lightningStrikesDayList; }
             set { lightningStrikesDayList = value; }
@@ -101,7 +101,7 @@ namespace LLSDA.Entities
 
         #region Index
 
-        public AbstractLightningStrikeDay this[int index]
+        public BaseLightningStrikeDay this[int index]
         {
             get
             {
@@ -115,11 +115,11 @@ namespace LLSDA.Entities
         /// 初始化lightningStrikesDayList,插入时加入判断：“如果核心List已经存在该日期，则不重复插入”
         /// </summary>
         /// <param name="parallel"></param>
-        private ConcurrentBag<AbstractLightningStrikeDay> Initiate(IEnumerable<AbstractStrike_Basic> _strikes, string _administrativeRegionName, bool parallel)
+        private ConcurrentBag<BaseLightningStrikeDay> Initiate(IEnumerable<BaseStrikeBasic> _strikes, string _administrativeRegionName, bool parallel)
         {
             if (_strikes.Any())
             {
-                var lightningStrikesDayResultList = new ConcurrentBag<AbstractLightningStrikeDay>();
+                var lightningStrikesDayResultList = new ConcurrentBag<BaseLightningStrikeDay>();
                 if (parallel)//并行
                 {
                     System.Threading.Tasks.Parallel.ForEach(_strikes, tmpStrike =>
@@ -208,7 +208,7 @@ namespace LLSDA.Entities
         /// </summary>
         /// <param name="_lightningStrikesDayList"></param>
         /// <returns></returns>
-        public override List<int> StatisticYearList(IEnumerable<AbstractLightningStrikeDay> _lightningStrikesDayList)
+        public override List<int> StatisticYearList(IEnumerable<BaseLightningStrikeDay> _lightningStrikesDayList)
         {
             try
             {
@@ -224,15 +224,15 @@ namespace LLSDA.Entities
         /// 输入已经统计完毕的LightningStrikeDay，按年分类,返回List<Dictionary<int, LightningStrikeDay>>
         /// </summary>
         /// <returns></returns>
-        public override List<Dictionary<int, AbstractLightningStrikeDay>> StatisticLightningStrikesDayYearly(IEnumerable<AbstractLightningStrikeDay> _lightningStrikeDays)
+        public override List<Dictionary<int, BaseLightningStrikeDay>> StatisticLightningStrikesDayYearly(IEnumerable<BaseLightningStrikeDay> _lightningStrikeDays)
         {
             try
             {
-                List<Dictionary<int, AbstractLightningStrikeDay>> result = new List<Dictionary<int, AbstractLightningStrikeDay>>();
+                List<Dictionary<int, BaseLightningStrikeDay>> result = new List<Dictionary<int, BaseLightningStrikeDay>>();
                 List<int> yearList = StatisticYearList(_lightningStrikeDays);
                 foreach (var tmpYear in yearList)
                 {
-                    Dictionary<int, AbstractLightningStrikeDay> tmpDic = new Dictionary<int, AbstractLightningStrikeDay>();
+                    Dictionary<int, BaseLightningStrikeDay> tmpDic = new Dictionary<int, BaseLightningStrikeDay>();
                     foreach (var tmp in _lightningStrikeDays)
                     {
                         if (tmp.DateTime.Date.Year == tmpYear)

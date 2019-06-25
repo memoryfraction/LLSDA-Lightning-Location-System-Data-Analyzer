@@ -1,5 +1,5 @@
 ﻿/*****************************************************************
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
@@ -69,11 +69,11 @@ namespace LLSDA.Entities
             return ProcessStrikeRecordTextToArray(rowText, curCharSeparator);
         }
 
-        public LightningStrike_China ReturnStrike()
+        public LightningStrikeChina ReturnStrike()
         {
             try
             {
-                LightningStrike_China strike = new LightningStrike_China();
+                LightningStrikeChina strike = new LightningStrikeChina();
                 //读content并获取strike
                 string[] strArray = ProcessStrikeRecordTextToArray();
                 strike = LlsRowFormatFactory.GetStrikeFromRowArray(strArray);
@@ -119,9 +119,9 @@ namespace LLSDA.Entities
         /// 获取必备信息，返回LightningStrike_China实例
         /// </summary>
         /// <returns></returns>
-        protected LightningStrike_China ReturnStrike(DateTime dt, double intensity, double slope, double error, double longitude, double latitude, string locationMode, string province, string city, string district)
+        protected LightningStrikeChina ReturnStrike(DateTime dt, double intensity, double slope, double error, double longitude, double latitude, string locationMode, string province, string city, string district)
         {
-            LightningStrike_China newStrike = new LightningStrike_China();
+            LightningStrikeChina newStrike = new LightningStrikeChina();
             newStrike.DateAndTime = dt;
             newStrike.Intensity = intensity;
             newStrike.Slope = slope;
@@ -141,7 +141,7 @@ namespace LLSDA.Entities
         /// <param name="strLineArray"></param>
         /// <param name="provinceName">如“河南省”</param>
         /// <returns></returns>
-        public abstract LightningStrike_China ProcessStrikeLineReturnStrikeFormat();
+        public abstract LightningStrikeChina ProcessStrikeLineReturnStrikeFormat();
     }
 
     /// <summary>
@@ -150,9 +150,9 @@ namespace LLSDA.Entities
     public class LlsRowFormatFactory
     {
         public static string srcFileName;
-        public static LightningStrike_China GetStrikeFromRowArray(string[] strArray)
+        public static LightningStrikeChina GetStrikeFromRowArray(string[] strArray)
         {
-            LightningStrike_China strike = new LightningStrike_China();
+            LightningStrikeChina strike = new LightningStrikeChina();
             LlsRowProcessorFormat Lrpf;
             try
             {
@@ -191,7 +191,7 @@ namespace LLSDA.Entities
         /// </summary>
         /// <param name="strLineArray"></param>
         /// <returns></returns>
-        public override LightningStrike_China ProcessStrikeLineReturnStrikeFormat()
+        public override LightningStrikeChina ProcessStrikeLineReturnStrikeFormat()
         {
             string[] strLineArray = base.StrLineArray;
             try
@@ -216,7 +216,7 @@ namespace LLSDA.Entities
                 double latitude = Convert.ToDouble(strLineArray[3].Substring(3));
                 double longitude = Convert.ToDouble(strLineArray[4].Substring(3));
                 string locationmode = strLineArray[8].Substring(5);
-                LightningStrike_China newLightningStrike_China;
+                LightningStrikeChina newLightningStrike_China;
                 if (strLineArray.Length > 9)
                 {
                     string province = strLineArray[9].Substring(2);
@@ -243,7 +243,7 @@ namespace LLSDA.Entities
         /// </summary>
         /// <param name="strLineArray"></param>
         /// <returns></returns>
-        public override LightningStrike_China ProcessStrikeLineReturnStrikeFormat()
+        public override LightningStrikeChina ProcessStrikeLineReturnStrikeFormat()
         {
             string[] strLineArray = base.StrLineArray;
             try
@@ -272,7 +272,7 @@ namespace LLSDA.Entities
                 string city = strLineArray[10].Substring(2);
                 string district = strLineArray[11].Substring(2);
 
-                LightningStrike_China newLightningStrike_China = ReturnStrike(dt, intensity, slope, error, longitude, latitude, locationmode, province, city, district);
+                LightningStrikeChina newLightningStrike_China = ReturnStrike(dt, intensity, slope, error, longitude, latitude, locationmode, province, city, district);
                 return newLightningStrike_China;
             }
             catch
@@ -292,7 +292,7 @@ namespace LLSDA.Entities
         /// </summary>
         /// <param name="strLineArray"></param>
         /// <returns></returns>
-        public override LightningStrike_China ProcessStrikeLineReturnStrikeFormat()
+        public override LightningStrikeChina ProcessStrikeLineReturnStrikeFormat()
         {
             string[] strLineArray = base.StrLineArray;
             try
@@ -317,7 +317,7 @@ namespace LLSDA.Entities
                 string city = "";
                 string district = "";
 
-                LightningStrike_China newLightningStrike_China = ReturnStrike(dt, intensity, slope, error, longitude, latitude, locationmode, province, city, district);
+                LightningStrikeChina newLightningStrike_China = ReturnStrike(dt, intensity, slope, error, longitude, latitude, locationmode, province, city, district);
                 return newLightningStrike_China;
             }
             catch

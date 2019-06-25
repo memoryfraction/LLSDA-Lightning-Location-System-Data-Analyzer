@@ -1,6 +1,6 @@
 ﻿/*****************************************************************
-** License|知识产权:  Creative Commons| 知识共享
-** License|知识产权:  Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)| 署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)
+
+
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 ******************************************************************/
@@ -119,8 +119,8 @@ namespace LLSDA.Entities
         /// 调用此函数来计算经纬度上下限。
         /// </summary>
         public abstract void CalcuShapeBorder();
-        public abstract bool AddStrikeToShapeWithJudgment(AbstractStrike_Basic _strike);
-        public abstract bool AddStrikeToShapeWithJudgment(LightningStrike_Standard _strike);
+        public abstract bool AddStrikeToShapeWithJudgment(BaseStrikeBasic _strike);
+        public abstract bool AddStrikeToShapeWithJudgment(LightningStrikeStandard _strike);
 
 
         //public abstract void AddStrikeToShapeWithJudgment(IEnumerable<IStrike_Standard> _strikes);
@@ -144,7 +144,7 @@ namespace LLSDA.Entities
         /// 统计雷电主次导方向概率|calcu direction properbility
         /// </summary>
         /// <returns></returns>
-        public Dictionary<LightningStrikeDirectionEnum, double> CalcuLightningStrikeDirectionProbabilityDistribution(IEnumerable<LightningStrike_Standard> _strikes)
+        public Dictionary<LightningStrikeDirectionEnum, double> CalcuLightningStrikeDirectionProbabilityDistribution(IEnumerable<LightningStrikeStandard> _strikes)
         {
             if (_strikes.Any())
             {
@@ -170,7 +170,7 @@ namespace LLSDA.Entities
         /// </summary>
         /// <param name="_strikes"></param>
         /// <returns></returns>
-        private double CalcuLightningStrikeDirectionProbability(IEnumerable<LightningStrike_Standard> _strikes, LightningStrikeDirectionEnum _directionEnum)
+        private double CalcuLightningStrikeDirectionProbability(IEnumerable<LightningStrikeStandard> _strikes, LightningStrikeDirectionEnum _directionEnum)
         {
             double result = 0;
             int suitedNum = 0;
@@ -191,7 +191,7 @@ namespace LLSDA.Entities
         /// </summary>
         /// <param name="_strike"></param>
         /// <returns></returns>
-        private LightningStrikeDirectionEnum JudgeLightningStrikeDirection(LightningStrike_Standard _strike, PointLocation _centerPoint)
+        private LightningStrikeDirectionEnum JudgeLightningStrikeDirection(LightningStrikeStandard _strike, PointLocation _centerPoint)
         {
             try
             {
@@ -320,12 +320,12 @@ namespace LLSDA.Entities
             MaxLatitude = centerPoint.Latitude + Distance.LatitudeDegreeOfPerKm() * length / 2.0;
         }
 
-        public override bool AddStrikeToShapeWithJudgment(AbstractStrike_Basic strike)
+        public override bool AddStrikeToShapeWithJudgment(BaseStrikeBasic strike)
         {
             return AddStrikeToShapeWithJudgment(strike.ConvertToIStrike_Standard());
         }
 
-        public override bool AddStrikeToShapeWithJudgment(LightningStrike_Standard strike)
+        public override bool AddStrikeToShapeWithJudgment(LightningStrikeStandard strike)
         {
             try
             {
@@ -346,11 +346,11 @@ namespace LLSDA.Entities
         /// 判断闪电是否在边界内，是则加入；内存中只存1000个闪电，节约内存
         /// </summary>
         /// <param name="_strikes"></param>
-        public void AddStrikeToShapeWithJudgment(IEnumerable<LightningStrike_Standard> _strikes)
+        public void AddStrikeToShapeWithJudgment(IEnumerable<LightningStrikeStandard> _strikes)
         {
             int count = _strikes.Count();
             strikes_Standard = new LightningStrikes_Standard();//重新初始化核心列表
-            var tmpStrikeList = new ConcurrentBag<LightningStrike_Standard>();
+            var tmpStrikeList = new ConcurrentBag<LightningStrikeStandard>();
             int spanNum = 1000;//分段的个数
             if (count > spanNum)//个数超过1000
             {
@@ -436,11 +436,11 @@ namespace LLSDA.Entities
             }
             catch { return false; }
         }
-        public override bool AddStrikeToShapeWithJudgment(AbstractStrike_Basic strike)
+        public override bool AddStrikeToShapeWithJudgment(BaseStrikeBasic strike)
         {
             return AddStrikeToShapeWithJudgment(strike.ConvertToIStrike_Standard());
         }
-        public override bool AddStrikeToShapeWithJudgment(LightningStrike_Standard strike)
+        public override bool AddStrikeToShapeWithJudgment(LightningStrikeStandard strike)
         {
             try
             {
@@ -460,12 +460,12 @@ namespace LLSDA.Entities
         /// 判断闪电是否在边界内，是则加入；内存中只存1000个闪电，节约内存
         /// </summary>
         /// <param name="_strikes"></param>
-        public void AddStrikeToShapeWithJudgment(IEnumerable<LightningStrike_Standard> _strikes)
+        public void AddStrikeToShapeWithJudgment(IEnumerable<LightningStrikeStandard> _strikes)
         {
             Int64 count = _strikes.LongCount();
             strikes_Standard = new LightningStrikes_Standard();//重新初始化核心列表
             int spanNum = 1000;//分段的个数 
-            var tmpStrikeList = new ConcurrentBag<LightningStrike_Standard>();
+            var tmpStrikeList = new ConcurrentBag<LightningStrikeStandard>();
             if (count > spanNum)//个数超过1000
             {
                 Int64 sumTimes = count / spanNum + 1;

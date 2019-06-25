@@ -8,9 +8,9 @@ namespace LLSDA.Service
 {
     public class StrikeFormatConvertService : IStrikeFormatConvertService
     {
-        public AbstractStrike_Standard ConvertBasicStrikToStandard(AbstractStrike_Basic strike)
+        public BaseStrikeStandard ConvertBasicStrikToStandard(BaseStrikeBasic strike)
         {
-            var res = new LightningStrike_Standard() {
+            var res = new LightningStrikeStandard() {
                 ID = strike.ID,
                 DateAndTime = strike.DateAndTime,
                 Longitude = strike.Longitude,
@@ -19,9 +19,9 @@ namespace LLSDA.Service
             return res;
         }
 
-        public AbstractStrike_Basic ConvertChineseStrikToBasic(AbstractStrike_China strike)
+        public BaseStrikeBasic ConvertChineseStrikToBasic(BaseStrikeChina strike)
         {
-            var res = new LightningStrike_Basic()
+            var res = new LightningStrikeBasic()
             {
                 ID = strike.ID,
                 DateAndTime = strike.DateAndTime,
@@ -31,9 +31,9 @@ namespace LLSDA.Service
             return res;
         }
 
-        public AbstractStrike_Standard ConvertChineseStrikToStandard(AbstractStrike_China strike)
+        public BaseStrikeStandard ConvertChineseStrikToStandard(BaseStrikeChina strike)
         {
-            var res = new LightningStrike_Standard()
+            var res = new LightningStrikeStandard()
             {
                 ID = strike.ID,
                 DateAndTime = strike.DateAndTime,
@@ -48,9 +48,9 @@ namespace LLSDA.Service
             return res;
         }
 
-        public AbstractStrike_Basic ConvertStandardStrikToBasic(AbstractStrike_Standard strike)
+        public BaseStrikeBasic ConvertStandardStrikToBasic(BaseStrikeStandard strike)
         {
-            var res = new LightningStrike_Basic()
+            var res = new LightningStrikeBasic()
             {
                 ID = strike.ID,
                 DateAndTime = strike.DateAndTime,
@@ -60,9 +60,9 @@ namespace LLSDA.Service
             return res;
         }
 
-        public AbstractStrike_China ConvertStandardStrikToChina(AbstractStrike_Standard strike)
+        public BaseStrikeChina ConvertStandardStrikToChina(BaseStrikeStandard strike)
         {
-            var res = new LightningStrike_China()
+            var res = new LightningStrikeChina()
             {
                 ID = strike.ID,
                 DateAndTime = strike.DateAndTime,

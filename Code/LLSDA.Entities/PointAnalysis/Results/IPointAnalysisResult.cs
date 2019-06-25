@@ -127,7 +127,7 @@ namespace LLSDA.Entities
             set;
         }
 
-        List<LightningStrike_Standard> Strikes
+        List<LightningStrikeStandard> Strikes
         {
             get;
             set;
