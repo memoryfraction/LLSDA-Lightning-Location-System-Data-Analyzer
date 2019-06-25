@@ -83,7 +83,7 @@ New added OOP Design and Architecture
 * You are welcome to buy me a coffee.
 
 ## Thanks to
-* Wen'an Xiao(Supervisor)
+* HongBing Chen, Xia Li, Yi Gao, Wen'an Xiao(Alphabetical Sorted by family name)
 * [Nanjing University of Information Science and Technology(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [LeaderTech Co., Ltd](http://www.leader-tech.net)
@@ -99,7 +99,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 ## 特性
 * 编译通过
 * 基于 .NET STANDARD 2.0 
-* 跨平台
+* 跨平台: MAC/LINUX/WINDOWS
 
 
 ## 依赖项
@@ -167,7 +167,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 鸣谢
-* 导师：肖稳安
+* 陈鸿兵、李霞、高燚、肖稳安(排名不分先后)
 * [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
