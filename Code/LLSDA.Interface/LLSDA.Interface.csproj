@@ -7,4 +7,12 @@
     <Company />
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Interfaces\IStrikeIOService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Interfaces\IStrikeIOService.cs" />
+  </ItemGroup>
+
 </Project>

@@ -51,7 +51,7 @@
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
 							"font": "Arial;13;0",
-							"left": 640,
+							"left": 632,
 							"top": 16,
 							"width": 832,
 							"height": 776
@@ -9457,9 +9457,9 @@
 											"font": "Arial;13;1",
 											"left": 765,
 											"top": 638,
-											"width": 61.419921875,
+											"width": 99.72802734375,
 											"height": 13,
-											"text": "IStrike.IO"
+											"text": "IStrikeIOService"
 										},
 										{
 											"_type": "LabelView",
@@ -9492,7 +9492,7 @@
 									"font": "Arial;13;0",
 									"left": 760,
 									"top": 631,
-									"width": 71.419921875,
+									"width": 109.72802734375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFrkEutJ1bNM/8="
@@ -9576,7 +9576,7 @@
 							"containerChangeable": true,
 							"left": 760,
 							"top": 608,
-							"width": 71.419921875,
+							"width": 109.72802734375,
 							"height": 49,
 							"stereotypeDisplay": "icon",
 							"nameCompartment": {
@@ -10628,7 +10628,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "IStrike.IO"
+					"name": "IStrikeIOService"
 				}
 			]
 		}
