@@ -167,7 +167,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 鸣谢
-* 陈鸿兵、李霞、高燚、肖稳安(排名不分先后)
+* 陈鸿兵、李霞、高燚、肖稳安(姓氏音序排列)
 * [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
