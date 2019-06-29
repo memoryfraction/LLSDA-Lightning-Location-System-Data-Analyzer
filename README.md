@@ -149,9 +149,10 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 知识产权
-[署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
+* 非代码部分: [署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 * 解释: [谈谈创作共用许可证（Creative Commons licenses）- 阮一峰](http://www.ruanyifeng.com/blog/2008/04/creative_commons_licenses.html)
 
+* 代码部分: [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE)
 
 ## 声明
 由于知识有限，时间有限，不对开源版本提供任何使用质量保障和服务。
