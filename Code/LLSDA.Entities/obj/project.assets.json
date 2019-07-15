@@ -262,8 +262,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\T480\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\T480\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.6",
@@ -274,9 +273,6 @@
       "packagesPath": "C:\\Users\\T480\\.nuget\\packages\\",
       "outputPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLSDA.Entities\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\T480\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -318,7 +314,12 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true

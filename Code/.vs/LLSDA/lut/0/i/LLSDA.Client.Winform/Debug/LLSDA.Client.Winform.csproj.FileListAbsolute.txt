@@ -1,0 +1,9 @@
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\b\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Client.Winform.exe.config
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\b\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Client.Winform.exe
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Client.Winform\Debug\LLSDA.Client.Winform.Form1.resources
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Client.Winform\Debug\LLSDA.Client.Winform.Properties.Resources.resources
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Client.Winform\Debug\LLSDA.Client.Winform.csproj.GenerateResource.cache
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Client.Winform\Debug\LLSDA.Client.Winform.csproj.CoreCompileInputs.cache
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Client.Winform\Debug\LLSDA.Client.Winform.csproj.CopyComplete
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Client.Winform\Debug\LLSDA.Client.Winform.exe
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Client.Winform\Debug\LLSDA.Client.Winform.csprojAssemblyReference.cache

@@ -5,6 +5,7 @@
 ** DESC|描述:
 ******************************************************************/
 
+using LLSDA.Interface;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,7 +25,7 @@ namespace LLSDA.Entities
         TimeSpan timeSpanElapsed = new TimeSpan();
         int currentPercent = 0;
         string fileNameLlsSrc;
-
+        Encoding encode=Encoding.UTF8;
 
         #endregion
 
@@ -93,6 +94,8 @@ namespace LLSDA.Entities
             get { return curRow; }
             set { curRow = value; }
         }
+
+        public Encoding Encode { get => encode; set => encode = value; }
         #endregion
 
 
@@ -100,8 +103,9 @@ namespace LLSDA.Entities
         /// <summary>
         /// 传入闪电定位数据路径及文件名| CONSTRUCTOR
         /// </summary>
-        public LlsFileProcessor(string _fulLlsPathFileName)
+        public LlsFileProcessor(string _fulLlsPathFileName,Encoding _encode)
         {
+            encode = _encode;
             if (File.Exists(_fulLlsPathFileName))
             {
                 sourceLlsFilePathName = _fulLlsPathFileName;
@@ -147,9 +151,9 @@ namespace LLSDA.Entities
         /// 返回LightningStrike_China列表，强制赋值省份信息。市县信息为空 
         /// </summary>
         /// <returns></returns>
-        public List<LightningStrikeChina> ReturnStrikesChinaByProcess(string provinceName)
+        public List<BaseStrikeChina> ReturnStrikesChinaByProcess(string provinceName)
         {
-            List<LightningStrikeChina> strikes = new List<LightningStrikeChina>();
+            List<BaseStrikeChina> strikes = new List<BaseStrikeChina>();
             strikes = ReturnStrikesChinaByProcess();
             for (int i = 0; i < strikes.Count; i++)
             {
@@ -157,8 +161,8 @@ namespace LLSDA.Entities
                     strikes[i].Province = provinceName;
                 if (string.IsNullOrEmpty(strikes[i].City))
                     strikes[i].City = string.Empty;
-                if (string.IsNullOrEmpty(strikes[i].District))
-                    strikes[i].District = string.Empty;
+                if (string.IsNullOrEmpty(strikes[i].County))
+                    strikes[i].County = string.Empty;
             }
             return strikes;
         }
@@ -167,14 +171,14 @@ namespace LLSDA.Entities
         /// 返回LightningStrike_China列表
         /// </summary>
         /// <returns></returns>
-        public List<LightningStrikeChina> ReturnStrikesChinaByProcess()
+        public List<BaseStrikeChina> ReturnStrikesChinaByProcess()
         {
             DateTime dtStart = DateTime.Now;
             string strBuffer;//
             GetSumLineNumFromText();
             curRow = 1;
-            List<LightningStrikeChina> StrikesList = new List<LightningStrikeChina>();
-            using (StreamReader strReader = new StreamReader(SourceLlsFilePathName, Encoding.Default))
+            List<BaseStrikeChina> StrikesList = new List<BaseStrikeChina>();
+            using (StreamReader strReader = new StreamReader(SourceLlsFilePathName, Encoding.UTF8))
             {
                 while ((strBuffer = strReader.ReadLine()) != null)
                 {
@@ -184,7 +188,7 @@ namespace LLSDA.Entities
                         currentPercent = 100 * curRow / sumLineNum;
                         LlsRowProcessor rowProcessor = new LlsRowProcessor(strBuffer);
                         rowProcessor.SrcFileName = sourceLlsFilePathName;
-                        LightningStrikeChina strike = rowProcessor.ReturnStrike();
+                        BaseStrikeChina strike = rowProcessor.ReturnStrike();
                         if (strike != null)
                             StrikesList.Add(strike);
                     }

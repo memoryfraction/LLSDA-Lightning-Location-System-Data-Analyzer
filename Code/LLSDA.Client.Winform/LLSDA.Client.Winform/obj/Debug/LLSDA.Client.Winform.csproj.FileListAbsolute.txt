@@ -1,0 +1,15 @@
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Client.Winform.exe.config
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Client.Winform.exe
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Client.Winform.pdb
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.csprojAssemblyReference.cache
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.Form1.resources
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.Properties.Resources.resources
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.csproj.GenerateResource.cache
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.csproj.CoreCompileInputs.cache
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.exe
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.pdb
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Interface.dll
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Interface.pdb
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.csproj.CopyComplete
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Entities.dll
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Entities.pdb
