@@ -75,7 +75,8 @@ New added OOP Design and Architecture
 [![image](/Images/Abstract.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
 ## License
-[Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
+* For Non-Code parts: [Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
+* For Code parts: [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE)
 
 
 ## Donation
@@ -148,9 +149,10 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 知识产权
-[署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
+* 非代码部分: [署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 * 解释: [谈谈创作共用许可证（Creative Commons licenses）- 阮一峰](http://www.ruanyifeng.com/blog/2008/04/creative_commons_licenses.html)
 
+* 代码部分: [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE)
 
 ## 声明
 由于知识有限，时间有限，不对开源版本提供任何使用质量保障和服务。
@@ -167,7 +169,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 鸣谢
-* 陈鸿兵、李霞、高燚、肖稳安(排名不分先后)
+* 陈鸿兵、李霞、高燚、肖稳安(姓氏音序排列)
 * [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
