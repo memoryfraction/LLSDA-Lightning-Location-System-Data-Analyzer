@@ -15,10 +15,19 @@ namespace LLSDA.Client.Winform
 {
     public partial class Form1 : Form
     {
+        List<BaseStrikeChina> strikes;
+        public event EventHandler SrcFileLoadCompleted;
         public Form1()
         {
             InitializeComponent();
-           
+            SrcFileLoadCompleted += Form1_srcFileLoadCompleted;
+            strikes  = ReadDataAsync().Result;      
+        }
+
+        private void Form1_srcFileLoadCompleted(object sender, EventArgs e)
+        {
+            // Enable buttons
+            button1.Enabled = true;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -29,24 +38,27 @@ namespace LLSDA.Client.Winform
         /// <summary>
         /// 读取源文件，并获取数据到内存;
         /// </summary>
-        private IEnumerable<BaseStrikeChina> ReadData()
+        private Task<List<BaseStrikeChina>> ReadDataAsync()
         {
-            var strikes = new List<BaseStrikeChina>();
-            var str = System.AppDomain.CurrentDomain.BaseDirectory;
-            var srcFile1 = (new System.IO.DirectoryInfo(str)).Parent.Parent.Parent.Parent.Parent.FullName + @"\Documents\Sample Source Data\2008_07_09.txt";
-            var srcFile2 = (new System.IO.DirectoryInfo(str)).Parent.Parent.Parent.Parent.Parent.FullName + @"\Documents\Sample Source Data\2008_07_09.txt";
-            if (File.Exists(srcFile1))
-            {
-                var fileProcessor = new LlsFileProcessor(srcFile1,Encoding.UTF8);
-                strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-            }
+            return Task<List<BaseStrikeChina>>.Run(() => {
+                var strikes = new List<BaseStrikeChina>();
+                var str = System.AppDomain.CurrentDomain.BaseDirectory;
+                var srcFile1 = (new System.IO.DirectoryInfo(str)).Parent.Parent.Parent.Parent.Parent.FullName + @"\Documents\Sample Source Data\2008_07_09.txt";
+                var srcFile2 = (new System.IO.DirectoryInfo(str)).Parent.Parent.Parent.Parent.Parent.FullName + @"\Documents\Sample Source Data\2008_07_09.txt";
+                if (File.Exists(srcFile1))
+                {
+                    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+                    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+                }
 
-            if (File.Exists(srcFile2))
-            {
-                var fileProcessor = new LlsFileProcessor(srcFile2, Encoding.UTF8);
-                strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-            }            
-            return strikes;
+                if (File.Exists(srcFile2))
+                {
+                    var fileProcessor = new LlsFileProcessor(srcFile2, Encoding.UTF8);
+                    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+                }
+                SrcFileLoadCompleted(this, new EventArgs());
+                return strikes;
+            });
         }
 
         private Dictionary<int, int> GetMonthDistributionPositive(IEnumerable<BaseStrikeChina> strikes)
@@ -69,12 +81,14 @@ namespace LLSDA.Client.Winform
 
         private void DrawMonthDistributionChart()
         {
-            var strikes = ReadData();
-            var positiveDistribution = GetMonthDistributionPositive(strikes);
-            var negativeDistribution = GetMonthDistributionNegative(strikes);
-            var Distribution = GetMonthDistribution(strikes);
+            if (strikes != null && strikes.Count > 0)
+            {
+                var positiveDistribution = GetMonthDistributionPositive(strikes);
+                var negativeDistribution = GetMonthDistributionNegative(strikes);
+                var Distribution = GetMonthDistribution(strikes);
 
-            //todo draw chart and show
+                //todo draw chart and show
+            }
         }
     }
 }
