@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,10 +53,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PictureDrawer\ChartDistribution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PictureDrawer\ChartDistribution.Designer.cs">
+      <DependentUpon>ChartDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PictureDrawer\LightningPictureDrawer.cs" />
+    <Compile Include="PictureDrawer\RoseDiagramUCs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PictureDrawer\RoseDiagramUCs.Designer.cs">
+      <DependentUpon>RoseDiagramUCs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityService.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictureDrawer\ChartDistribution.resx">
+      <DependentUpon>ChartDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictureDrawer\RoseDiagramUCs.resx">
+      <DependentUpon>RoseDiagramUCs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +108,10 @@
     <ProjectReference Include="..\..\LLSDA.Interface\LLSDA.Interface.csproj">
       <Project>{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}</Project>
       <Name>LLSDA.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LLSDA.Service\LLSDA.Service.csproj">
+      <Project>{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}</Project>
+      <Name>LLSDA.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

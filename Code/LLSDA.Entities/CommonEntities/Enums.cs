@@ -1,16 +1,30 @@
 ﻿/*****************************************************************
-
-
 ** Author|创建人:     Rong(Rex) Fan|樊荣
 ** DESC|描述:
 ******************************************************************/
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace LLSDA.Entities
 {
+
+    public enum ResultPictureTypeEnum
+    {
+        地闪时分布图,
+        地闪月分布图,
+        地闪年分布图,
+        地闪地区分布图,
+        地闪累计概率分布图,
+        雷击大地密度分布图,
+        雷电流强度分布图,
+        雷击大地密度分布图含行政区划,
+        雷电流强度分布图含行政区划,
+        地闪分布玫瑰图,
+    }
+
     public enum SeriesNameFlashType
     {
         正闪所占百分比,
@@ -110,6 +124,21 @@ namespace LLSDA.Entities
         NorthWest = 7,
         
         CenteralPoint
+    }
+
+    /// <summary>
+    /// 按照雷电流强度划分的闪电定位数据
+    /// </summary>
+    public enum LightningStrikeIntensityClassTypeEnum
+    {
+        [EnumMember]
+        强度20kA以下,
+        [EnumMember]
+        强度20kA到50kA之间,
+        [EnumMember]
+        强度50kA到100kA之间,
+        [EnumMember]
+        强度100kA以上
     }
 
     /// <summary>

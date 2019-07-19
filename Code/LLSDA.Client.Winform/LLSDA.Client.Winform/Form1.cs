@@ -1,9 +1,11 @@
 ﻿using LLSDA.Entities;
 using LLSDA.Interface;
+using LLSDA.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,23 +19,35 @@ namespace LLSDA.Client.Winform
     {
         List<BaseStrikeChina> strikes;
         public event EventHandler SrcFileLoadCompleted;
+        IStrikesDistributionStatisticService iStrikesDistributionStatisticService;
+        LightningPictureDrawer lightningPictureDrawer;
+        string baseDirectory;
         public Form1()
         {
             InitializeComponent();
             SrcFileLoadCompleted += Form1_srcFileLoadCompleted;
-            strikes  = ReadDataAsync().Result;      
+            strikes  = ReadDataAsync().Result;
+            lightningPictureDrawer = new LightningPictureDrawer();
+            iStrikesDistributionStatisticService = new StrikesDistributionStatisticService();
+            baseDirectory = AppDomain.CurrentDomain.BaseDirectory + @"Results\";
         }
 
         private void Form1_srcFileLoadCompleted(object sender, EventArgs e)
         {
             // Enable buttons
-            button1.Enabled = true;
+            MonthDistribution.Enabled = true;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             DrawMonthDistributionChart();
         }
+
+        private void HourDistribution_Click(object sender, EventArgs e)
+        {
+            DrawHourDistributionChart();
+        }
+
 
         /// <summary>
         /// 读取源文件，并获取数据到内存;
@@ -61,22 +75,29 @@ namespace LLSDA.Client.Winform
             });
         }
 
+        #region MonthDistribution
         private Dictionary<int, int> GetMonthDistributionPositive(IEnumerable<BaseStrikeChina> strikes)
         {
-            // todo
-            return null;
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuMonthDistributionPosive(strikes.Where(x => x.Intensity > 0).Select(x => x));
+            else
+                throw new ArgumentOutOfRangeException();
         }
 
         private Dictionary<int, int> GetMonthDistributionNegative(IEnumerable<BaseStrikeChina> strikes)
         {
-            // todo
-            return null;
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuMonthDistributionNegative(strikes.Where(x => x.Intensity < 0).Select(x => x));
+            else
+                throw new ArgumentOutOfRangeException();
         }
 
         private Dictionary<int, int> GetMonthDistribution(IEnumerable<BaseStrikeChina> strikes)
         {
-            // todo
-            return null;
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuMonthDistributionNegative(strikes);
+            else
+                throw new ArgumentOutOfRangeException();
         }
 
         private void DrawMonthDistributionChart()
@@ -87,8 +108,59 @@ namespace LLSDA.Client.Winform
                 var negativeDistribution = GetMonthDistributionNegative(strikes);
                 var Distribution = GetMonthDistribution(strikes);
 
-                //todo draw chart and show
+                // todo draw chart and show
+                // draw chart and show
+                var chart = lightningPictureDrawer.BindMonthDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
+                var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString();
+                UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
+                Process.Start("mspaint.exe", fullFileName);
+
             }
         }
+        #endregion
+
+
+        #region HourDistribution
+        private void DrawHourDistributionChart()
+        {
+            if (strikes != null && strikes.Count > 0)
+            {
+                var positiveDistribution = GetHourDistributionPositive(strikes);
+                var negativeDistribution = GetHourDistributionNegative(strikes);
+                var Distribution = GetHourDistribution(strikes);
+
+                // draw chart and show
+                var chart = lightningPictureDrawer.BindHourDistributionChart(distribution:Distribution,positiveDistribution,negativeDistribution,"");
+                var fullFileName = baseDirectory + "HourDistributionChart_" + Guid.NewGuid().ToString();
+                UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
+                Process.Start("mspaint.exe",fullFileName);
+            }
+        }
+
+        private Dictionary<int, int> GetHourDistribution(IEnumerable<BaseStrikeChina> strikes)
+        {
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuHourDistribution(strikes);
+            else
+                throw new ArgumentOutOfRangeException();
+        }
+
+        private Dictionary<int, int> GetHourDistributionPositive(IEnumerable<BaseStrikeChina> strikes)
+        {
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuHourDistribution_Positive(strikes.Where(x => x.Intensity > 0).Select(x => x));
+            else
+                throw new ArgumentOutOfRangeException();
+        }
+
+        private Dictionary<int, int> GetHourDistributionNegative(IEnumerable<BaseStrikeChina> strikes)
+        {
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuHourDistribution_Negative(strikes.Where(x => x.Intensity < 0).Select(x => x));
+            else
+                throw new ArgumentOutOfRangeException();
+        }
+        #endregion
+
     }
 }

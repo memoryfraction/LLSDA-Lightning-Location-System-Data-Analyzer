@@ -28,26 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.MonthDistribution = new System.Windows.Forms.Button();
+            this.HourDistribution = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // MonthDistribution
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(106, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.MonthDistribution.Enabled = false;
+            this.MonthDistribution.Location = new System.Drawing.Point(100, 103);
+            this.MonthDistribution.Name = "MonthDistribution";
+            this.MonthDistribution.Size = new System.Drawing.Size(141, 55);
+            this.MonthDistribution.TabIndex = 0;
+            this.MonthDistribution.Text = "Month Distribution";
+            this.MonthDistribution.UseVisualStyleBackColor = true;
+            this.MonthDistribution.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // HourDistribution
+            // 
+            this.HourDistribution.Location = new System.Drawing.Point(366, 103);
+            this.HourDistribution.Name = "HourDistribution";
+            this.HourDistribution.Size = new System.Drawing.Size(140, 55);
+            this.HourDistribution.TabIndex = 1;
+            this.HourDistribution.Text = "Hour Distribution";
+            this.HourDistribution.UseVisualStyleBackColor = true;
+            this.HourDistribution.Click += new System.EventHandler(this.HourDistribution_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 368);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.HourDistribution);
+            this.Controls.Add(this.MonthDistribution);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -56,7 +68,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button MonthDistribution;
+        private System.Windows.Forms.Button HourDistribution;
     }
 }
 

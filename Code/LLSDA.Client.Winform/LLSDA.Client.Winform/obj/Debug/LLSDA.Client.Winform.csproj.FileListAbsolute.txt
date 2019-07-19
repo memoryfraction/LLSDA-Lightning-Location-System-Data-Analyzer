@@ -13,3 +13,7 @@ E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\L
 E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.csproj.CopyComplete
 E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Entities.dll
 E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Entities.pdb
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Service.dll
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\bin\Debug\LLSDA.Service.pdb
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.ChartDistribution.resources
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLSDA.Client.Winform\LLSDA.Client.Winform\obj\Debug\LLSDA.Client.Winform.RoseDiagramUCs.resources
