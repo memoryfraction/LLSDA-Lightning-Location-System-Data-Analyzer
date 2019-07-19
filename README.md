@@ -37,7 +37,7 @@ Glad you like it.
 * copy *.dll file to the target address and use it
 
 ## TODO List
-* LLSDA.App (Plan to use Avalonia)
+* LLSDA.App 
 
 ## Change Log
 * V1.0.0(2019-6-4)
@@ -161,6 +161,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 ## 捐赠与支持
 [支付宝二维码](/Images/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%BA%8C%E7%BB%B4%E7%A0%81.JPG)
+如本项目对您的研究、工作有帮助，请在参考文献中添加本文作为引用。
 
 
 ## 合作伙伴
