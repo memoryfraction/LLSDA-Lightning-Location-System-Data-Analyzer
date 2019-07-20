@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using LLSDA.Entities;
 
 namespace LLSDA.Client.Winform
 {
@@ -61,7 +55,7 @@ namespace LLSDA.Client.Winform
         /// <param name="_sourceDictionary"></param>
         /// <param name="seriesName"></param>
         /// <param name="showValueAsLabel"></param>
-        public void BindDataToRoseDiagram(Dictionary<LightningStrikeDirectionEnum, double> _sourceDictionary, string seriesName, bool showValueAsLabel)
+        public void BindDataToRoseDiagram(Dictionary<Entities.LightningStrikeDirectionEnum, double> _sourceDictionary, string seriesName, bool showValueAsLabel)
         {
             Dictionary<string, double> resultDictionary=new Dictionary<string,double>();
             foreach (var tmp in _sourceDictionary)

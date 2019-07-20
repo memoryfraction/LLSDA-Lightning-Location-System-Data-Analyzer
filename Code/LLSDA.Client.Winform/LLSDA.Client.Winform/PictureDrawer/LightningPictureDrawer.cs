@@ -1,4 +1,4 @@
-﻿using LLSDA.Entities;
+﻿using LLSDA;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace LLSDA.Client.Winform
         public ChartDistribution BindHourDistributionChart(Dictionary<int,int> distribution, Dictionary<int, int> positiveDistribution, Dictionary<int, int> negativeDistribution,string desc)
         {
             chartDistribution_Hours_Dynamic = new ChartDistribution();
-            chartDistribution_Hours_Dynamic.SaveOriginalName = ResultPictureTypeEnum.地闪时分布图.ToString();
+            chartDistribution_Hours_Dynamic.SaveOriginalName = Entities.ResultPictureTypeEnum.地闪时分布图.ToString();
 
             Dictionary<int, int> hourDistribution = distribution;
             Dictionary<int, int> hourDistributionPositive = positiveDistribution;
@@ -46,7 +46,7 @@ namespace LLSDA.Client.Winform
         public ChartDistribution BindMonthDistributionChart(Dictionary<int, int> distribution, Dictionary<int, int> positiveDistribution, Dictionary<int, int> negativeDistribution, string desc)
         {
             chartDistribution_Month_Dynamic = new ChartDistribution();
-            chartDistribution_Month_Dynamic.SaveOriginalName = ResultPictureTypeEnum.地闪月分布图.ToString();
+            chartDistribution_Month_Dynamic.SaveOriginalName = Entities.ResultPictureTypeEnum.地闪月分布图.ToString();
 
             Dictionary<int, int> monthDistribution = distribution;
             Dictionary<int, int> monthDistributionPositive = positiveDistribution;
@@ -62,7 +62,7 @@ namespace LLSDA.Client.Winform
         /// <summary>
         /// 绑定雷电流累计概率分布图
         /// </summary>
-        private void BindProbabilityDistribution(PointAnalysisResults pointAnalysisResult)
+        private void BindProbabilityDistribution(Entities.PointAnalysisResults pointAnalysisResult)
         {
             Dictionary<int, double> ProbabilityDistribution = pointAnalysisResult.ProbabilityDistribution;
             chartDistribution_Probablity_Dynamic.richTextBox.Text = pointAnalysisResult.ProbabilityDistributionDesc;
@@ -73,9 +73,9 @@ namespace LLSDA.Client.Winform
         /// <summary>
         /// 绘制雷电玫瑰图
         /// </summary>
-        private void BindStrikeRoseDistribution(PointAnalysisResults pointAnalysisResult)
+        private void BindStrikeRoseDistribution(Entities.PointAnalysisResults pointAnalysisResult)
         {
-            Dictionary<LightningStrikeDirectionEnum, double> sourceDataDictionary = new Dictionary<LightningStrikeDirectionEnum, double>();
+            Dictionary<Entities.LightningStrikeDirectionEnum, double> sourceDataDictionary = new Dictionary<Entities.LightningStrikeDirectionEnum, double>();
             sourceDataDictionary = pointAnalysisResult.RoseDistribution;
             Dictionary<string, double> SourceDataDictionaryString = new Dictionary<string, double>();
             foreach (var tmp in sourceDataDictionary)

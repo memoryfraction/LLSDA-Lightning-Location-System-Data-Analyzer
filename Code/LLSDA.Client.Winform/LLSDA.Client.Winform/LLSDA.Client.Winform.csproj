@@ -101,17 +101,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\LLSDA.Entities\LLSDA.Entities.csproj">
-      <Project>{A5268D0F-DB1D-412B-B36F-135128BE6CF2}</Project>
-      <Name>LLSDA.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\LLSDA.Interface\LLSDA.Interface.csproj">
-      <Project>{E67E3C3A-9DA7-45A9-B7D2-90C99DE7972C}</Project>
-      <Name>LLSDA.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\LLSDA.Service\LLSDA.Service.csproj">
-      <Project>{1F809C8A-76E3-4DD9-854A-B36517B7F3EE}</Project>
-      <Name>LLSDA.Service</Name>
+    <ProjectReference Include="..\..\LLDSA\LLDSA.csproj">
+      <Project>{4ec1e50a-3221-4198-bac3-f9e2d505b116}</Project>
+      <Name>LLDSA</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

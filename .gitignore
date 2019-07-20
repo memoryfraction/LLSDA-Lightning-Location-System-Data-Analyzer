@@ -2,9 +2,8 @@ README.md
 Images/支付宝二维码.JPG
 
 # ignore an entire directory
-/Code/LLSDA.Entities/bin/Debug/
-/Code/LLSDA.Interface/bin/Debug/
-/Code/LLSDA.Service/bin/Debug/
+/Code/LLSDA/bin/Debug/
+/Code/LLSDA.Client.Winform/bin/Debug/
 
 
 # ignore a file type

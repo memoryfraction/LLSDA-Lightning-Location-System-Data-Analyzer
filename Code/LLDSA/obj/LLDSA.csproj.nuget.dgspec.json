@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLDSA\\LLDSA.csproj": {}
+  },
+  "projects": {
+    "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLDSA\\LLDSA.csproj": {
+      "version": "1.2.0",
+      "restore": {
+        "projectUniqueName": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLDSA\\LLDSA.csproj",
+        "projectName": "LLDSA",
+        "projectPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLDSA\\LLDSA.csproj",
+        "packagesPath": "C:\\Users\\T480\\.nuget\\packages\\",
+        "outputPath": "E:\\GitHub\\LLSDA--LightningLocationSystemDataAnalyzer\\Code\\LLDSA\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\T480\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
