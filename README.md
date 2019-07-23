@@ -67,6 +67,9 @@ New added OOP Design and Architecture
 * V1.2.0(2019-7-18)
 Implemented Hour and month distribution
 
+* V1.2.1(2019-7-23)
+New added year distribution feature
+
 ## OOP Design
 ![image](/Images/ObjectOrientedDesign.jpg)
 
@@ -145,6 +148,9 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 * V1.2.0(2019-7-18)
 实现了时分布、月分布图
+
+* V1.2.1(2019-7-23)
+新增年分布功能
 
 ## 待完成
 * LLSDA.App (范例代码项目。 计划使用跨平台UI:Avalonia，调用LLSDA.Entities来生成产品图。 欢迎推荐其他的跨平台UI项目。)
