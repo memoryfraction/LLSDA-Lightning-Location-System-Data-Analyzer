@@ -120,7 +120,6 @@ namespace LLSDA.Client.Winform
                 var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
-
             }
         }
         #endregion

@@ -6,3 +6,4 @@ E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netsta
 E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.AssemblyInfo.cs
 E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.dll
 E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.pdb
+E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.csprojAssemblyReference.cache
