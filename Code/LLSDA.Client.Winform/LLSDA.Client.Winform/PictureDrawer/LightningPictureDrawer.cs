@@ -15,7 +15,7 @@ namespace LLSDA.Client.Winform
         string srcLigCurAvgFilePathName = AppDomain.CurrentDomain.BaseDirectory + @"\Surfer\ResultFile\平均雷电流文件.txt";
         string NgMap = AppDomain.CurrentDomain.BaseDirectory + @"\Surfer\ResultFile\NgMap.bmp";
         string curAvgMap = AppDomain.CurrentDomain.BaseDirectory + @"\Surfer\ResultFile\curAvgMap.bmp";
-        ChartDistribution chartDistribution_Hours_Dynamic, chartDistribution_Month_Dynamic, chartDistribution_Probablity_Dynamic;
+        ChartDistribution chartDistribution_Hours_Dynamic, chartDistribution_Month_Dynamic, chartDistribution_Year_Dynamic, chartDistribution_Probablity_Dynamic;
         RoseDiagramUCs roseDiagramUCs1;
         #endregion
 
@@ -57,6 +57,22 @@ namespace LLSDA.Client.Winform
             chartDistribution_Month_Dynamic.BindDataToChart(monthDistributionNegative, "Negative", false);
             chartDistribution_Month_Dynamic.richTextBox.Text = desc;//月分布文字描述
             return chartDistribution_Month_Dynamic;
+        }
+
+        public ChartDistribution BindYearDistributionChart(Dictionary<int, int> distribution, Dictionary<int, int> positiveDistribution, Dictionary<int, int> negativeDistribution, string desc)
+        {
+            chartDistribution_Year_Dynamic = new ChartDistribution();
+            chartDistribution_Year_Dynamic.SaveOriginalName = Entities.ResultPictureTypeEnum.地闪月分布图.ToString();
+
+            Dictionary<int, int> yearDistribution = distribution;
+            Dictionary<int, int> yearDistributionPositive = positiveDistribution;
+            Dictionary<int, int> yearDistributionNegative = negativeDistribution;
+            chartDistribution_Year_Dynamic.ConfigChartAreasType("Year", "Times");
+            chartDistribution_Year_Dynamic.BindDataToChart(yearDistribution, "Strike Times", true);
+            chartDistribution_Year_Dynamic.BindDataToChart(yearDistributionPositive, "Positive", false);
+            chartDistribution_Year_Dynamic.BindDataToChart(yearDistributionNegative, "Negative", false);
+            chartDistribution_Year_Dynamic.richTextBox.Text = desc;//年分布文字描述
+            return chartDistribution_Year_Dynamic;
         }
 
         /// <summary>

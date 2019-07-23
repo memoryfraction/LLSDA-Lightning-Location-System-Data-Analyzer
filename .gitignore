@@ -4,6 +4,7 @@ Images/支付宝二维码.JPG
 # ignore an entire directory
 /Code/LLSDA/bin/Debug/
 /Code/LLSDA.Client.Winform/bin/Debug/
+/Code/.vs/LLDSA/V16/Server/
 
 
 # ignore a file type
@@ -14,3 +15,4 @@ Images/支付宝二维码.JPG
 *.sqlite
 *.dtbcache
 *.lut
+*.exe

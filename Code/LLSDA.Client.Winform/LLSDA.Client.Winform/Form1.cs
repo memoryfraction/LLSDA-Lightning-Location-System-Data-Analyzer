@@ -48,6 +48,11 @@ namespace LLSDA.Client.Winform
             DrawHourDistributionChart();
         }
 
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            DrawYearDistributionChart();
+        }
+
 
         /// <summary>
         /// 读取源文件，并获取数据到内存;
@@ -74,6 +79,7 @@ namespace LLSDA.Client.Winform
                 return strikes;
             });
         }
+
 
         #region MonthDistribution
         private Dictionary<int, int> GetMonthDistributionPositive(IEnumerable<BaseStrikeChina> strikes)
@@ -162,5 +168,41 @@ namespace LLSDA.Client.Winform
         }
         #endregion
 
+
+        #region YearDistribution
+        private Dictionary<int, int> GetYearDistributionPositive(IEnumerable<BaseStrikeChina> strikes) {
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuYearDistributionPositive(strikes);
+            else
+                throw new ArgumentOutOfRangeException();
+        }
+
+        private Dictionary<int, int> GetYearDistributionNegative(IEnumerable<BaseStrikeChina> strikes) {
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuYearDistributionNegative(strikes);
+            else
+                throw new ArgumentOutOfRangeException();
+        }
+        private Dictionary<int, int> GetYearDistribution(IEnumerable<BaseStrikeChina> strikes)
+        {
+            if (strikes != null || strikes.Any())
+                return iStrikesDistributionStatisticService.CalcuYearDistribution(strikes);
+            else
+                throw new ArgumentOutOfRangeException();
+        }
+
+        private void DrawYearDistributionChart()
+        {
+            var positiveDistribution = GetYearDistributionPositive(strikes);
+            var negativeDistribution = GetYearDistributionNegative(strikes);
+            var Distribution = GetYearDistribution(strikes);
+
+            // draw chart and show
+            var chart = lightningPictureDrawer.BindYearDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
+            var fullFileName = baseDirectory + "YearDistributionChart_" + Guid.NewGuid().ToString();
+            UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
+            Process.Start("mspaint.exe", fullFileName);
+        }
+        #endregion
     }
 }
