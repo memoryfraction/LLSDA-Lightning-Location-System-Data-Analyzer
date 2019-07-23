@@ -16,3 +16,10 @@ Images/支付宝二维码.JPG
 *.dtbcache
 *.lut
 *.exe
+Code/LLSDA.Client.Winform/LLSDA.Client.Winform/bin/Debug/Results/YearDistributionChart_d4c4ba19-f660-4304-a540-9ae69a09d39e
+Code/LLSDA.Client.Winform/LLSDA.Client.Winform/obj/Debug/LLSDA.Client.Winform.exe
+Code/LLSDA.Client.Winform/LLSDA.Client.Winform/bin/Debug/LLSDA.Client.Winform.exe
+Code/.vs/LLSDA/v16/Server/sqlite3/storage.ide-wal
+Code/.vs/LLSDA/v16/Server/sqlite3/storage.ide-shm
+*.exe
+*.exe

@@ -117,7 +117,7 @@ namespace LLSDA.Client.Winform
                 // todo draw chart and show
                 // draw chart and show
                 var chart = lightningPictureDrawer.BindMonthDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
-                var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString();
+                var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
 
@@ -137,7 +137,7 @@ namespace LLSDA.Client.Winform
 
                 // draw chart and show
                 var chart = lightningPictureDrawer.BindHourDistributionChart(distribution:Distribution,positiveDistribution,negativeDistribution,"");
-                var fullFileName = baseDirectory + "HourDistributionChart_" + Guid.NewGuid().ToString();
+                var fullFileName = baseDirectory + "HourDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
                 Process.Start("mspaint.exe",fullFileName);
             }
@@ -199,7 +199,7 @@ namespace LLSDA.Client.Winform
 
             // draw chart and show
             var chart = lightningPictureDrawer.BindYearDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
-            var fullFileName = baseDirectory + "YearDistributionChart_" + Guid.NewGuid().ToString();
+            var fullFileName = baseDirectory + "YearDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
             UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
             Process.Start("mspaint.exe", fullFileName);
         }
