@@ -89,6 +89,11 @@ New added year distribution feature
 * Paypal: rong.fan1031@gmail.com
 * You are welcome to buy me a coffee.
 
+
+## Google Scholar Citations
+https://scholar.google.com/citations?user=Zxn84ckAAAAJ
+
+
 ## Thanks to
 * HongBing Chen, Xia Li, Yi Gao, Wen'an Xiao(Alphabetical Sorted by family name)
 * [Nanjing University of Information Science and Technology(NUIST)](https://en.nuist.edu.cn/)
