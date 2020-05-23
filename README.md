@@ -70,6 +70,10 @@ Implemented Hour and month distribution
 * V1.2.1(2019-7-23)
 New added year distribution feature
 
+* V1.2.1(2020-5-22)
+New added academic paper
+
+
 ## OOP Design
 ![image](/Images/ObjectOrientedDesign.jpg)
 
@@ -79,6 +83,8 @@ New added year distribution feature
 ## Reference & Academic support
 * Abstract
 [![image](/Images/Abstract.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
+
+[![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
 ## License
 * For Non-Code parts: [Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
@@ -157,12 +163,17 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * V1.2.1(2019-7-23)
 新增年分布功能
 
+* V1.2.1(2020-5-22)
+新增论文
+
 ## 待完成
 * LLSDA.App (范例代码项目。 计划使用跨平台UI:Avalonia，调用LLSDA.Entities来生成产品图。 欢迎推荐其他的跨平台UI项目。)
 
 ## 学术支撑
 * Abstract
 [![image](/Images/%E6%91%98%E8%A6%81.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
+
+[![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
 ## Google学术引用
 https://scholar.google.com/citations?user=Zxn84ckAAAAJ
