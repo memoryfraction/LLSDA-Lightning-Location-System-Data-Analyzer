@@ -8,7 +8,7 @@ Readme: English | [中文](#简介)
 
 ## Brief Introduction
 LLSDA is a public benefit project helps lightning protection engineer and lightning scientist to analyze lightning distribution. 
-LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# following .NET Standard 2.0 . It is the necessary part of all lightning time and spatial distribution analysis software.
+LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# following .NET Standard. It is the necessary part of all lightning time and spatial distribution analysis software.
 
 ## Introduction
 Lightning is a violent and sudden electrostatic discharge where two electrically charged regions in the atmosphere temporarily equalize themselves, usually during a thunderstorm.
@@ -21,12 +21,12 @@ Glad you like it.
 
 ## Features
 * Build passing
-* Based on .NET STANDARD 2.0 
+* Based on .NET STANDARD 2.1 
 * Cross platform
 
 
 ## Dependencies
-* .NET Standard 2.0
+* .NET Standard 2.1
 * Newtonsoft
 * Nuget: System.Drawing.Common
 
@@ -73,6 +73,9 @@ New added year distribution feature
 * V1.2.1(2020-5-22)
 New added academic paper
 
+* V1.2.2(2020-12-06)
+Updated to .net standard 2.1 和 .NET 5.0
+
 
 ## OOP Design
 ![image](/Images/ObjectOrientedDesign.jpg)
@@ -116,12 +119,12 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 ## 特性
 * 编译通过
-* 基于 .NET STANDARD 2.0 
+* 基于 .NET STANDARD 2.1 
 * 跨平台: MAC/LINUX/WINDOWS
 
 
 ## 依赖项
-* .NET Core 2.0版本及以上
+* .NET Core 2.1版本及以上
 * Newtonsoft
 * Nuget: System.Drawing.Common
 
@@ -166,8 +169,11 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * V1.2.1(2020-5-22)
 新增论文
 
+* V1.2.2(2020-12-06)
+升级到 .net standard 2.1和 .NET 5.0
+
 ## 待完成
-* LLSDA.App (范例代码项目。 计划使用跨平台UI:Avalonia，调用LLSDA.Entities来生成产品图。 欢迎推荐其他的跨平台UI项目。)
+* LLSDA.App (范例代码项目。欢迎推荐其他的跨平台UI项目。)
 
 ## 学术支撑
 * Abstract
@@ -175,8 +181,8 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 [![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
-## Google学术引用
-https://scholar.google.com/citations?user=Zxn84ckAAAAJ
+## 百度学术引用
+https://xueshu.baidu.com/scholarID/CN-BM75JUJJ
 
 ## 知识产权
 * 非代码部分: [署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
