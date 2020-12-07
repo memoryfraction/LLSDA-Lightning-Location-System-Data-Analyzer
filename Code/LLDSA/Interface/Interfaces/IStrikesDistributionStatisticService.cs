@@ -206,6 +206,7 @@ namespace LLSDA.Interface
 
         #endregion
 
+
         #region Ng
         /// <summary>
         /// 计算Ng值

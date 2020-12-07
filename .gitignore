@@ -1,11 +1,13 @@
 README.md
 Images/支付宝二维码.JPG
 
-# ignore an entire directory
+# ignore the entire directory
 /Code/LLSDA/bin/
 /Code/LLSDA/obj/
 /Code/LLSDA.Client.Winform/bin/
 /Code/LLSDA.Client.Winform/obj/
+/Code/LLSDA.Tests/bin/
+/Code/LLSDA.Tests/obj/
 /Code/.vs/
 
 
@@ -19,3 +21,4 @@ Images/支付宝二维码.JPG
 *.lut
 *.exe
 *.bak
+
