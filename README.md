@@ -75,6 +75,7 @@ New added academic paper
 
 * V1.2.2(2020-12-06)
 Updated to .net standard 2.1 和 .NET 5.0
+added unit test project
 
 
 ## OOP Design
@@ -171,6 +172,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 * V1.2.2(2020-12-06)
 升级到 .net standard 2.1和 .NET 5.0
+添加了单元测试项目
 
 ## 待完成
 * LLSDA.App (范例代码项目。欢迎推荐其他的跨平台UI项目。)
@@ -191,8 +193,8 @@ https://xueshu.baidu.com/scholarID/CN-BM75JUJJ
 * 代码部分: [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE)
 
 ## 声明
-由于知识有限，时间有限，不对开源版本提供任何使用质量保障和服务。
-欢迎在[Issue](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues)区提出，我会尽力解答您的问题。
+由于知识有限，精力有限，不对开源版本提供任何使用质量保障和服务。
+欢迎在[Issue](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues)区提出。
 
 
 ## 捐赠与支持
