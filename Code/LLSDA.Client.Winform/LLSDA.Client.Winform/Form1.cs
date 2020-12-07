@@ -62,8 +62,8 @@ namespace LLSDA.Client.Winform
             return Task<List<BaseStrikeChina>>.Run(() => {
                 var strikes = new List<BaseStrikeChina>();
                 var str = System.AppDomain.CurrentDomain.BaseDirectory;
-                var srcFile1 = (new System.IO.DirectoryInfo(str)).Parent.Parent.Parent.Parent.Parent.FullName + @"\Documents\Sample Source Data\2008_07_09.txt";
-                var srcFile2 = (new System.IO.DirectoryInfo(str)).Parent.Parent.Parent.Parent.Parent.FullName + @"\Documents\Sample Source Data\2008_07_09.txt";
+                var srcFile1 = AppDomain.CurrentDomain.BaseDirectory + @"\data\2008_07_09.txt";
+                var srcFile2 = AppDomain.CurrentDomain.BaseDirectory + @"\data\2008_07_10.txt";
                 if (File.Exists(srcFile1))
                 {
                     var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);

@@ -3,4 +3,15 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PictureDrawer\ChartDistribution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="PictureDrawer\RoseDiagramUCs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
