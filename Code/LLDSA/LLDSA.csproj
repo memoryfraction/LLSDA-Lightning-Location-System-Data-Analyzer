@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# following .NET Standard 2.0 . It is the necessary part of all lightning time and spatial distribution analysis software.</Description>
+    <Description>
+LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# based on .NET Framework. It is the necessary part of all lightning time and spatial distribution analysis software.</Description>
     <Version>1.2.1</Version>
     <Authors>Rong(Rex) Fan</Authors>
     <Product>LightningLocationSystemDataAnalyzer</Product>
