@@ -80,8 +80,8 @@ New added year distribution feature
 New added academic paper
 
 * V1.2.2(2020-12-06)
-Updated to .net standard 2.1 和 .NET 5.0
-added unit test project
+Updated to .net standard 2.1 and .NET 5.0
+Added unit test project
 
 
 ## OOP Design
