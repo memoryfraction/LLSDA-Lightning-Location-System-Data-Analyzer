@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>LLDSA</id>
+    <version>1.2.1</version>
+    <authors>Rong Fan</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# based on .NET Framework. It is the necessary part of all lightning time and spatial distribution analysis software.</description>
+    <repository url="https://github.com/memoryfraction/LLSDA--LightningLocationSystemDataAnalyzer" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="Newtonsoft.Json" version="12.0.2" exclude="Build,Analyzers" />
+        <dependency id="System.Drawing.Common" version="4.5.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\bin\Debug\netstandard2.1\LLDSA.dll" target="lib\netstandard2.1\LLDSA.dll" />
+  </files>
+</package>
