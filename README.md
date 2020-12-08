@@ -37,12 +37,12 @@ Glad you like it.
 * Code
 ```
 var strikes = new List<BaseStrikeChina>();
-            var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
-            if (File.Exists(srcFile1))
-            {
-                var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
-                strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-            }
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
+if (File.Exists(srcFile1))
+{
+      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}
 ```
 * for more statistical and visualization method，refer to codes in LLSDA.ClientWinform
 
@@ -143,12 +143,12 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 * 代码
 ```
 var strikes = new List<BaseStrikeChina>();
-            var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
-            if (File.Exists(srcFile1))
-            {
-                var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
-                strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-            }
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
+if (File.Exists(srcFile1))
+{
+      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}
 ```
 * 更多统计分析、出图方法，请参考LLSDA.ClientWinform中的代码
 
