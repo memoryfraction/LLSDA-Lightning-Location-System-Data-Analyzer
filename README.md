@@ -32,6 +32,7 @@ Glad you like it.
 
 
 ## How to use it
+* NugetUrl(https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/1.2.2)
 * Package Manager execute below command to install Nuget package<br>
 ```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
 * Code
@@ -138,6 +139,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 使用方法
+* NugetUrl(https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/1.2.2)
 * Package Manager 中执行以下命令以安装Nuget包<br>
 ```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
 * 代码
