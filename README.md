@@ -33,16 +33,17 @@ Glad you like it.
 
 ## How to use it
 * Package Manager execute below command to install Nuget package<br>
-<code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2</code>
-* <code>
-  var strikes = new List<BaseStrikeChina>();<br>
-  var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");//lls file path and file name<br>
-  if (File.Exists(srcFile1))<br>
-  {<br>
-      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);<br>
-      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());<br>
-  }<br>
-  </code>
+```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
+* Code
+```
+var strikes = new List<BaseStrikeChina>();
+            var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
+            if (File.Exists(srcFile1))
+            {
+                var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+                strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+            }
+```
 * for more statistical and visualization method，refer to codes in LLSDA.ClientWinform
 
 ## Change Log
@@ -138,16 +139,17 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 ## 使用方法
 * Package Manager 中执行以下命令以安装Nuget包<br>
-<code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2</code>
-* <code>
-  var strikes = new List<BaseStrikeChina>();<br>
-  var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");//数据源文件完整路径<br>
-  if (File.Exists(srcFile1))<br>
-  {<br>
-      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);<br>
-      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());<br>
-  }<br>
-  </code>
+```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
+* 代码
+```
+var strikes = new List<BaseStrikeChina>();
+            var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
+            if (File.Exists(srcFile1))
+            {
+                var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+                strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+            }
+```
 * 更多统计分析、出图方法，请参考LLSDA.ClientWinform中的代码
 
 
