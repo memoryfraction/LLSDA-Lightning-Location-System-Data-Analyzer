@@ -32,12 +32,18 @@ Glad you like it.
 
 
 ## How to use it
-* download source code and compile
-* go to bin, debug and find the *.dll file
-* copy *.dll file to the target address and use it
-
-## TODO List
-* LLSDA.App 
+* Package Manager execute below command to install Nuget package<br>
+<code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2</code>
+* <code>
+  var strikes = new List<BaseStrikeChina>();<br>
+  var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");//lls file path and file name<br>
+  if (File.Exists(srcFile1))<br>
+  {<br>
+      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);<br>
+      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());<br>
+  }<br>
+  </code>
+* for more statistical and visualization method，refer to codes in LLSDA.ClientWinform
 
 ## Change Log
 * V1.0.0(2019-6-4)
@@ -131,9 +137,18 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 使用方法
-* 下载源码并编译
-* bin文件夹，Debug子文件夹，找到“LLSDA.dll”
-* 复制“LLSDA.dll”到目标项目，添加引用，并使用
+* Package Manager 中执行以下命令以安装Nuget包<br>
+<code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2</code>
+* <code>
+  var strikes = new List<BaseStrikeChina>();<br>
+  var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");//数据源文件完整路径<br>
+  if (File.Exists(srcFile1))<br>
+  {<br>
+      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);<br>
+      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());<br>
+  }<br>
+  </code>
+* 更多统计分析、出图方法，请参考LLSDA.ClientWinform中的代码
 
 
 ## 版本
