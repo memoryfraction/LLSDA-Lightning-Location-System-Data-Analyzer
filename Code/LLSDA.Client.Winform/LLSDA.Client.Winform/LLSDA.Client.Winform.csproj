@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="LLDSA">
-      <HintPath>E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\bin\Debug\netstandard2.1\LLDSA.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\LLDSA\LLDSA.csproj" />
   </ItemGroup>
 
   <ItemGroup>
