@@ -32,12 +32,20 @@ Glad you like it.
 
 
 ## How to use it
-* download source code and compile
-* go to bin, debug and find the *.dll file
-* copy *.dll file to the target address and use it
-
-## TODO List
-* LLSDA.App 
+* [NugetUrl](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/1.2.2)
+* Package Manager execute below command to install Nuget package<br>
+```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
+* Code
+```
+var strikes = new List<BaseStrikeChina>();
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
+if (File.Exists(srcFile1))
+{
+      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}
+```
+* for more statistical and visualization method，refer to codes in LLSDA.ClientWinform
 
 ## Change Log
 * V1.0.0(2019-6-4)
@@ -74,8 +82,8 @@ New added year distribution feature
 New added academic paper
 
 * V1.2.2(2020-12-06)
-Updated to .net standard 2.1 和 .NET 5.0
-added unit test project
+Updated to .net standard 2.1 and .NET 5.0
+Added unit test project
 
 
 ## OOP Design
@@ -131,9 +139,20 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 使用方法
-* 下载源码并编译
-* bin文件夹，Debug子文件夹，找到“LLSDA.dll”
-* 复制“LLSDA.dll”到目标项目，添加引用，并使用
+* [NugetUrl](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/1.2.2)
+* Package Manager 中执行以下命令以安装Nuget包<br>
+```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
+* 代码
+```
+var strikes = new List<BaseStrikeChina>();
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
+if (File.Exists(srcFile1))
+{
+      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}
+```
+* 更多统计分析、出图方法，请参考LLSDA.ClientWinform中的代码
 
 
 ## 版本
