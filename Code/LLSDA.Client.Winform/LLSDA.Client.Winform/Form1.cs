@@ -244,7 +244,7 @@ namespace LLSDA.Client.Winform
                 chartDistribution_Probablity_Dynamic.BindDataToChart(ProbabilityDistribution, "概率分布", false);
 
                 // Save File
-                var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
+                var fullFileName = baseDirectory + "IntensityProbabilityChart_" + Guid.NewGuid().ToString() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chartDistribution_Probablity_Dynamic.chart, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
             }
