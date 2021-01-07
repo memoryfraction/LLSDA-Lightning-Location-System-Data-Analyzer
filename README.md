@@ -85,6 +85,10 @@ New added academic paper
 Updated to .net standard 2.1 and .NET 5.0
 Added unit test project
 
+* V1.2.3(2021-01-06)
+Added Intensity Probability Chart
+Added Rose Diagram Chart
+
 
 ## OOP Design
 ![image](/Images/ObjectOrientedDesign.jpg)
@@ -193,6 +197,10 @@ if (File.Exists(srcFile1))
 升级到 .net standard 2.1和 .NET 5.0
 添加了单元测试项目
 
+* V1.2.3(2021-01-06)
+范例项目新增雷电流累计概率分布图
+范例项目新增雷电玫瑰分布图
+
 ## 待完成
 * LLSDA.App (范例代码项目。欢迎推荐其他的跨平台UI项目。)
 
@@ -227,7 +235,7 @@ https://xueshu.baidu.com/scholarID/CN-BM75JUJJ
 
 
 ## 鸣谢
-* 陈鸿兵、李霞、高燚、肖稳安(姓氏音序排列)
+* 肖稳安、李霞、高燚、陈鸿兵
 * [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
