@@ -116,7 +116,7 @@ namespace LLSDA.Client.Winform
 
                 // draw chart and show
                 var chart = lightningPictureDrawer.BindMonthDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
-                var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
+                var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
             }
@@ -206,22 +206,26 @@ namespace LLSDA.Client.Winform
 
         private void buttonRoseDiagram_Click(object sender, EventArgs e)
         {
-            // todo 雷电玫瑰图需要基于几何中心才能实现; 通常, 用于格点化分析中的格点;
-            //if (strikes != null && strikes.Count > 0)
-            //{
-            //    RoseDiagramUCs roseDiagramUCs1 = new RoseDiagramUCs();
-            //    roseDiagramUCs1.SaveOriginalName = "LigithningRoseDistributionChart";
+            // 雷电玫瑰图需要基于几何中心才能实现; 通常, 用于格点化分析中的格点;
+            if (strikes != null && strikes.Count > 0)
+            {
+                var roseDiagramUCs1 = new RoseDiagramUCs();
+                roseDiagramUCs1.SaveOriginalName = "LigithningRoseDistributionChart";
 
-            //    Dictionary<LightningStrikeDirectionEnum, double> sourceDataDictionary = new Dictionary<LightningStrikeDirectionEnum, double>();
-            //    sourceDataDictionary = pointAnalysisResult.RoseDistribution;
-            //    Dictionary<string, double> SourceDataDictionaryString = new Dictionary<string, double>();
-            //    foreach (var tmp in sourceDataDictionary)
-            //    {
-            //        SourceDataDictionaryString.Add(tmp.Key.ToString(), tmp.Value);
-            //    }
-            //    roseDiagramUCs1.BindDataToRoseDiagram(SourceDataDictionaryString, "概率百分比", true);
+                Dictionary<LightningStrikeDirectionEnum, double> sourceDataDictionary =
+                    iStrikesDistributionStatisticService.CalcuLightningStrikeDirectionProbabilityDistribution(strikes);
+                Dictionary<string, double> SourceDataDictionaryString = new Dictionary<string, double>();
+                foreach (var tmp in sourceDataDictionary)
+                {
+                    SourceDataDictionaryString.Add(tmp.Key.ToString(), tmp.Value);
+                }
+                roseDiagramUCs1.BindDataToRoseDiagram(SourceDataDictionaryString, "概率百分比", true);
 
-            //}
+                // Save File
+                var fullFileName = baseDirectory + "RoseDiagramChart_" + Guid.NewGuid() + @".bmp";
+                UtilityService.SaveImageWithFullPathName(roseDiagramUCs1.chartRose, fullFileName);
+                Process.Start("mspaint.exe", fullFileName);
+            }
         }
 
 
