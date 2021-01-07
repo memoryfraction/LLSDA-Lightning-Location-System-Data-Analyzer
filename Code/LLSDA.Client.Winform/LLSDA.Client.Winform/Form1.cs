@@ -114,7 +114,6 @@ namespace LLSDA.Client.Winform
                 var negativeDistribution = GetMonthDistributionNegative(strikes);
                 var Distribution = GetMonthDistribution(strikes);
 
-                // todo draw chart and show
                 // draw chart and show
                 var chart = lightningPictureDrawer.BindMonthDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
                 var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
@@ -203,5 +202,48 @@ namespace LLSDA.Client.Winform
             Process.Start("mspaint.exe", fullFileName);
         }
         #endregion
+
+
+        private void buttonRoseDiagram_Click(object sender, EventArgs e)
+        {
+            // todo 雷电玫瑰图需要基于几何中心才能实现; 通常, 用于格点化分析中的格点;
+            //if (strikes != null && strikes.Count > 0)
+            //{
+            //    RoseDiagramUCs roseDiagramUCs1 = new RoseDiagramUCs();
+            //    roseDiagramUCs1.SaveOriginalName = "LigithningRoseDistributionChart";
+
+            //    Dictionary<LightningStrikeDirectionEnum, double> sourceDataDictionary = new Dictionary<LightningStrikeDirectionEnum, double>();
+            //    sourceDataDictionary = pointAnalysisResult.RoseDistribution;
+            //    Dictionary<string, double> SourceDataDictionaryString = new Dictionary<string, double>();
+            //    foreach (var tmp in sourceDataDictionary)
+            //    {
+            //        SourceDataDictionaryString.Add(tmp.Key.ToString(), tmp.Value);
+            //    }
+            //    roseDiagramUCs1.BindDataToRoseDiagram(SourceDataDictionaryString, "概率百分比", true);
+
+            //}
+        }
+
+
+        private void buttonCurrent_Click(object sender, EventArgs e)
+        {
+            if (strikes != null && strikes.Count > 0)
+            {
+                // Generate chart
+                ChartDistribution chartDistribution_Probablity_Dynamic = new ChartDistribution();
+                chartDistribution_Probablity_Dynamic.SaveOriginalName = "LigithningIntensityProbabilityDistributionChart";
+
+                chartDistribution_Probablity_Dynamic.richTextBox.Text = iStrikesDistributionStatisticService.GenerateProbabilityDistributionText(strikes);
+                chartDistribution_Probablity_Dynamic.ConfigChartAreasType("强度(单位;kA)", "概率P");
+
+                var ProbabilityDistribution = iStrikesDistributionStatisticService.CalcuProbabilityDistribution(strikes);
+                chartDistribution_Probablity_Dynamic.BindDataToChart(ProbabilityDistribution, "概率分布", false);
+
+                // Save File
+                var fullFileName = baseDirectory + "MonthDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
+                UtilityService.SaveImageWithFullPathName(chartDistribution_Probablity_Dynamic.chart, fullFileName);
+                Process.Start("mspaint.exe", fullFileName);
+            }
+        }
     }
 }
