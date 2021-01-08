@@ -957,62 +957,81 @@ namespace LLSDA.Service
         #endregion
 
 
-        #region 雷电玫瑰图，暂被注释，因为包含经纬度信息，不应该出现在这里。
-        ///// <summary>
-        ///// 统计雷电主次导方向概率
-        ///// </summary>
-        ///// <returns></returns>
-        //public  Dictionary<LightningStrikeDirectionEnum, double> CalcuLightningStrikeDirectionProbabilityDistribution(IEnumerable<AbstractStrike_Standard> _strikes,PointLocation _point)
-        //{ 
-        //    if (_strikes!=null && _strikes.Any())
-        //    {
-        //        Dictionary<LightningStrikeDirectionEnum, double> resultDictionaryList = new Dictionary<LightningStrikeDirectionEnum, double>();
-        //        //北", "东北", "东", "东南", "南", "西南", "西", "西北"
-        //        double resultProbability;
-        //        //遍历整个枚举类型
-        //        foreach (LightningStrikeDirectionEnum item in Enum.GetValues(typeof(LightningStrikeDirectionEnum)))
-        //        {
-        //            resultProbability = CalcuLightningStrikeDirectionProbability(_strikes, item, _point);
-        //            resultDictionaryList.Add(item, resultProbability);
-        //        }
-        //        return resultDictionaryList;
-        //    }
-        //    else
-        //        throw new ArgumentNullException("序列中不包含闪电。"); 
-        //}
-        ///// <summary>
-        ///// 输入闪电，计算某种方向闪电的概率。概率格式：33.3%
-        ///// </summary>
-        ///// <param name="_strikes"></param>
-        ///// <returns></returns>
-        //private  double CalcuLightningStrikeDirectionProbability(IEnumerable<AbstractStrike_Standard> _strikes, LightningStrikeDirectionEnum _directionEnum,PointLocation _centerPoint)
-        //{
-        //    double result = 0;
-        //    int suitedNum = 0;
-        //    int TotalNumber = _strikes.Count();
-        //    foreach (var tmpStrike in _strikes)
-        //    {
-        //        if (_directionEnum == JudgeLightningStrikeDirection(tmpStrike, _centerPoint))
-        //        {
-        //            suitedNum++;
-        //        }
-        //    }
-        //    result = Math.Round((double)suitedNum / (double)TotalNumber * 100, 1);
-        //    return result;
+        #region 雷电玫瑰图
+        /// <summary>
+        /// 统计雷电主次导方向概率
+        /// </summary>
+        /// <param name="_strikes"></param>
+        /// <returns></returns>
+        public Dictionary<LightningStrikeDirectionEnum, double> CalcuLightningStrikeDirectionProbabilityDistribution(IEnumerable<BaseStrikeStandard> _strikes)
+        {
+            var centerPoint = new PointLocation();
 
-        //}
-        ///// <summary>
-        ///// 输入一个闪电，判断其对应中心点经纬度 方向
-        ///// </summary>
-        ///// <param name="_strike"></param>
-        ///// <returns></returns>
-        //private  LightningStrikeDirectionEnum JudgeLightningStrikeDirection(AbstractStrike_Standard _strike, PointLocation _centerPoint)
-        //{
-        //    LightningStrikeDirectionEnum result = new LightningStrikeDirectionEnum();
-        //    double angle = AngleClass.CalcueAngle(_centerPoint.Longitude, _centerPoint.Latitude, _strike.Longitude, _strike.Latitude);
-        //    result = AngleClass.GetLightningStrikeDirection(angle);
-        //    return result;
-        //}
+            // 求经纬度中位数
+            centerPoint.Longitude = _strikes.OrderBy(x => x.Longitude).Select(x=>x.Longitude).ToList()[_strikes.Count()/2];
+            centerPoint.Latitude = _strikes.OrderBy(x => x.Latitude).Select(x => x.Latitude).ToList()[_strikes.Count() / 2];
+
+            return CalcuLightningStrikeDirectionProbabilityDistribution(_strikes, centerPoint);
+        }
+
+
+        /// <summary>
+        /// 统计雷电主次导方向概率
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<LightningStrikeDirectionEnum, double> CalcuLightningStrikeDirectionProbabilityDistribution(IEnumerable<BaseStrikeStandard> _strikes, PointLocation _point)
+        {
+            if (_strikes != null && _strikes.Any())
+            {
+                Dictionary<LightningStrikeDirectionEnum, double> resultDictionaryList = new Dictionary<LightningStrikeDirectionEnum, double>();
+                //北", "东北", "东", "东南", "南", "西南", "西", "西北"
+                double resultProbability;
+                //遍历整个枚举类型
+                foreach (LightningStrikeDirectionEnum item in Enum.GetValues(typeof(LightningStrikeDirectionEnum)))
+                {
+                    resultProbability = CalcuLightningStrikeDirectionProbability(_strikes, item, _point);
+                    resultDictionaryList.Add(item, resultProbability);
+                }
+                return resultDictionaryList;
+            }
+            else
+                throw new ArgumentNullException("序列中不包含闪电。");
+        }
+
+        /// <summary>
+        /// 输入闪电，计算某种方向闪电的概率。概率格式：33.3%
+        /// </summary>
+        /// <param name="_strikes"></param>
+        /// <returns></returns>
+        private double CalcuLightningStrikeDirectionProbability(IEnumerable<BaseStrikeStandard> _strikes, LightningStrikeDirectionEnum _directionEnum, PointLocation _centerPoint)
+        {
+            double result = 0;
+            int suitedNum = 0;
+            int TotalNumber = _strikes.Count();
+            foreach (var tmpStrike in _strikes)
+            {
+                if (_directionEnum == JudgeLightningStrikeDirection(tmpStrike, _centerPoint))
+                {
+                    suitedNum++;
+                }
+            }
+            result = Math.Round((double)suitedNum / (double)TotalNumber * 100, 1);
+            return result;
+        }
+
+        /// <summary>
+        /// 输入一个闪电，判断其对应中心点经纬度 方向
+        /// </summary>
+        /// <param name="_strike"></param>
+        /// <returns></returns>
+        private LightningStrikeDirectionEnum JudgeLightningStrikeDirection(BaseStrikeStandard _strike, PointLocation _centerPoint)
+        {
+            LightningStrikeDirectionEnum result = new LightningStrikeDirectionEnum();
+            double angle = AngleClass.CalcueAngle(_centerPoint.Longitude, _centerPoint.Latitude, _strike.Longitude, _strike.Latitude);
+            result = AngleClass.GetLightningStrikeDirection(angle);
+            return result;
+        }
+
         #endregion
 
         #region Ng
