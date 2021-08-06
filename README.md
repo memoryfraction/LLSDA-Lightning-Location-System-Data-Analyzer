@@ -218,6 +218,7 @@ https://xueshu.baidu.com/scholarID/CN-BM75JUJJ
 * 解释: [谈谈创作共用许可证（Creative Commons licenses）- 阮一峰](http://www.ruanyifeng.com/blog/2008/04/creative_commons_licenses.html)
 
 * 代码部分: [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE)
+* 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ## 声明
 由于知识有限，精力有限，不对开源版本提供任何使用质量保障和服务。
