@@ -1034,6 +1034,7 @@ namespace LLSDA.Service
 
         #endregion
 
+
         #region Ng
         /// <summary>
         /// 计算Ng值

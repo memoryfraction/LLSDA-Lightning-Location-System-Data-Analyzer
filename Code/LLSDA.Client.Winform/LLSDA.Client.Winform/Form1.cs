@@ -19,7 +19,7 @@ namespace LLSDA.Client.Winform
     {
         List<BaseStrikeChina> strikes;
         public event EventHandler SrcFileLoadCompleted;
-        IStrikesDistributionStatisticService iStrikesDistributionStatisticService;
+        IStrikesDistributionStatisticService strikesDistributionStatisticService;
         LightningPictureDrawer lightningPictureDrawer;
         string baseDirectory;
         public Form1()
@@ -28,7 +28,7 @@ namespace LLSDA.Client.Winform
             SrcFileLoadCompleted += Form1_srcFileLoadCompleted;
             strikes  = ReadDataAsync().Result;
             lightningPictureDrawer = new LightningPictureDrawer();
-            iStrikesDistributionStatisticService = new StrikesDistributionStatisticService();
+            strikesDistributionStatisticService = new StrikesDistributionStatisticService();
             baseDirectory = AppDomain.CurrentDomain.BaseDirectory + @"Results\";
         }
 
@@ -85,7 +85,7 @@ namespace LLSDA.Client.Winform
         private Dictionary<int, int> GetMonthDistributionPositive(IEnumerable<BaseStrikeChina> strikes)
         {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuMonthDistributionPosive(strikes.Where(x => x.Intensity > 0).Select(x => x));
+                return strikesDistributionStatisticService.CalcuMonthDistributionPosive(strikes.Where(x => x.Intensity > 0).Select(x => x));
             else
                 throw new ArgumentOutOfRangeException();
         }
@@ -93,7 +93,7 @@ namespace LLSDA.Client.Winform
         private Dictionary<int, int> GetMonthDistributionNegative(IEnumerable<BaseStrikeChina> strikes)
         {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuMonthDistributionNegative(strikes.Where(x => x.Intensity < 0).Select(x => x));
+                return strikesDistributionStatisticService.CalcuMonthDistributionNegative(strikes.Where(x => x.Intensity < 0).Select(x => x));
             else
                 throw new ArgumentOutOfRangeException();
         }
@@ -101,7 +101,7 @@ namespace LLSDA.Client.Winform
         private Dictionary<int, int> GetMonthDistribution(IEnumerable<BaseStrikeChina> strikes)
         {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuMonthDistributionNegative(strikes);
+                return strikesDistributionStatisticService.CalcuMonthDistributionNegative(strikes);
             else
                 throw new ArgumentOutOfRangeException();
         }
@@ -144,7 +144,7 @@ namespace LLSDA.Client.Winform
         private Dictionary<int, int> GetHourDistribution(IEnumerable<BaseStrikeChina> strikes)
         {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuHourDistribution(strikes);
+                return strikesDistributionStatisticService.CalcuHourDistribution(strikes);
             else
                 throw new ArgumentOutOfRangeException();
         }
@@ -152,7 +152,7 @@ namespace LLSDA.Client.Winform
         private Dictionary<int, int> GetHourDistributionPositive(IEnumerable<BaseStrikeChina> strikes)
         {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuHourDistribution_Positive(strikes.Where(x => x.Intensity > 0).Select(x => x));
+                return strikesDistributionStatisticService.CalcuHourDistribution_Positive(strikes.Where(x => x.Intensity > 0).Select(x => x));
             else
                 throw new ArgumentOutOfRangeException();
         }
@@ -160,7 +160,7 @@ namespace LLSDA.Client.Winform
         private Dictionary<int, int> GetHourDistributionNegative(IEnumerable<BaseStrikeChina> strikes)
         {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuHourDistribution_Negative(strikes.Where(x => x.Intensity < 0).Select(x => x));
+                return strikesDistributionStatisticService.CalcuHourDistribution_Negative(strikes.Where(x => x.Intensity < 0).Select(x => x));
             else
                 throw new ArgumentOutOfRangeException();
         }
@@ -170,21 +170,21 @@ namespace LLSDA.Client.Winform
         #region YearDistribution
         private Dictionary<int, int> GetYearDistributionPositive(IEnumerable<BaseStrikeChina> strikes) {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuYearDistributionPositive(strikes);
+                return strikesDistributionStatisticService.CalcuYearDistributionPositive(strikes);
             else
                 throw new ArgumentOutOfRangeException();
         }
 
         private Dictionary<int, int> GetYearDistributionNegative(IEnumerable<BaseStrikeChina> strikes) {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuYearDistributionNegative(strikes);
+                return strikesDistributionStatisticService.CalcuYearDistributionNegative(strikes);
             else
                 throw new ArgumentOutOfRangeException();
         }
         private Dictionary<int, int> GetYearDistribution(IEnumerable<BaseStrikeChina> strikes)
         {
             if (strikes != null || strikes.Any())
-                return iStrikesDistributionStatisticService.CalcuYearDistribution(strikes);
+                return strikesDistributionStatisticService.CalcuYearDistribution(strikes);
             else
                 throw new ArgumentOutOfRangeException();
         }
@@ -203,7 +203,6 @@ namespace LLSDA.Client.Winform
         }
         #endregion
 
-
         private void buttonRoseDiagram_Click(object sender, EventArgs e)
         {
             // 雷电玫瑰图需要基于几何中心才能实现; 通常, 用于格点化分析中的格点;
@@ -213,7 +212,7 @@ namespace LLSDA.Client.Winform
                 roseDiagramUCs1.SaveOriginalName = "LigithningRoseDistributionChart";
 
                 Dictionary<LightningStrikeDirectionEnum, double> sourceDataDictionary =
-                    iStrikesDistributionStatisticService.CalcuLightningStrikeDirectionProbabilityDistribution(strikes);
+                    strikesDistributionStatisticService.CalcuLightningStrikeDirectionProbabilityDistribution(strikes);
                 Dictionary<string, double> SourceDataDictionaryString = new Dictionary<string, double>();
                 foreach (var tmp in sourceDataDictionary)
                 {
@@ -228,7 +227,6 @@ namespace LLSDA.Client.Winform
             }
         }
 
-
         private void buttonCurrent_Click(object sender, EventArgs e)
         {
             if (strikes != null && strikes.Count > 0)
@@ -237,10 +235,10 @@ namespace LLSDA.Client.Winform
                 ChartDistribution chartDistribution_Probablity_Dynamic = new ChartDistribution();
                 chartDistribution_Probablity_Dynamic.SaveOriginalName = "LigithningIntensityProbabilityDistributionChart";
 
-                chartDistribution_Probablity_Dynamic.richTextBox.Text = iStrikesDistributionStatisticService.GenerateProbabilityDistributionText(strikes);
+                chartDistribution_Probablity_Dynamic.richTextBox.Text = strikesDistributionStatisticService.GenerateProbabilityDistributionText(strikes);
                 chartDistribution_Probablity_Dynamic.ConfigChartAreasType("强度(单位;kA)", "概率P");
 
-                var ProbabilityDistribution = iStrikesDistributionStatisticService.CalcuProbabilityDistribution(strikes);
+                var ProbabilityDistribution = strikesDistributionStatisticService.CalcuProbabilityDistribution(strikes);
                 chartDistribution_Probablity_Dynamic.BindDataToChart(ProbabilityDistribution, "概率分布", false);
 
                 // Save File

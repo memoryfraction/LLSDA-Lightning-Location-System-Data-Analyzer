@@ -1,8 +1,0 @@
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\bin\Debug\netstandard2.0\LLDSA.deps.json
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\bin\Debug\netstandard2.0\LLDSA.dll
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\bin\Debug\netstandard2.0\LLDSA.pdb
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.csproj.CoreCompileInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.AssemblyInfoInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.AssemblyInfo.cs
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.dll
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\LLDSA\obj\Debug\netstandard2.0\LLDSA.pdb

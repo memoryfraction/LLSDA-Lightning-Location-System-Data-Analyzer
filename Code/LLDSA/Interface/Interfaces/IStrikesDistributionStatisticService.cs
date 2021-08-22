@@ -3,6 +3,7 @@
 ** DESC|描述:
 ******************************************************************/
 
+using LLSDA.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -159,19 +160,14 @@ namespace LLSDA.Interface
 
         #region 最大、最小雷电流强度、数量
         double CalcuMaxPositiveIntensity(IEnumerable<BaseStrikeStandard> _strikes);
-
         double CalcuMinPositiveIntensity(IEnumerable<BaseStrikeStandard> _strikes);
-
         double CalcuMaxNegativeIntensity(IEnumerable<BaseStrikeStandard> _strikes);
         double CalcuMinNegativeIntensity(IEnumerable<BaseStrikeStandard> _strikes);
-
         double CalcuPositiveAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes);
         double CalcuNegativeAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes);
         double CalcuAbsAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes);
         double CalcuAbsMinIntensity(IEnumerable<BaseStrikeStandard> _strikes);
-
         double CalcuAbsMaxIntensity(IEnumerable<BaseStrikeStandard> _strikes);
-
         Int64 CalcuPositiveSumNum(IEnumerable<BaseStrikeStandard> _strikes);
         Int64 CalcuNegativeSumNum(IEnumerable<BaseStrikeStandard> _strikes);
         Int64 CalcuSumNum(IEnumerable<BaseStrikeBasic> _strikes);
@@ -203,7 +199,7 @@ namespace LLSDA.Interface
 
 
         #region 雷电玫瑰图，暂被注释，因为包含经纬度信息，不应该出现在这里。
-
+        Dictionary<LightningStrikeDirectionEnum, double> CalcuLightningStrikeDirectionProbabilityDistribution(IEnumerable<BaseStrikeStandard> _strikes);
         #endregion
 
 

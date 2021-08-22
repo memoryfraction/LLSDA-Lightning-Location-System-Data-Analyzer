@@ -1,8 +1,0 @@
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\b\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.deps.json
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\b\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.dll
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.csproj.CoreCompileInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.AssemblyInfoInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.AssemblyInfo.cs
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.csproj.CopyComplete
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.dll
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Service\Debug\netstandard2.0\LLSDA.Service.csprojAssemblyReference.cache

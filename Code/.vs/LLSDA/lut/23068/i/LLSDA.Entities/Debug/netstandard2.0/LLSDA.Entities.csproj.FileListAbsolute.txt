@@ -1,8 +1,0 @@
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\b\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.deps.json
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\b\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.dll
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.csproj.CoreCompileInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.AssemblyInfoInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.AssemblyInfo.cs
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.csproj.CopyComplete
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.dll
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLSDA.Entities\Debug\netstandard2.0\LLSDA.Entities.csprojAssemblyReference.cache

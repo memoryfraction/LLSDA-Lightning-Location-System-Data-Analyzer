@@ -1,3 +1,0 @@
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLDSA\Debug\netstandard1.4\LLDSA.csproj.CoreCompileInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLDSA\Debug\netstandard1.4\LLDSA.AssemblyInfoInputs.cache
-E:\GitHub\LLSDA--LightningLocationSystemDataAnalyzer\Code\.vs\LLSDA\lut\0\i\LLDSA\Debug\netstandard1.4\LLDSA.AssemblyInfo.cs
