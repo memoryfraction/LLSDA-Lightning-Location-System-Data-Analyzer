@@ -6,4 +6,10 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="MeteoInfoDLL">
+      <HintPath>..\..\packages\MeteoInfoDLL\MeteoInfoDLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
