@@ -11,7 +11,6 @@ namespace LLSDA.Tests
     public class Tests
     {
 
-
         [SetUp]
         public void Setup()
         {
@@ -29,8 +28,6 @@ namespace LLSDA.Tests
             }
             Assert.IsTrue(strikes.Count > 0);
         }
-
-
 
     }
 }
