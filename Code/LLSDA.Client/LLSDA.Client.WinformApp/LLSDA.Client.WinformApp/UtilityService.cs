@@ -45,8 +45,10 @@ namespace LLSDA.Client.Winform
                 if (!string.IsNullOrEmpty(_PathFileName))
                 {
                     ValidateFileFolderExistence(_PathFileName);
-                    using var stream = new FileStream(_PathFileName, FileMode.CreateNew);
-                    _chart.SaveImage(stream, ChartImageFormat.Bmp);
+                    using (var stream = new FileStream(_PathFileName, FileMode.CreateNew))
+                    { 
+                        _chart.SaveImage(stream, ChartImageFormat.Bmp);
+                    }
                 }
             }
             catch (Exception ex)

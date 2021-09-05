@@ -174,7 +174,7 @@ namespace LLSDA.Entities
         public List<BaseStrikeChina> ReturnStrikesChinaByProcess()
         {
             DateTime dtStart = DateTime.Now;
-            string strBuffer;//
+            string strBuffer;
             GetSumLineNumFromText();
             curRow = 1;
             List<BaseStrikeChina> StrikesList = new List<BaseStrikeChina>();

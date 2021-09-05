@@ -1,4 +1,5 @@
-﻿using LLSDA.Entities;
+﻿using LLSDA.Client.Winform;
+using LLSDA.Entities;
 using LLSDA.Interface;
 using LLSDA.Service;
 using System;
@@ -13,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LLSDA.Client.Winform
+namespace LLSDA.Client.WinformApp
 {
     public partial class Form1 : Form
     {
@@ -22,25 +23,32 @@ namespace LLSDA.Client.Winform
         IStrikesDistributionStatisticService strikesDistributionStatisticService;
         LightningPictureDrawer lightningPictureDrawer;
         string baseDirectory;
+
         public Form1()
         {
             InitializeComponent();
-            SrcFileLoadCompleted += Form1_srcFileLoadCompleted;
-            strikes  = ReadDataAsync().Result;
+            SrcFileLoadCompleted += Form_srcFileLoadCompleted;
+            strikes = ReadDataAsync().Result;
             lightningPictureDrawer = new LightningPictureDrawer();
             strikesDistributionStatisticService = new StrikesDistributionStatisticService();
             baseDirectory = AppDomain.CurrentDomain.BaseDirectory + @"Results\";
         }
 
-        private void Form1_srcFileLoadCompleted(object sender, EventArgs e)
+        private void Form_srcFileLoadCompleted(object sender, EventArgs e)
         {
             // Enable buttons
             MonthDistribution.Enabled = true;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void MonthDistribution_Click(object sender, EventArgs e)
         {
             DrawMonthDistributionChart();
+        }
+
+        
+        private void buttonYearDistribution_Click(object sender, EventArgs e)
+        {
+            DrawYearDistributionChart();
         }
 
         private void HourDistribution_Click(object sender, EventArgs e)
@@ -48,9 +56,49 @@ namespace LLSDA.Client.Winform
             DrawHourDistributionChart();
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
+        private void buttonRoseDiagram_Click(object sender, EventArgs e)
         {
-            DrawYearDistributionChart();
+            // 雷电玫瑰图需要基于几何中心才能实现; 通常, 用于格点化分析中的格点;
+            if (strikes != null && strikes.Count > 0)
+            {
+                var roseDiagramUCs1 = new RoseDiagramUCs();
+                roseDiagramUCs1.SaveOriginalName = "LigithningRoseDistributionChart";
+
+                Dictionary<LightningStrikeDirectionEnum, double> sourceDataDictionary =
+                    strikesDistributionStatisticService.CalcuLightningStrikeDirectionProbabilityDistribution(strikes);
+                Dictionary<string, double> SourceDataDictionaryString = new Dictionary<string, double>();
+                foreach (var tmp in sourceDataDictionary)
+                {
+                    SourceDataDictionaryString.Add(tmp.Key.ToString(), tmp.Value);
+                }
+                roseDiagramUCs1.BindDataToRoseDiagram(SourceDataDictionaryString, "概率百分比", true);
+
+                // Save File
+                var fullFileName = baseDirectory + "RoseDiagramChart_" + Guid.NewGuid() + @".bmp";
+                UtilityService.SaveImageWithFullPathName(roseDiagramUCs1.chartRose, fullFileName);
+                Process.Start("mspaint.exe", fullFileName);
+            }
+        }
+
+        private void buttonCurrent_Click(object sender, EventArgs e)
+        {
+            if (strikes != null && strikes.Count > 0)
+            {
+                // Generate chart
+                ChartDistribution chartDistribution_Probablity_Dynamic = new ChartDistribution();
+                chartDistribution_Probablity_Dynamic.SaveOriginalName = "LigithningIntensityProbabilityDistributionChart";
+
+                chartDistribution_Probablity_Dynamic.richTextBox.Text = strikesDistributionStatisticService.GenerateProbabilityDistributionText(strikes);
+                chartDistribution_Probablity_Dynamic.ConfigChartAreasType("强度(单位;kA)", "概率P");
+
+                var ProbabilityDistribution = strikesDistributionStatisticService.CalcuProbabilityDistribution(strikes);
+                chartDistribution_Probablity_Dynamic.BindDataToChart(ProbabilityDistribution, "概率分布", false);
+
+                // Save File
+                var fullFileName = baseDirectory + "IntensityProbabilityChart_" + Guid.NewGuid().ToString() + @".bmp";
+                UtilityService.SaveImageWithFullPathName(chartDistribution_Probablity_Dynamic.chart, fullFileName);
+                Process.Start("mspaint.exe", fullFileName);
+            }
         }
 
 
@@ -134,10 +182,10 @@ namespace LLSDA.Client.Winform
                 var Distribution = GetHourDistribution(strikes);
 
                 // draw chart and show
-                var chart = lightningPictureDrawer.BindHourDistributionChart(distribution:Distribution,positiveDistribution,negativeDistribution,"");
+                var chart = lightningPictureDrawer.BindHourDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
                 var fullFileName = baseDirectory + "HourDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
-                Process.Start("mspaint.exe",fullFileName);
+                Process.Start("mspaint.exe", fullFileName);
             }
         }
 
@@ -168,14 +216,16 @@ namespace LLSDA.Client.Winform
 
 
         #region YearDistribution
-        private Dictionary<int, int> GetYearDistributionPositive(IEnumerable<BaseStrikeChina> strikes) {
+        private Dictionary<int, int> GetYearDistributionPositive(IEnumerable<BaseStrikeChina> strikes)
+        {
             if (strikes != null || strikes.Any())
                 return strikesDistributionStatisticService.CalcuYearDistributionPositive(strikes);
             else
                 throw new ArgumentOutOfRangeException();
         }
 
-        private Dictionary<int, int> GetYearDistributionNegative(IEnumerable<BaseStrikeChina> strikes) {
+        private Dictionary<int, int> GetYearDistributionNegative(IEnumerable<BaseStrikeChina> strikes)
+        {
             if (strikes != null || strikes.Any())
                 return strikesDistributionStatisticService.CalcuYearDistributionNegative(strikes);
             else
@@ -202,50 +252,5 @@ namespace LLSDA.Client.Winform
             Process.Start("mspaint.exe", fullFileName);
         }
         #endregion
-
-        private void buttonRoseDiagram_Click(object sender, EventArgs e)
-        {
-            // 雷电玫瑰图需要基于几何中心才能实现; 通常, 用于格点化分析中的格点;
-            if (strikes != null && strikes.Count > 0)
-            {
-                var roseDiagramUCs1 = new RoseDiagramUCs();
-                roseDiagramUCs1.SaveOriginalName = "LigithningRoseDistributionChart";
-
-                Dictionary<LightningStrikeDirectionEnum, double> sourceDataDictionary =
-                    strikesDistributionStatisticService.CalcuLightningStrikeDirectionProbabilityDistribution(strikes);
-                Dictionary<string, double> SourceDataDictionaryString = new Dictionary<string, double>();
-                foreach (var tmp in sourceDataDictionary)
-                {
-                    SourceDataDictionaryString.Add(tmp.Key.ToString(), tmp.Value);
-                }
-                roseDiagramUCs1.BindDataToRoseDiagram(SourceDataDictionaryString, "概率百分比", true);
-
-                // Save File
-                var fullFileName = baseDirectory + "RoseDiagramChart_" + Guid.NewGuid() + @".bmp";
-                UtilityService.SaveImageWithFullPathName(roseDiagramUCs1.chartRose, fullFileName);
-                Process.Start("mspaint.exe", fullFileName);
-            }
-        }
-
-        private void buttonCurrent_Click(object sender, EventArgs e)
-        {
-            if (strikes != null && strikes.Count > 0)
-            {
-                // Generate chart
-                ChartDistribution chartDistribution_Probablity_Dynamic = new ChartDistribution();
-                chartDistribution_Probablity_Dynamic.SaveOriginalName = "LigithningIntensityProbabilityDistributionChart";
-
-                chartDistribution_Probablity_Dynamic.richTextBox.Text = strikesDistributionStatisticService.GenerateProbabilityDistributionText(strikes);
-                chartDistribution_Probablity_Dynamic.ConfigChartAreasType("强度(单位;kA)", "概率P");
-
-                var ProbabilityDistribution = strikesDistributionStatisticService.CalcuProbabilityDistribution(strikes);
-                chartDistribution_Probablity_Dynamic.BindDataToChart(ProbabilityDistribution, "概率分布", false);
-
-                // Save File
-                var fullFileName = baseDirectory + "IntensityProbabilityChart_" + Guid.NewGuid().ToString() + @".bmp";
-                UtilityService.SaveImageWithFullPathName(chartDistribution_Probablity_Dynamic.chart, fullFileName);
-                Process.Start("mspaint.exe", fullFileName);
-            }
-        }
     }
 }

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LLSDA.Client.Winform
+namespace LLSDA.Client.WinformApp
 {
     static class Program
     {
