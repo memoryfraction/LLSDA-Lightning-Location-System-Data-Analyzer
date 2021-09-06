@@ -76,8 +76,8 @@ namespace MeteoInfoControlLibrary
             aLayer.LegendScheme = LegendManage.CreateSingleSymbolLegendScheme(ShapeTypes.Point, Color.Blue, 10);
             //((PointBreak)aLayer.LegendScheme.breakList[0]).Style = PointStyle.Plus; // 标记为加号
             //减号标记未知，等待王老师增加Point.Minus
-            //((PointBreak)aLayer.LegendScheme.MarkerType[0]).MarkerType = MarkerType.Character;
-            //((PointBreak)aLayer.LegendScheme.breakList[0]).CharIndex = 45;// 减号
+            ((PointBreak)aLayer.LegendScheme.LegendBreaks[0]).MarkerType = MarkerType.Character;
+            ((PointBreak)aLayer.LegendScheme.LegendBreaks[0]).CharIndex = 45;// 减号
             //((PointBreak)aLayer.LegendScheme.breakList[0]).CharIndex = 43;// 加号
             aLayer.Visible = true;
 
@@ -133,9 +133,9 @@ namespace MeteoInfoControlLibrary
             aLayer.LegendScheme = LegendManage.CreateSingleSymbolLegendScheme(ShapeTypes.Point, Color.Red, 10);
             //((PointBreak)aLayer.LegendScheme.breakList[0]).Style = PointStyle.Plus; //标记为加号
             //减号标记未知，等待王老师增加Point.Minus
-            //((PointBreak)aLayer.LegendScheme.breakList[0]).MarkerType = MarkerType.Character;
-            //((PointBreak)aLayer.LegendScheme.breakList[0]).CharIndex = 45;//减号
-            //((PointBreak)aLayer.LegendScheme.breakList[0]).CharIndex = 43;//加号
+            ((PointBreak)aLayer.LegendScheme.LegendBreaks[0]).MarkerType = MarkerType.Character;
+            //((PointBreak)aLayer.LegendScheme.LegendBreaks[0]).CharIndex = 45;//减号
+            ((PointBreak)aLayer.LegendScheme.LegendBreaks[0]).CharIndex = 43;//加号
             aLayer.Visible = true;
 
             //Add fields            
