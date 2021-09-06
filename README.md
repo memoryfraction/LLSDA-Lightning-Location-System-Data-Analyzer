@@ -4,7 +4,7 @@ Readme: English | [中文](#简介)
 
 ## Part of the Result | 部分效果图
 ![image](/Images/LightningTimeDistributionChart-%E9%9B%B7%E7%94%B5%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E5%9B%BE.png)
-
+![image](/Images/PrintScreen - Lightning Location System Data Analyzer - Desktop Application.png)
 
 ## Brief Introduction
 LLSDA is a public benefit project helps lightning protection engineer and lightning scientist to analyze lightning distribution. 
@@ -88,6 +88,10 @@ Added unit test project
 * V1.2.3(2021-01-06)
 Added Intensity Probability Chart
 Added Rose Diagram Chart
+
+* V1.3.0(2021-09-05)
+Added multiple target frameworks: .NET 4.8, and .NetStandard 2.0
+Added WinformApplication, added MeteoInfo(GIS) reference
 
 
 ## OOP Design
@@ -201,8 +205,12 @@ if (File.Exists(srcFile1))
 范例项目新增雷电流累计概率分布图
 范例项目新增雷电玫瑰分布图
 
+* V1.3.0(2021-09-05)
+添加了多框架支持，同时支持以下框架: .NET 4.8, and .NetStandard 2.0
+升级了Window桌面客户端，该客户端添加 MeteoInfo(GIS)的引用，允许闪电与GIS地图(*.shp格式)的叠加，效果图见Readme顶部
+
 ## 待完成
-* LLSDA.App (范例代码项目。欢迎推荐其他的跨平台UI项目。)
+* LLSDA.App (范例代码项目。)
 
 ## 学术支撑
 * Abstract
