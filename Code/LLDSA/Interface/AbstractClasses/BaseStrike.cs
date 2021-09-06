@@ -18,9 +18,7 @@ namespace LLSDA.Interface
     {
         public string ID { get; set;  }
         public DateTime DateAndTime { get; set; }
-
         public double Latitude { get; set; }
-
         public double Longitude { get; set; }
         public abstract BaseStrikeStandard ConvertToIStrike_Standard();
     }
@@ -36,16 +34,6 @@ namespace LLSDA.Interface
         public double Error { get; set; }
         public string LocationMode { get; set; }
         public double Intensity { get; set; }
-        public new LightningType LightningType
-        {
-            get
-            {
-                if (Intensity > 0) return LightningType.Positive;
-                else if (Intensity < 0) return LightningType.Negative;
-                else throw new ArgumentOutOfRangeException("Invalid 0 intensity.");
-            }
-            set { LightningType = value; }
-        }
         public abstract BaseStrikeBasic ConvertThisToStrikeBasic();
         public abstract BaseStrikeChina ConvertThisToStrikeChina();
     }

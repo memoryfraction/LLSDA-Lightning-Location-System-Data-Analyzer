@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LlsDataanalyzer;
+using System;
 using System.Windows.Forms;
 
 namespace LLSDA.Client.WinformApp
@@ -13,7 +14,7 @@ namespace LLSDA.Client.WinformApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

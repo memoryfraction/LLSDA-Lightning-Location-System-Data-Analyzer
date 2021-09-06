@@ -40,8 +40,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\LLDSA\bin\Debug\net48\LLDSA.dll</HintPath>
     </Reference>
-    <Reference Include="MeteoInfoControlLibrary">
-      <HintPath>..\..\LLSDA.Client.Winform.MeteoInfoControlLibrary\bin\Debug\MeteoInfoControlLibrary.dll</HintPath>
+    <Reference Include="MeteoInfoC, Version=1.1.3.5, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Utility\MeteoInfoDLL\bin\Debug\MeteoInfoC.dll</HintPath>
+    </Reference>
+    <Reference Include="RegexTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\RegexTextBox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,35 +62,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\DetailParamForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\DetailParamForm.Designer.cs">
+      <DependentUpon>DetailParamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PictureDrawer\ChartDistribution.cs">
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\PictureDrawer\ChartDistribution.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PictureDrawer\ChartDistribution.Designer.cs">
+    <Compile Include="UserControllers\PictureDrawer\ChartDistribution.Designer.cs">
       <DependentUpon>ChartDistribution.cs</DependentUpon>
     </Compile>
-    <Compile Include="PictureDrawer\LightningPictureDrawer.cs" />
-    <Compile Include="PictureDrawer\RoseDiagramUCs.cs">
+    <Compile Include="UserControllers\PictureDrawer\LightningPictureDrawer.cs" />
+    <Compile Include="UserControllers\PictureDrawer\RoseDiagramUCs.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PictureDrawer\RoseDiagramUCs.Designer.cs">
+    <Compile Include="UserControllers\PictureDrawer\RoseDiagramUCs.Designer.cs">
       <DependentUpon>RoseDiagramUCs.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UtilityService.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="UserControllers\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControllers\AboutBox1.designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\MeteoInfo\BusyLoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControllers\MeteoInfo\BusyLoadingForm.designer.cs">
+      <DependentUpon>BusyLoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControllers\MeteoInfo\DrawLightningStrikes.cs" />
+    <Compile Include="UserControllers\MeteoInfo\MeteoInfoUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControllers\MeteoInfo\MeteoInfoUserControl.Designer.cs">
+      <DependentUpon>MeteoInfoUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\UtilityService.cs" />
+    <EmbeddedResource Include="Forms\DetailParamForm.resx">
+      <DependentUpon>DetailParamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PictureDrawer\ChartDistribution.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\PictureDrawer\ChartDistribution.resx">
       <DependentUpon>ChartDistribution.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PictureDrawer\RoseDiagramUCs.resx">
+    <EmbeddedResource Include="UserControllers\PictureDrawer\RoseDiagramUCs.resx">
       <DependentUpon>RoseDiagramUCs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,6 +140,93 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControllers\AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\MeteoInfo\BusyLoadingForm.resx">
+      <DependentUpon>BusyLoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControllers\MeteoInfo\MeteoInfoUserControl.resx">
+      <DependentUpon>MeteoInfoUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="data\Shps\WorldCities\World_Cities.dbf" />
+    <None Include="data\Shps\WorldCities\World_Cities.prj" />
+    <None Include="data\Shps\WorldCities\World_Cities.sbn" />
+    <None Include="data\Shps\WorldCities\World_Cities.sbx" />
+    <None Include="data\Shps\WorldCities\World_Cities.shp" />
+    <None Include="data\Shps\WorldCities\World_Cities.shx" />
+    <None Include="data\Shps\WorldLakes\World_Lakes.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldLakes\World_Lakes.prj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldLakes\World_Lakes.sbn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldLakes\World_Lakes.sbx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldLakes\World_Lakes.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldLakes\World_Lakes.shx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldRivers\World_Hydrography.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldRivers\World_Hydrography.prj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldRivers\World_Hydrography.sbn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldRivers\World_Hydrography.sbx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldRivers\World_Hydrography.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\WorldRivers\World_Hydrography.shx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\World\world.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\World\world.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\World\world.shx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_city.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_city.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_city.SHX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_county.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_county.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_county.SHX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_province.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_province.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Shps\浙江省\Zhejiang_province.SHX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,6 +248,22 @@
     <Content Include="data\2008_07_10.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="data\Shps\WorldCities\World_Cities.shp.xml" />
+    <Content Include="data\Shps\WorldCities\World_Cities_README.txt" />
+    <Content Include="data\Shps\WorldLakes\World_Lakes_README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Shps\WorldRivers\World_Hydrography_README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="data\Resources\土壤电阻率分析10.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\Resources\雷电数据分析2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />

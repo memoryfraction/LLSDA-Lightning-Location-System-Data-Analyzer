@@ -121,31 +121,31 @@ namespace LLSDA.Entities
         //    this.Intensity = intensity;
         //}
 
-        private double _Intensity;
-        public double Intensity
-        {
-            get { return _Intensity; }
-            set { _Intensity = value; }
-        }
-        private double _Slope;
-        public double Slope
-        {
-            get { return _Slope; }
-            set { _Slope = value; }
-        }
-        private double _Error;
-        public double Error
-        {
-            get { return _Error; }
-            set { _Error = value; }
-        }
+        //private double _Intensity;
+        //public double Intensity
+        //{
+        //    get { return _Intensity; }
+        //    set { _Intensity = value; }
+        //}
+        //private double _Slope;
+        //public double Slope
+        //{
+        //    get { return _Slope; }
+        //    set { _Slope = value; }
+        //}
+        //private double _Error;
+        //public double Error
+        //{
+        //    get { return _Error; }
+        //    set { _Error = value; }
+        //}
 
-        private string _LocationMode;
-        public string LocationMode
-        {
-            get { return _LocationMode; }
-            set { _LocationMode = value; }
-        }
+        //private string _LocationMode;
+        //public string LocationMode
+        //{
+        //    get { return _LocationMode; }
+        //    set { _LocationMode = value; }
+        //}
 
         public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
 
