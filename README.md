@@ -146,6 +146,7 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 
 
 ## 使用方法
+* 下载并编译，引用LLSDA.dll(最新)
 * [NugetUrl](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/1.2.2)
 * Package Manager 中执行以下命令以安装Nuget包<br>
 ```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
