@@ -109,10 +109,10 @@ namespace LLSDA.Entities
     
     public class LightningStrikeStandard : BaseStrikeStandard
     {
-        private IStrikeFormatConvertService iStrikeFormatConvertService;
-        public LightningStrikeStandard(IStrikeFormatConvertService _iStrikeFormatConvertService)
+        private IStrikeFormatConvertService _strikeFormatConvertService;
+        public LightningStrikeStandard(IStrikeFormatConvertService strikeFormatConvertService)
         {
-            IStrikeFormatConvertService = _iStrikeFormatConvertService;
+            _strikeFormatConvertService = strikeFormatConvertService;
         }
         public LightningStrikeStandard() { }
 
@@ -147,11 +147,11 @@ namespace LLSDA.Entities
         //    set { _LocationMode = value; }
         //}
 
-        public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
+        public IStrikeFormatConvertService IStrikeFormatConvertService { get => _strikeFormatConvertService; set => _strikeFormatConvertService = value; }
 
         public override BaseStrikeBasic ConvertThisToStrikeBasic()
         {
-            return iStrikeFormatConvertService.ConvertStandardStrikToBasic(this);
+            return _strikeFormatConvertService.ConvertStandardStrikToBasic(this);
         }
 
         public override BaseStrikeStandard ConvertToIStrike_Standard()
@@ -167,7 +167,7 @@ namespace LLSDA.Entities
         /// <returns></returns>
         public override BaseStrikeChina ConvertThisToStrikeChina()
         {
-            return iStrikeFormatConvertService.ConvertStandardStrikToChina(this);
+            return _strikeFormatConvertService.ConvertStandardStrikToChina(this);
         }
 
 
