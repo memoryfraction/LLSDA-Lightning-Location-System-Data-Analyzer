@@ -1,20 +1,14 @@
 ﻿using LLSDA.Client.Winform;
 using LLSDA.Entities;
 using LLSDA.Interface;
-using LLSDA.Service;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace LLSDA.Client.WinformApp
 {
@@ -25,7 +19,6 @@ namespace LLSDA.Client.WinformApp
         IStrikesDistributionStatisticService _strikesDistributionStatisticService;
         LightningPictureDrawer _lightningPictureDrawer;
         string _baseDirectory;
-        ServiceCollection _services;
 
         public Form1(IStrikesDistributionStatisticService strikesDistributionStatisticService)
         {
