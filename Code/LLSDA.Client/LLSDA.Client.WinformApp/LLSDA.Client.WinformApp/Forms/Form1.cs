@@ -1,40 +1,45 @@
 ﻿using LLSDA.Client.Winform;
 using LLSDA.Entities;
 using LLSDA.Interface;
-using LLSDA.Service;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
+using LLDSA.Entities.FileOperator.LLSFileProcessor;
+
 
 namespace LLSDA.Client.WinformApp
 {
     public partial class Form1 : Form
     {
-        List<BaseStrikeChina> _strikes;
+        private List<BaseStrikeChina> _strikes;
         public event EventHandler SrcFileLoadCompleted;
-        IStrikesDistributionStatisticService _strikesDistributionStatisticService;
-        LightningPictureDrawer _lightningPictureDrawer;
-        string _baseDirectory;
-        ServiceCollection _services;
+        private IStrikesDistributionStatisticService _strikesDistributionStatisticService;
+        private LightningPictureDrawer _lightningPictureDrawer;
+        
+        private ServiceCollection _services;
+        private string _srcADTDFile1, _srcADTDFile2,_srcGLD360File;
+        private string _baseResultDirectory, _baseDirectory;
 
         public Form1(IStrikesDistributionStatisticService strikesDistributionStatisticService)
         {
             InitializeComponent();
+            
+            _baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            _baseResultDirectory = _baseDirectory + @"Results\";
+            _srcADTDFile1 = _baseDirectory + @"\data\LLS\ADTD\2008_07_09.txt";
+            _srcADTDFile2 = _baseDirectory + @"\data\LLS\ADTD\2008_07_10.txt";
+            _srcGLD360File = _baseDirectory + @"\data\GLD360\GLD360 2018_09_24_0800_24h 35N_43N_113E_119E.csv";
+
             SrcFileLoadCompleted += Form_srcFileLoadCompleted;
             _strikes = ReadDataAsync().Result;
             _lightningPictureDrawer = new LightningPictureDrawer();
             _strikesDistributionStatisticService = strikesDistributionStatisticService;
-            _baseDirectory = AppDomain.CurrentDomain.BaseDirectory + @"Results\";
         }
 
         private void Form_srcFileLoadCompleted(object sender, EventArgs e)
@@ -77,7 +82,7 @@ namespace LLSDA.Client.WinformApp
                 roseDiagramUCs1.BindDataToRoseDiagram(SourceDataDictionaryString, "概率百分比", true);
 
                 // Save File
-                var fullFileName = _baseDirectory + "RoseDiagramChart_" + Guid.NewGuid() + @".bmp";
+                var fullFileName = _baseResultDirectory + "RoseDiagramChart_" + Guid.NewGuid() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(roseDiagramUCs1.chartRose, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
             }
@@ -98,7 +103,7 @@ namespace LLSDA.Client.WinformApp
                 chartDistribution_Probablity_Dynamic.BindDataToChart(ProbabilityDistribution, "概率分布", false);
 
                 // Save File
-                var fullFileName = _baseDirectory + "IntensityProbabilityChart_" + Guid.NewGuid().ToString() + @".bmp";
+                var fullFileName = _baseResultDirectory + "IntensityProbabilityChart_" + Guid.NewGuid().ToString() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chartDistribution_Probablity_Dynamic.chart, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
             }
@@ -112,18 +117,15 @@ namespace LLSDA.Client.WinformApp
         {
             return Task<List<BaseStrikeChina>>.Run(() => {
                 var strikes = new List<BaseStrikeChina>();
-                var str = System.AppDomain.CurrentDomain.BaseDirectory;
-                var srcFile1 = AppDomain.CurrentDomain.BaseDirectory + @"\data\2008_07_09.txt";
-                var srcFile2 = AppDomain.CurrentDomain.BaseDirectory + @"\data\2008_07_10.txt";
-                if (File.Exists(srcFile1))
+                if (File.Exists(_srcADTDFile1))
                 {
-                    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+                    var fileProcessor = new ADTDFileProcessor(_srcADTDFile1, Encoding.UTF8);
                     strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
                 }
 
-                if (File.Exists(srcFile2))
+                if (File.Exists(_srcADTDFile2))
                 {
-                    var fileProcessor = new LlsFileProcessor(srcFile2, Encoding.UTF8);
+                    var fileProcessor = new ADTDFileProcessor(_srcADTDFile2, Encoding.UTF8);
                     strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
                 }
                 SrcFileLoadCompleted(this, new EventArgs());
@@ -167,7 +169,7 @@ namespace LLSDA.Client.WinformApp
 
                 // draw chart and show
                 var chart = _lightningPictureDrawer.BindMonthDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
-                var fullFileName = _baseDirectory + "MonthDistributionChart_" + Guid.NewGuid() + @".bmp";
+                var fullFileName = _baseResultDirectory + "MonthDistributionChart_" + Guid.NewGuid() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
             }
@@ -186,7 +188,7 @@ namespace LLSDA.Client.WinformApp
 
                 // draw chart and show
                 var chart = _lightningPictureDrawer.BindHourDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
-                var fullFileName = _baseDirectory + "HourDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
+                var fullFileName = _baseResultDirectory + "HourDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
                 UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
                 Process.Start("mspaint.exe", fullFileName);
             }
@@ -250,10 +252,11 @@ namespace LLSDA.Client.WinformApp
 
             // draw chart and show
             var chart = _lightningPictureDrawer.BindYearDistributionChart(distribution: Distribution, positiveDistribution, negativeDistribution, "");
-            var fullFileName = _baseDirectory + "YearDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
+            var fullFileName = _baseResultDirectory + "YearDistributionChart_" + Guid.NewGuid().ToString() + @".bmp";
             UtilityService.SaveImageWithFullPathName(chart.chart, fullFileName);
             Process.Start("mspaint.exe", fullFileName);
         }
         #endregion
+
     }
 }

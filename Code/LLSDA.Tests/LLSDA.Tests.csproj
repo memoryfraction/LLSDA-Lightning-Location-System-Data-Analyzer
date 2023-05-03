@@ -7,6 +7,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\LLS\ADTD\2008_07_09.txt" />
+    <None Remove="data\LLS\ADTD\2008_07_10.txt" />
+    <None Remove="data\Shps\WorldCities\World_Cities.shp.xml" />
+    <None Remove="data\Shps\WorldCities\World_Cities_README.txt" />
+    <None Remove="data\Shps\WorldLakes\World_Lakes_README.txt" />
+    <None Remove="data\Shps\WorldRivers\World_Hydrography_README.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="data\LLS\ADTD\2008_07_09.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\LLS\ADTD\2008_07_10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Shps\WorldCities\World_Cities.shp.xml" />
+    <Content Include="data\Shps\WorldCities\World_Cities_README.txt" />
+    <Content Include="data\Shps\WorldLakes\World_Lakes_README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\Shps\WorldRivers\World_Hydrography_README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
@@ -17,8 +43,86 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="data\2008_07_09.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Update="data\LLS\GLD360\GLD360 2018_09_24_0800_24h 35N_43N_113E_119E.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Resources\土壤电阻率分析10.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Resources\雷电数据分析2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldLakes\World_Lakes.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldLakes\World_Lakes.prj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldLakes\World_Lakes.sbn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldLakes\World_Lakes.sbx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldLakes\World_Lakes.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldLakes\World_Lakes.shx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldRivers\World_Hydrography.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldRivers\World_Hydrography.prj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldRivers\World_Hydrography.sbn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldRivers\World_Hydrography.sbx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldRivers\World_Hydrography.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\WorldRivers\World_Hydrography.shx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\World\world.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\World\world.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\World\world.shx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_city.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_city.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_city.SHX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_county.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_county.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_county.SHX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_province.dbf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_province.shp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="data\Shps\浙江省\Zhejiang_province.SHX">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
