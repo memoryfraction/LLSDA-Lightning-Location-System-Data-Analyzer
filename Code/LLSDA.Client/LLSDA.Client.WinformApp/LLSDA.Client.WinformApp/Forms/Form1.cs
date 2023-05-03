@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LLDSA.Entities.FileOperator.LLSFileProcessor;
 
 
 namespace LLSDA.Client.WinformApp
@@ -118,13 +119,13 @@ namespace LLSDA.Client.WinformApp
                 var strikes = new List<BaseStrikeChina>();
                 if (File.Exists(_srcADTDFile1))
                 {
-                    var fileProcessor = new LlsFileProcessor(_srcADTDFile1, Encoding.UTF8);
+                    var fileProcessor = new ADTDFileProcessor(_srcADTDFile1, Encoding.UTF8);
                     strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
                 }
 
                 if (File.Exists(_srcADTDFile2))
                 {
-                    var fileProcessor = new LlsFileProcessor(_srcADTDFile2, Encoding.UTF8);
+                    var fileProcessor = new ADTDFileProcessor(_srcADTDFile2, Encoding.UTF8);
                     strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
                 }
                 SrcFileLoadCompleted(this, new EventArgs());

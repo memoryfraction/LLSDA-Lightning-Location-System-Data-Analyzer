@@ -28,6 +28,7 @@ namespace LLSDA.Interface
         public LightningType LightningType { get; set; }
     }
 
+
     public abstract class BaseStrikeStandard : BaseStrikeCompactEdition
     {
         public double Slope { get; set; }

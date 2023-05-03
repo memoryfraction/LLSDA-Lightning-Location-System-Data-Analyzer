@@ -18,7 +18,6 @@ LLSDA(Lightning Location System Data Analyzer) is an cross platform class librar
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="Interface\" />
     <Folder Include="Service\" />
   </ItemGroup>

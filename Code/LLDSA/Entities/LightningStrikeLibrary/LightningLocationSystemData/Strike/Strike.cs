@@ -24,42 +24,42 @@ namespace LLSDA.Entities
 
         public LightningStrikeBasic(DateTime dateTime, double longitude, double latitude)
         {
-            this._DateAndTime = dateTime;
-            this._Longitude = longitude;
-            this._Latitude = latitude;
+            this.DateAndTime = dateTime;
+            this.Longitude = longitude;
+            this.Latitude = latitude;
         }
 
-        string _ID;
+        //string _ID;
 
-        public string ID
-        {
-            get { return _ID; }
-            set { _ID = value; }
-        }
+        //public string ID
+        //{
+        //    get { return _ID; }
+        //    set { _ID = value; }
+        //}
 
-        private DateTime _DateAndTime;
+        //private DateTime _DateAndTime;
 
-        public DateTime DateAndTime
-        {
-            get { return _DateAndTime; }
-            set { _DateAndTime = value; }
-        }
+        //public DateTime DateAndTime
+        //{
+        //    get { return _DateAndTime; }
+        //    set { _DateAndTime = value; }
+        //}
 
-        private double _Latitude;
+        //private double _Latitude;
 
-        public double Latitude
-        {
-            get { return _Latitude; }
-            set { _Latitude = value; }
-        }
+        //public double Latitude
+        //{
+        //    get { return _Latitude; }
+        //    set { _Latitude = value; }
+        //}
 
-        private double _Longitude;
+        //private double _Longitude;
 
-        public double Longitude
-        {
-            get { return _Longitude; }
-            set { _Longitude = value; }
-        }
+        //public double Longitude
+        //{
+        //    get { return _Longitude; }
+        //    set { _Longitude = value; }
+        //}
 
         public IStrikeFormatConvertService IStrikeFormatConvertService { get => iStrikeFormatConvertService; set => iStrikeFormatConvertService = value; }
 
@@ -77,9 +77,9 @@ namespace LLSDA.Entities
 
         public override string ToString()
         {
-            return "DateTime: " + this._DateAndTime.ToString() + "\r\n"
-                + "Longitude: " + _Longitude.ToString() + "\r\n"
-                + "Latitude" + _Latitude.ToString() + "\r\n";
+            return "DateTime: " + DateAndTime.ToString() + "\r\n"
+                + "Longitude: " + Longitude.ToString() + "\r\n"
+                + "Latitude" + Latitude.ToString() + "\r\n";
         }
 
         public override bool Equals(object obj)
@@ -115,37 +115,6 @@ namespace LLSDA.Entities
             _strikeFormatConvertService = strikeFormatConvertService;
         }
         public LightningStrikeStandard() { }
-
-        //public LightningStrike_Standard(DateTime dateTime, double longitude, double latitude, double intensity) : base(dateTime, longitude, latitude)
-        //{
-        //    this.Intensity = intensity;
-        //}
-
-        //private double _Intensity;
-        //public double Intensity
-        //{
-        //    get { return _Intensity; }
-        //    set { _Intensity = value; }
-        //}
-        //private double _Slope;
-        //public double Slope
-        //{
-        //    get { return _Slope; }
-        //    set { _Slope = value; }
-        //}
-        //private double _Error;
-        //public double Error
-        //{
-        //    get { return _Error; }
-        //    set { _Error = value; }
-        //}
-
-        //private string _LocationMode;
-        //public string LocationMode
-        //{
-        //    get { return _LocationMode; }
-        //    set { _LocationMode = value; }
-        //}
 
         public IStrikeFormatConvertService IStrikeFormatConvertService { get => _strikeFormatConvertService; set => _strikeFormatConvertService = value; }
 
@@ -212,30 +181,7 @@ namespace LLSDA.Entities
     }
 
 
-    public class LightningStrikeWwlln : LightningStrikeBasic
-    {
-        double error;
-
-        public double Error
-        {
-            get { return error; }
-            set { error = value; }
-        }
-        string locationMode;
-
-        public string LocationMode
-        {
-            get { return locationMode; }
-            set { locationMode = value; }
-        }
-        public override int GetHashCode()
-        {
-            return 17 * this.DateAndTime.GetHashCode()
-                + 19 * this.Longitude.GetHashCode()
-                + 23 * this.Latitude.GetHashCode()
-                + 29 * this.error.GetHashCode();
-        }
-    }
+    
 
 
     public class LightningStrikeChina : BaseStrikeChina

@@ -16,6 +16,7 @@ using LLSDA.Entities;
 using LLSDA.Interface;
 using PointD = MeteoInfoC.PointD;
 using System.IO;
+using LLDSA.Entities.FileOperator.LLSFileProcessor;
 using LLSDA.Service;
 
 namespace MeteoInfoControlLibrary
@@ -249,7 +250,7 @@ namespace MeteoInfoControlLibrary
         }
         private void bg_DoWork(object sender, EventArgs e)
         {
-            var llsFileProcessor = new LlsFileProcessor(file,Encoding.UTF8);
+            var llsFileProcessor = new ADTDFileProcessor(file,Encoding.UTF8);
             stopwatch.Start();
 
             var strikeChinaList = llsFileProcessor.ReturnStrikesChinaByProcess();
