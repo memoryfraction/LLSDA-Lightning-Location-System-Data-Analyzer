@@ -27,6 +27,7 @@ namespace LLSDA.Client.WinformApp
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 var form1 = serviceProvider.GetRequiredService<Form1>();
+                var mainForm = serviceProvider.GetRequiredService<MainForm>();
                 Application.Run(form1);
             }
         }

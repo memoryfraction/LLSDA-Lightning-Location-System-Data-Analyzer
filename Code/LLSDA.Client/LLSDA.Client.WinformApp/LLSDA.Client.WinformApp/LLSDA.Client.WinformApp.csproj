@@ -164,6 +164,9 @@
     <EmbeddedResource Include="UserControllers\MeteoInfo\MeteoInfoUserControl.resx">
       <DependentUpon>MeteoInfoUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="data\LLS\GLD360\GLD360 2018_09_24_0800_24h 35N_43N_113E_119E.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="data\Shps\WorldCities\World_Cities.dbf" />
     <None Include="data\Shps\WorldCities\World_Cities.prj" />
     <None Include="data\Shps\WorldCities\World_Cities.sbn" />
@@ -257,10 +260,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data\2008_07_09.txt">
+    <Content Include="data\LLS\ADTD\2008_07_09.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\2008_07_10.txt">
+    <Content Include="data\LLS\ADTD\2008_07_10.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data\Shps\WorldCities\World_Cities.shp.xml" />
@@ -278,8 +281,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
