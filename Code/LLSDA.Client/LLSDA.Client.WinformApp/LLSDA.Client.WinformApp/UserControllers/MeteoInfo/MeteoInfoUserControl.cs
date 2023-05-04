@@ -17,6 +17,7 @@ using LLSDA.Interface;
 using PointD = MeteoInfoC.PointD;
 using System.IO;
 using LLDSA.Entities.FileOperator.LLSFileProcessor;
+using LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD;
 using LLSDA.Service;
 
 namespace MeteoInfoControlLibrary

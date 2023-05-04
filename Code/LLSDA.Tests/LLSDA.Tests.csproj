@@ -124,6 +124,9 @@
     <None Update="data\Shps\浙江省\Zhejiang_province.SHX">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="data\LLS\WWLLN\A20160820.loc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

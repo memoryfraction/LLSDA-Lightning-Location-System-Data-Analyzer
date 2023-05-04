@@ -167,6 +167,9 @@
     <None Include="data\LLS\GLD360\GLD360 2018_09_24_0800_24h 35N_43N_113E_119E.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="data\LLS\WWLLN\A20160820.loc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="data\Shps\WorldCities\World_Cities.dbf" />
     <None Include="data\Shps\WorldCities\World_Cities.prj" />
     <None Include="data\Shps\WorldCities\World_Cities.sbn" />
