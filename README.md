@@ -101,6 +101,11 @@ Glad you like it.
   Added multiple target frameworks: .NET 4.8, and .NetStandard 2.0
   Added WinformApplication, added MeteoInfo(GIS) reference
 
+* V1.4.0(2023-07-25)
+ LLSDA Academic Paper published in TechRxiv
+ DOI: https://doi.org/10.36227/techrxiv.23615019.v1
+
+
 ## OOP Design
 
 ![image](/Images/ObjectOrientedDesign.jpg)
@@ -115,6 +120,10 @@ Glad you like it.
   [![image](/Images/Abstract.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
 [![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
+
+[![image](/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
+
+Citation：Fan, Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
 
 ## License
 
@@ -225,9 +234,10 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
   添加了多框架支持，同时支持以下框架: .NET 4.8, and .NetStandard 2.0
   升级了Window桌面客户端，该客户端添加 MeteoInfo(GIS)的引用，允许闪电与GIS地图(*.shp格式)的叠加，效果图见Readme顶部
 
-## 待完成
+* V1.4.0(2023-07-25)
+ LLSDA Academic Paper published in TechRxiv
+ DOI: https://doi.org/10.36227/techrxiv.23615019.v1
 
-* LLSDA.App (范例代码项目。)
 
 ## 学术支撑
 
@@ -235,6 +245,11 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
   [![image](/Images/%E6%91%98%E8%A6%81.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
 [![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
+
+[![image](/Images/LLSDA TechRxiv paper abstract.png)][![image](/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
+
+引用, Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
+
 
 ## 百度学术引用
 
