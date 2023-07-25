@@ -122,7 +122,8 @@ Glad you like it.
 [![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
 [![image](/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
-引用：Fan, Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
+
+Citation：Fan, Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
 
 ## License
 
@@ -246,7 +247,8 @@ LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者�
 [![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
 [![image](/Images/LLSDA TechRxiv paper abstract.png)][![image](/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
-引用：Fan, Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
+
+引用, Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
 
 
 ## 百度学术引用
