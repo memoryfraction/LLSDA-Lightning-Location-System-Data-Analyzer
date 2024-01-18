@@ -283,7 +283,7 @@ https://xueshu.baidu.com/scholarID/CN-BM75JUJJ
 
 ## 鸣谢
 
-* 肖稳安、李霞、高燚、陈鸿兵
+* 肖稳安、高燚、陈鸿兵
 * [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
