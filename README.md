@@ -85,7 +85,7 @@ if (File.Exists(srcFile1))
 }
 ```
 
-> For more examples, refer to [LLSDA.Client](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/tree/main/Code/LLSDA.Client).
+> For more examples, refer to [LLSDA.Client](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/tree/master/Code/LLSDA.Client).
 
 ## Design & Architecture
 
@@ -153,6 +153,14 @@ if (File.Exists(srcFile1))
 
 * **Code**: [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0)
 * **Non-code assets**: [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en)
+
+## Contributing
+
+We welcome contributions from the community!
+
+- **Feature requests / Bug reports**: Please open an [Issue](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues).
+- **Pull Requests**: If you'd like to contribute code, feel free to fork the repository and submit a PR directly.
+- **Academic collaboration**: Interested in lightning research? Contact: [fanrong1985@126.com](mailto:fanrong1985@126.com)
 
 ## Acknowledgements
 
@@ -227,7 +235,7 @@ if (File.Exists(srcFile1))
 }
 ```
 
-> 更多示例请参考 [LLSDA.Client](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/tree/main/Code/LLSDA.Client)。
+> 更多示例请参考 [LLSDA.Client](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/tree/master/Code/LLSDA.Client)。
 
 ## 面向对象设计与架构
 
@@ -303,7 +311,11 @@ if (File.Exists(srcFile1))
 
 ## 合作伙伴
 
-如您对雷电有兴趣，正在攻读相关学位，从事相关研究，或有意向成为项目的贡献者，欢迎联系我：**fanrong1985@126.com**
+如您对雷电有兴趣，正在攻读相关学位，从事相关研究，或有意向成为项目的贡献者：
+
+- **提交代码**：欢迎直接 Fork 本仓库并提交 PR
+- **报告问题**：在 [Issue](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues) 区提交问题或建议
+- **学术合作**：联系邮箱 [fanrong1985@126.com](mailto:fanrong1985@126.com)
 
 ## 鸣谢
 
