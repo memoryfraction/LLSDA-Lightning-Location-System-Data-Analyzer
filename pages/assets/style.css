@@ -28,3 +28,11 @@ pre { background:var(--code-bg); border:1px solid var(--border); border-radius:v
 .screenshots img { border-radius:var(--radius); border:1px solid var(--border); max-width:100%; height:auto; }
 .footer { background:#24292f; color:#adb5bd; text-align:center; padding:24px; font-size:0.85rem; } .footer a { color:#fff; }
 ul { margin-left:24px; }
+
+
+table { width:100%; border-collapse:collapse; margin-top:12px; }
+th, td { padding:10px 12px; border:1px solid var(--border); text-align:left; }
+th { background:var(--bg-alt); font-weight:600; }
+tr:nth-child(even) { background:var(--bg-alt); }
+code { background:var(--code-bg); padding:2px 6px; border-radius:4px; font-size:0.9em; }
+.author-info p { margin-bottom:8px; }

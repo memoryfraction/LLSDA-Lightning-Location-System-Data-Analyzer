@@ -4,29 +4,48 @@
 <body>
 <div class="header"><div class="container"><h1>LLSDA Documentation</h1><p>Lightning Location System Data Analyzer v1.4.1</p></div></div>
 <div class="navbar"><div class="container">
-<ul class="nav-links"><li><a href="#overview">Overview</a></li><li><a href="#install">Install</a></li><li><a href="#quick-start">Quick Start</a></li><li><a href="#pubs">Publications</a></li></ul>
+<ul class="nav-links"><li><a href="#overview">Overview</a></li><li><a href="#install">Install</a></li><li><a href="#quick-start">Quick Start</a></li><li><a href="#architecture">Architecture</a></li><li><a href="#pubs">Publications</a></li><li><a href="#author">Author</a></li></ul>
 <div class="lang-switch"><a href="#" class="active">English</a><a href="../zh-cn/index.html">中文</a></div>
 </div></div>
 
+<!-- Overview Section -->
 <div class="section" id="overview"><div class="container">
 <h2>Overview</h2>
-<p><strong>LLSDA</strong> (Lightning Location System Data Analyzer) is an open-source, cross-platform class library for analyzing lightning location system data.</p>
+<p><strong>LLSDA</strong> (Lightning Location System Data Analyzer) is an open-source, cross-platform .NET class library for analyzing lightning location system data. It provides core functionality for spatiotemporal statistics and visualization of lightning distribution.</p>
 <h3>Key Features</h3>
-<ul>
-<li>Cross-platform (.NET Framework 4.8 / .NET Standard 2.0)</li><li>Multiple lightning data file format parsing</li>
-<li>Year, month, hour distribution analysis</li><li>Spatial distribution and flash density calculation</li>
-<li>Point-based lat/lng query analysis</li><li>Rose diagram and intensity probability charts</li>
-<li>GIS Shapefile overlay with MeteoInfo integration</li>
-</ul></div></div>
-
-<div class="section" id="install"><div class="container">
-<h2>Installation</h2>
-<pre><code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
-<pre><code>dotnet add package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+<div class="feature-grid">
+<div class="feature-card"><h4>Cross-Platform</h4><p>.NET Framework 4.8 + .NET Standard 2.0 — Windows/Linux/macOS.</p></div>
+<div class="feature-card"><h4>File Parsing</h4><p>Multiple lightning data formats: ADTD (China LLS), GLD360, WWLLN.</p></div>
+<div class="feature-card"><h4>Time Distribution</h4><p>Year/month/hour distribution analysis and charting.</p></div>
+<div class="feature-card"><h4>Spatial Statistics</h4><p>Lightning flash density calculation with square grid / concentric circles.</p></div>
+<div class="feature-card"><h4>Point Analysis</h4><p>Lat/lng-based point query analysis and custom region analysis.</p></div>
+<div class="feature-card"><h4>Rose Diagram</h4><p>Lightning rose diagram and intensity probability charts.</p></div>
+<div class="feature-card"><h4>GIS Support</h4><p>Shapefile overlay with MeteoInfo GIS integration.</p></div>
+</div>
+<h3 style="margin-top:24px;">Application Screenshot</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen---Lightning-Location-System-Data-Analyzer---Desktop-Application.png" alt="Main Application Window" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;">
+</p>
 </div></div>
 
+<!-- Installation Section -->
+<div class="section" id="install"><div class="container">
+<h2>Installation</h2>
+<p><strong>NuGet Package Manager:</strong></p>
+<pre><code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+<p><strong>.NET CLI:</strong></p>
+<pre><code>dotnet add package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+<p><strong>PackageReference (add to .csproj):</strong></p>
+<pre><code>&lt;PackageReference Include="LightningLocationSystemDataAnalyzer-LLDSA" Version="1.4.1" /&gt;</code></pre>
+<div style="margin-top:16px;">
+<a href="https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/" class="btn btn-primary">NuGet Gallery</a>
+<a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer" class="btn btn-outline">View on GitHub</a>
+</div></div></div>
+
+<!-- Quick Start Section -->
 <div class="section" id="quick-start"><div class="container">
 <h2>Quick Start</h2>
+<p>The core class for reading Chinese LLS data files is <code>ADTDFileProcessor</code>, which converts text-format lightning records into strongly-typed objects.</p>
 <pre><code>using LLDSA;
 using LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD;
 using System.Collections.Generic;
@@ -34,29 +53,105 @@ using System.IO;
 using System.Text;
 
 // 1. Point to a lightning data file (ADTD format)
+string dataFilePath = @"data\2008_07_09.txt";
+
 var processor = new ADTDFileProcessor();
-processor.SourceLlsFilePathName = @"data\2008_07_09.txt";
+processor.SourceLlsFilePathName = dataFilePath;
 processor.Province = "";
 processor.Encode = Encoding.UTF8;
 
 // 2. Parse all records into strongly-typed objects
-List<BaseStrikeChina> strikes = processor.ReturnStrikesChinaByProcess().ToList();
-Console.WriteLine($"Parsed {strikes.Count} lightning strike records.");</code></pre>
-<p style="margin-top:16px;"><a href="../" class="btn btn-outline">Back to Home</a></p></div></div>
+List&lt;BaseStrikeChina&gt; strikes = processor.ReturnStrikesChinaByProcess().ToList();
+Console.WriteLine($"Parsed {strikes.Count} lightning strike records.");
 
-<div class="section" id="pubs"><div class="container">
-<h2>Academic Publications</h2>
-<p>Fan, R.; Li, J.X.; Liu, M.Y. (2023). LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization. TechRxiv.</p>
-<p><a href="https://doi.org/10.36227/techrxiv.23615019.v1">DOI: 10.36227/techrxiv.23615019.v1</a></p>
-<div style="text-align:center; margin-top:20px;">
-<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Abstract.png" alt="Abstract" style="max-width:500px;border-radius:8px;">
-</div>
-<h3 style="margin-top:24px;">Architecture</h3>
-<div style="text-align:center; margin-top:16px;">
-<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP Design" style="max-width:500px;border-radius:8px;">
-</div>
+// 3. Each record contains:
+foreach (var strike in strikes.Take(3))
+{{
+    Console.WriteLine($"Time: {{strike.DateAndTime}}, " +
+        $"Lat: {{strike.Latitude}}, Lon: {{strike.Longitude}}, " +
+        $"Intensity: {{strike.Intensity}} A");
+}}</code></pre>
+<h3 style="margin-top:24px;">Supported File Formats</h3>
+<table style="width:100%;border-collapse:collapse;margin-top:12px;">
+<tr style="background:var(--bg-alt);"><th style="padding:8px;border:1px solid var(--border);text-align:left;">Format</th><th style="padding:8px;border:1px solid var(--border);text-align:left;">Processor Class</th><th style="padding:8px;border:1px solid var(--border);text-align:left;">Namespace</th></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">ADTD (China LLS)</td><td style="padding:8px;border:1px solid var(--border);"><code>ADTDFileProcessor</code></td><td style="padding:8px;border:1px solid var(--border);"><code>LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD</code></td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">GLD360 (Global)</td><td style="padding:8px;border:1px solid var(--border);"><code>GLD360FileProcessor</code></td><td style="padding:8px;border:1px solid var(--border);"><code>LLDSA.Entities.FileOperator.LLSFileProcessor.GLD360</code></td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">WWLLN (Global)</td><td style="padding:8px;border:1px solid var(--border);"><code>WWLLNFileProcessor</code></td><td style="padding:8px;border:1px solid var(--border);"><code>LLDSA.Entities.FileOperator.LLSFileProcessor.WWLLN</code></td></tr>
+</table></div></div>
+
+<!-- Architecture Section -->
+<div class="section" id="architecture"><div class="container">
+<h2>Architecture &amp; Design</h2>
+<h3>Object-Oriented Design</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP Design" style="max-width:800px;border-radius:8px;display:block;margin:0 auto;">
+</p>
+<h3 style="margin-top:24px;">Architecture Diagram</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Architecture.png" alt="Architecture" style="max-width:800px;border-radius:8px;display:block;margin:0 auto;">
+</p>
+<h3 style="margin-top:24px;">Source Code Structure</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/SrcCode.png" alt="Source Code" style="max-width:800px;border-radius:8px;display:block;margin:0 auto;">
+</p>
 </div></div>
 
-<div class="footer"><p><a href="../">Home</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a></p>
-<p>&copy; 2019-2026 Rong Fan. GPL v3.0 / CC BY-NC 4.0.</p></div>
+<!-- Publications Section -->
+<div class="section" id="pubs"><div class="container">
+<h2>Academic Publications</h2>
+<p>This project is supported by multiple academic papers. The following abstracts provide a technical overview of the research behind LLSDA.</p>
+
+<h3 style="margin-top:24px;">Paper 1 — Ground Lightning Flash Density Calculation and Software Implementation</h3>
+<p style="text-align:center; margin-top:12px;">
+<a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8E%E8%8D%A3.pdf" target="_blank">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/%E6%91%98%E8%A6%81.png" alt="Abstract 1" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;cursor:pointer;">
+</a>
+<p style="text-align:center;margin-top:8px;"><a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8E%E8%8D%A3.pdf" target="_blank">📄 View Full Paper (PDF)</a></p>
+</p>
+
+<h3 style="margin-top:24px;">Paper 2 — Design and Implementation of Lightning Analysis Software</h3>
+<p style="text-align:center; margin-top:12px;">
+<a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf" target="_blank">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Design-and-Implementation-of-Lightning-Analysis-Software-Based-on-Lightning-Location-System-Data--Abstract.png" alt="Abstract 2" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;cursor:pointer;">
+</a>
+<p style="text-align:center;margin-top:8px;"><a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf" target="_blank">📄 View Full Paper (PDF)</a></p>
+</p>
+
+<h3 style="margin-top:24px;">Paper 3 — TechRxiv Preprint (DOI)</h3>
+<p style="text-align:center; margin-top:12px;">
+<a href="https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019" target="_blank">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA-TechRxiv-paper-abstract.png" alt="TechRxiv Abstract" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;cursor:pointer;">
+</a>
+<p style="text-align:center;margin-top:8px;"><a href="https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019" target="_blank">📄 View on TechRxiv (DOI: 10.36227/techrxiv.23615019.v1)</a></p>
+</p>
+
+<h3 style="margin-top:24px;">Citation (BibTeX)</h3>
+<p>Use the following BibTeX entry to cite this project in your publications:</p>
+<pre><code>@misc{fan2023llsda,
+  author = {Rong Fan and JingXiao Li and MingYuan Liu},
+  title = {{LLSDA}: Design and Implementation of Lightning Location Data Analysis and Visualization},
+  year = {2023},
+  doi = {10.36227/techrxiv.23615019.v1},
+  publisher = {TechRxiv}
+}</code></pre>
+</div></div>
+
+<!-- Author Section -->
+<div class="section" id="author"><div class="container">
+<h2>About the Author</h2>
+<div class="author-card">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" alt="Rong Fan">
+<div class="author-info">
+<h3>Rong Fan / 樊荣</h3>
+<p>Email: <a href="mailto:fanrong1985@126.com">fanrong1985@126.com</a></p>
+<p><strong>Academic Profiles:</strong></p>
+<p>🔗 <a href="https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en" target="_blank">Google Scholar — Rong Fan</a></p>
+<p>🔗 <a href="https://xueshu.baidu.com/scholarID/CN-BM75JUJJ" target="_blank">Baidu Xueshu (百度学术) — 樊荣</a></p>
+</div></div></div></div>
+
+<!-- Footer -->
+<div class="footer">
+<p><a href="../">Home</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a> | <a href="mailto:fanrong1985@126.com">Contact</a></p>
+<p>&copy; 2019-2026 Rong Fan. Code: <a href="https://www.gnu.org/licenses/gpl-3.0">GPL v3.0</a> | Assets: <a href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a></p>
+</div>
 </body></html>
