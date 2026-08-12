@@ -4,55 +4,154 @@
 <body>
 <div class="header"><div class="container"><h1>LLSDA 文档</h1><p>闪电定位系统数据分析器 v1.4.1</p></div></div>
 <div class="navbar"><div class="container">
-<ul class="nav-links"><li><a href="#overview">概述</a></li><li><a href="#install">安装</a></li><li><a href="#quick-start">快速开始</a></li><li><a href="#pubs">学术发表</a></li></ul>
+<ul class="nav-links"><li><a href="#overview">概述</a></li><li><a href="#install">安装</a></li><li><a href="#quick-start">快速开始</a></li><li><a href="#architecture">架构设计</a></li><li><a href="#pubs">学术发表</a></li><li><a href="#author">关于作者</a></li></ul>
 <div class="lang-switch"><a href="../en/index.html">English</a><a href="#" class="active">中文</a></div>
 </div></div>
+
+<!-- 概述 -->
 <div class="section" id="overview"><div class="container">
 <h2>概述</h2>
-<p><strong>LLSDA</strong>（闪电定位系统数据分析器）是一个开源、跨平台的类库，用于分析闪电定位系统数据。</p>
+<p><strong>LLSDA</strong>（闪电定位系统数据分析器）是一个开源、跨平台的 .NET 类库，用于分析闪电定位系统数据。它提供了闪电时空分布统计分析和可视化的核心功能。</p>
 <h3>主要特性</h3>
-<ul>
-<li>跨平台 (.NET Framework 4.8 / .NET Standard 2.0)</li>
-<li>多格式闪电数据文件解析 (ADTD/GLD360/WWLLN)</li>
-<li>年/月/小时时间分布分析</li><li>空间分布和雷击密度计算（方格网/同心圆）</li>
-<li>基于经纬度的点查询分析</li><li>雷电玫瑰图和电流强度概率图</li>
-<li>GIS Shapefile 叠加与 MeteoInfo 集成</li>
-</ul></div></div>
+<div class="feature-grid">
+<div class="feature-card"><h4>跨平台</h4><p>.NET Framework 4.8 + .NET Standard 2.0 — Windows/Linux/macOS。</p></div>
+<div class="feature-card"><h4>多格式解析</h4><p>支持 ADTD（中国 LLS）、GLD360、WWLLN 等多种闪电数据格式。</p></div>
+<div class="feature-card"><h4>时间分布分析</h4><p>年/月/小时时间分布分析与图表生成。</p></div>
+<div class="feature-card"><h4>空间统计分析</h4><p>基于方格网/同心圆的雷击密度计算。</p></div>
+<div class="feature-card"><h4>点分析</h4><p>基于经纬度的点查询分析和自定义区域分析。</p></div>
+<div class="feature-card"><h4>玫瑰图与概率图</h4><p>雷电玫瑰图和雷电流强度概率分布图。</p></div>
+<div class="feature-card"><h4>GIS 支持</h4><p>Shapefile 叠加与 MeteoInfo GIS 集成。</p></div>
+</div>
+<h3 style="margin-top:24px;">程序截图</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen---Lightning-Location-System-Data-Analyzer---Desktop-Application.png" alt="主程序窗口" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;">
+</p>
+</div></div>
+
+<!-- 安装 -->
 <div class="section" id="install"><div class="container">
 <h2>安装方法</h2>
+<p><strong>NuGet 包管理器：</strong></p>
 <pre><code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+<p><strong>.NET CLI：</strong></p>
 <pre><code>dotnet add package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
-</div></div>
+<p><strong>PackageReference（添加到 .csproj）：</strong></p>
+<pre><code>&lt;PackageReference Include="LightningLocationSystemDataAnalyzer-LLDSA" Version="1.4.1" /&gt;</code></pre>
+<div style="margin-top:16px;">
+<a href="https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/" class="btn btn-primary">NuGet Gallery</a>
+<a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer" class="btn btn-outline">GitHub 仓库</a>
+</div></div></div>
+
+<!-- 快速开始 -->
 <div class="section" id="quick-start"><div class="container">
 <h2>快速开始</h2>
+<p>读取中国 LLS 数据文件的核心类是 <code>ADTDFileProcessor</code>，它将文本格式的雷电记录转换为强类型对象。</p>
 <pre><code>using LLDSA;
 using LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-// 1. 创建文件处理器并指向数据文件 (ADTD格式)
+// 1. 创建文件处理器并指向数据文件
+string dataFilePath = @"data\2008_07_09.txt";
+
 var processor = new ADTDFileProcessor();
-processor.SourceLlsFilePathName = @"data\2008_07_09.txt";
+processor.SourceLlsFilePathName = dataFilePath;
 processor.Province = "";
 processor.Encode = Encoding.UTF8;
 
 // 2. 解析所有记录并返回强类型对象列表
-List<BaseStrikeChina> strikes = processor.ReturnStrikesChinaByProcess().ToList();
-Console.WriteLine($"成功解析 {strikes.Count} 条雷击记录。");</code></pre>
-<p style="margin-top:16px;"><a href="../" class="btn btn-outline">返回主页</a></p></div></div>
-<div class="section" id="pubs"><div class="container">
-<h2>学术发表</h2>
-<p>Fan, R.; Li, J.X.; Liu, M.Y. (2023). LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization. TechRxiv.</p>
-<p><a href="https://doi.org/10.36227/techrxiv.23615019.v1">DOI: 10.36227/techrxiv.23615019.v1</a></p>
-<div style="text-align:center; margin-top:20px;">
-<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/%E6%91%98%E8%A6%81.png" alt="论文摘要" style="max-width:500px;border-radius:8px;">
-</div>
-<h3 style="margin-top:24px;">架构设计</h3>
-<div style="text-align:center; margin-top:16px;">
-<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP 设计" style="max-width:500px;border-radius:8px;">
-</div>
+List&lt;BaseStrikeChina&gt; strikes = processor.ReturnStrikesChinaByProcess().ToList();
+Console.WriteLine($"成功解析 {strikes.Count} 条雷击记录。");
+
+// 3. 每条记录包含以下信息：
+foreach (var strike in strikes.Take(3))
+{{
+    Console.WriteLine($"时间: {{strike.DateAndTime}}, " +
+        $"纬度: {{strike.Latitude}}, 经度: {{strike.Longitude}}, " +
+        $"电流强度: {{strike.Intensity}} A");
+}}</code></pre>
+<h3 style="margin-top:24px;">支持的文件格式</h3>
+<table style="width:100%;border-collapse:collapse;margin-top:12px;">
+<tr style="background:var(--bg-alt);"><th style="padding:8px;border:1px solid var(--border);text-align:left;">格式</th><th style="padding:8px;border:1px solid var(--border);text-align:left;">处理类</th><th style="padding:8px;border:1px solid var(--border);text-align:left;">命名空间</th></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">ADTD (中国 LLS)</td><td style="padding:8px;border:1px solid var(--border);"><code>ADTDFileProcessor</code></td><td style="padding:8px;border:1px solid var(--border);"><code>LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD</code></td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">GLD360 (全球)</td><td style="padding:8px;border:1px solid var(--border);"><code>GLD360FileProcessor</code></td><td style="padding:8px;border:1px solid var(--border);"><code>LLDSA.Entities.FileOperator.LLSFileProcessor.GLD360</code></td></tr>
+<tr><td style="padding:8px;border:1px solid var(--border);">WWLLN (全球)</td><td style="padding:8px;border:1px solid var(--border);"><code>WWLLNFileProcessor</code></td><td style="padding:8px;border:1px solid var(--border);"><code>LLDSA.Entities.FileOperator.LLSFileProcessor.WWLLN</code></td></tr>
+</table></div></div>
+
+<!-- 架构设计 -->
+<div class="section" id="architecture"><div class="container">
+<h2>架构与设计</h2>
+<h3>面向对象设计图</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP 设计" style="max-width:800px;border-radius:8px;display:block;margin:0 auto;">
+</p>
+<h3 style="margin-top:24px;">架构设计图</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Architecture.png" alt="架构图" style="max-width:800px;border-radius:8px;display:block;margin:0 auto;">
+</p>
+<h3 style="margin-top:24px;">源代码结构</h3>
+<p style="text-align:center; margin-top:12px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/SrcCode.png" alt="源代码结构" style="max-width:800px;border-radius:8px;display:block;margin:0 auto;">
+</p>
 </div></div>
-<div class="footer"><p><a href="../">主页</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a></p>
-<p>&copy; 2019-2026 樊荣. GPL v3.0 / CC BY-NC 4.0.</p></div>
+
+<!-- 学术发表 -->
+<div class="section" id="pubs"><div class="container">
+<h2>学术论文</h2>
+<p>本项目有多篇学术论文作为支撑，以下为论文摘要：</p>
+
+<h3 style="margin-top:24px;">论文一 — 雷击大地密度的计算与软件实现</h3>
+<p style="text-align:center; margin-top:12px;">
+<a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8E%E8%8D%A3.pdf" target="_blank">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/%E6%91%98%E8%A6%81.png" alt="摘要一" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;cursor:pointer;">
+</a>
+<p style="text-align:center;margin-top:8px;"><a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8E%E8%8D%A3.pdf" target="_blank">📄 查看完整论文 (PDF)</a></p>
+</p>
+
+<h3 style="margin-top:24px;">论文二 — 基于闪电定位系统数据的雷电分析软件设计与实现</h3>
+<p style="text-align:center; margin-top:12px;">
+<a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf" target="_blank">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Design-and-Implementation-of-Lightning-Analysis-Software-Based-on-Lightning-Location-System-Data--Abstract.png" alt="摘要二" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;cursor:pointer;">
+</a>
+<p style="text-align:center;margin-top:8px;"><a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf" target="_blank">📄 查看完整论文 (PDF)</a></p>
+</p>
+
+<h3 style="margin-top:24px;">论文三 — TechRxiv 预印本 (DOI)</h3>
+<p style="text-align:center; margin-top:12px;">
+<a href="https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019" target="_blank">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA-TechRxiv-paper-abstract.png" alt="TechRxiv 摘要" style="max-width:700px;border-radius:8px;display:block;margin:0 auto;cursor:pointer;">
+</a>
+<p style="text-align:center;margin-top:8px;"><a href="https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019" target="_blank">📄 在 TechRxiv 上查看 (DOI: 10.36227/techrxiv.23615019.v1)</a></p>
+</p>
+
+<h3 style="margin-top:24px;">引用格式 (BibTeX)</h3>
+<p>在您的出版物中引用本项目，请使用以下 BibTeX 条目：</p>
+<pre><code>@misc{fan2023llsda,
+  author = {Rong Fan and JingXiao Li and MingYuan Liu},
+  title = {{LLSDA}: Design and Implementation of Lightning Location Data Analysis and Visualization},
+  year = {2023},
+  doi = {10.36227/techrxiv.23615019.v1},
+  publisher = {TechRxiv}
+}</code></pre>
+</div></div>
+
+<!-- 关于作者 -->
+<div class="section" id="author"><div class="container">
+<h2>关于作者</h2>
+<div class="author-card">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" alt="樊荣">
+<div class="author-info">
+<h3>樊荣 (Rong Fan)</h3>
+<p>邮箱: <a href="mailto:fanrong1985@126.com">fanrong1985@126.com</a></p>
+<p><strong>学术主页：</strong></p>
+<p>🔗 <a href="https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en" target="_blank">Google Scholar — Rong Fan</a></p>
+<p>🔗 <a href="https://xueshu.baidu.com/scholarID/CN-BM75JUJJ" target="_blank">百度学术 — 樊荣</a></p>
+</div></div></div></div>
+
+<!-- 页脚 -->
+<div class="footer">
+<p><a href="../">主页</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a> | <a href="mailto:fanrong1985@126.com">联系作者</a></p>
+<p>&copy; 2019-2026 樊荣. 代码: <a href="https://www.gnu.org/licenses/gpl-3.0">GPL v3.0</a> | 其他内容: <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">CC BY-NC 4.0</a></p>
+</div>
 </body></html>
