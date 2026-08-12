@@ -1,4 +1,4 @@
-﻿using LLDSA.Entities.LightningStrikeLibrary.LightningLocationSystemData.Strike;
+using LLDSA.Entities.LightningStrikeLibrary.LightningLocationSystemData.Strike;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,7 +35,7 @@ namespace LLDSA.Entities.FileOperator.LLSFileProcessor.GLD360
                 sourceLlsFilePathName = _fulLlsPathFileName;
             }
             else
-                throw new FileNotFoundException("文件" + _fulLlsPathFileName + "不存在。");
+                throw new FileNotFoundException("Source LLS file does not exist: " + _fulLlsPathFileName);
         }
 
 
@@ -57,7 +57,7 @@ namespace LLDSA.Entities.FileOperator.LLSFileProcessor.GLD360
                 }
             }
             else
-                throw new FileNotFoundException("文件" + fulLlsPathFileName + "不存在。");
+                throw new FileNotFoundException("Source LLS file does not exist: " + fulLlsPathFileName);
         }
 
         /// <summary>

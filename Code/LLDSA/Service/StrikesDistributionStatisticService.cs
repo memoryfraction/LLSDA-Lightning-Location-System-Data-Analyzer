@@ -1,4 +1,4 @@
-﻿/*****************************************************************
+/*****************************************************************
 
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
@@ -43,7 +43,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("年分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Year distribution: the strike sequence is empty or null.");
         }
         /// <summary>
         /// 统计雷电的年份
@@ -59,7 +59,7 @@ namespace LLSDA.Service
                 return _yearList;
             }
             else
-                throw new ArgumentNullException("年分布列表计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Year list calculation: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("年正闪分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Positive year distribution: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("年负闪分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Negative year distribution: the strike sequence is empty or null.");
         }
         #endregion
 
@@ -136,7 +136,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("月分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Month distribution: the strike sequence is empty or null.");
 
         }
         /// <summary>
@@ -162,7 +162,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("月正闪分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Positive month distribution: the strike sequence is empty or null.");
         }
         /// <summary>
         /// 统计正闪月份分布情况，耗时操作。
@@ -187,7 +187,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("月负闪分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Negative month distribution: the strike sequence is empty or null.");
         }
         #endregion
 
@@ -221,7 +221,7 @@ namespace LLSDA.Service
             }
             else
             {
-                throw new ArgumentNullException("时分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Hour distribution: the strike sequence is empty or null.");
             }
         }
         /// <summary>
@@ -250,7 +250,7 @@ namespace LLSDA.Service
             }
             else
             {
-                throw new ArgumentNullException("正闪时分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Positive hour distribution: the strike sequence is empty or null.");
             }
         }
         /// <summary>
@@ -279,7 +279,7 @@ namespace LLSDA.Service
             }
             else
             {
-                throw new ArgumentNullException("负闪时分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Negative hour distribution: the strike sequence is empty or null.");
             }
         }
         #endregion
@@ -316,7 +316,7 @@ namespace LLSDA.Service
                 return probabilityDistribution;
             }
             else
-                throw new ArgumentNullException("雷电流累计概率分布统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Probability distribution: the strike sequence is empty or null.");
         }
         #endregion
 
@@ -357,7 +357,7 @@ namespace LLSDA.Service
                 return resultString;
             }
             else
-                throw new ArgumentNullException("年分布文字说明统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Year distribution text report: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -392,7 +392,7 @@ namespace LLSDA.Service
                 return result;
             }
             else
-                throw new ArgumentNullException("时分布文字说明统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Hour distribution text report: the strike sequence is empty or null.");
         }
         /// <summary>
         /// 生成MonthDistributionText
@@ -420,7 +420,7 @@ namespace LLSDA.Service
                 return result;
             }
             else
-                throw new ArgumentNullException("月分布统计文字，序列中不包含闪电。");
+                throw new ArgumentNullException("Month distribution text report: the strike sequence is empty or null.");
         }
         /// <summary>
         /// 生成ProbabilityDistributionText
@@ -457,7 +457,7 @@ namespace LLSDA.Service
                 return resultString;
             }
             else
-                throw new ArgumentNullException("雷电流累计概率分布文字说明统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Probability distribution text report: the strike sequence is empty or null.");
         }
         #endregion
 
@@ -484,7 +484,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("强度区间概率统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Intensity range probability: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -509,7 +509,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("正闪强度概率统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Positive intensity probability: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -534,7 +534,7 @@ namespace LLSDA.Service
                 return resultDistribution;
             }
             else
-                throw new ArgumentNullException("负闪强度区间统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Negative intensity range: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -557,7 +557,7 @@ namespace LLSDA.Service
                 return probability;
             }
             else
-                throw new ArgumentException("输入闪电序列和section，计算对应的概率（0-100），序列中不包含闪电。");
+                throw new ArgumentException("Input lightning sequence and section for probability (0-100): the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -660,10 +660,10 @@ namespace LLSDA.Service
                     return thunderStormDayPerYear;
                 }
                 else
-                    throw new ArgumentOutOfRangeException("年份为0，被除数不能为0。");
+                    throw new ArgumentOutOfRangeException("Year count cannot be 0 (divisor).");
             }
             else
-                throw new ArgumentNullException("年平均雷电日计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Average lightning days per year: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -678,7 +678,7 @@ namespace LLSDA.Service
                 return resultDays;
             }
             else
-                throw new ArgumentNullException("总雷电日计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Total lightning days calculation: the strike sequence is empty or null.");
         }
         #endregion
 
@@ -692,7 +692,7 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("正闪最大雷电流计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Max positive intensity: the strike sequence is empty or null.");
         }
         public  double CalcuMinPositiveIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
@@ -702,7 +702,7 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("正闪最小雷电流计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Min positive intensity: the strike sequence is empty or null.");
         }
         public  double CalcuMaxNegativeIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
@@ -712,7 +712,7 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("负闪最大雷电流计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Max negative intensity: the strike sequence is empty or null.");
         }
         public  double CalcuMinNegativeIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
@@ -722,7 +722,7 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("负闪最小雷电流强度计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Min negative intensity: the strike sequence is empty or null.");
         }
 
         public  double CalcuPositiveAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes)
@@ -733,7 +733,7 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("正闪平均雷电流强度计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Average positive intensity: the strike sequence is empty or null.");
         }
         public  double CalcuNegativeAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
@@ -743,14 +743,14 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("负闪平均雷电流强度计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Average negative intensity: the strike sequence is empty or null.");
         }
         public  double CalcuAbsAvgIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
             if (_strikes.Where(x => x.Intensity <= 300 && x.Intensity >= -300).Any())
                 return _strikes.Where(x => x.Intensity <= 300 && x.Intensity >= -300).Select(r => Math.Abs(r.Intensity)).Average();
             else
-                throw new ArgumentNullException("绝对值雷电流强度计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Absolute intensity calculation: the strike sequence is empty or null.");
         }
         public  double CalcuAbsMinIntensity(IEnumerable<BaseStrikeStandard> _strikes)
         {
@@ -758,7 +758,7 @@ namespace LLSDA.Service
             if (_strikes!=null && _strikes.Any())
                 return _strikes.Where(x => x.Intensity <= 300 && x.Intensity >= -300).Select(r => Math.Abs(r.Intensity)).Min();
             else
-                throw new ArgumentNullException("绝对值雷电流强度计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Absolute intensity calculation: the strike sequence is empty or null.");
         }
 
         public  double CalcuAbsMaxIntensity(IEnumerable<BaseStrikeStandard> _strikes)
@@ -767,7 +767,7 @@ namespace LLSDA.Service
             if (_strikes!=null && _strikes.Any())
                 return _strikes.Where(x => x.Intensity <= 300 && x.Intensity >= -300).Select(r => Math.Abs(r.Intensity)).Max();
             else
-                throw new ArgumentNullException("绝对值雷电流强度计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Absolute intensity calculation: the strike sequence is empty or null.");
         }
 
         public  Int64 CalcuPositiveSumNum(IEnumerable<BaseStrikeStandard> _strikes)
@@ -778,7 +778,7 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("正闪总数计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Positive strike count: the strike sequence is empty or null.");
         }
         public  Int64 CalcuNegativeSumNum(IEnumerable<BaseStrikeStandard> _strikes)
         {
@@ -788,14 +788,14 @@ namespace LLSDA.Service
                 else
                     return 0;
             else
-                throw new ArgumentNullException("负闪总数计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Negative strike count: the strike sequence is empty or null.");
         }
         public  Int64 CalcuSumNum(IEnumerable<BaseStrikeBasic> _strikes)
         {
             if (_strikes!=null && _strikes.Any())
                 return _strikes.LongCount();
             else
-                throw new ArgumentNullException("地闪总数计算，序列中不包含闪电。");
+                throw new ArgumentNullException("Total CG strike count: the strike sequence is empty or null.");
         }
         #endregion
 
@@ -830,7 +830,7 @@ namespace LLSDA.Service
                 return resultString;
             }
             else
-                throw new ArgumentNullException("雷电公报文字描述统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Lightning bulletin text report: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -861,7 +861,7 @@ namespace LLSDA.Service
                 return resultString;
             }
             else
-                throw new ArgumentNullException("雷电公报文字描述统计，序列中不包含闪电。");
+                throw new ArgumentNullException("Lightning bulletin text report: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -891,7 +891,7 @@ namespace LLSDA.Service
                     return null;
             }
             else
-                throw new ArgumentException("下级地区分布描述处理，序列中不包含闪电。");
+                throw new ArgumentException("Sub-region distribution processing: the strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -919,7 +919,7 @@ namespace LLSDA.Service
             {
                 return null;
                 //无下级单位
-                throw new ArgumentOutOfRangeException("县无下级行政区划单位");
+                throw new ArgumentOutOfRangeException("County level has no sub-administrative divisions.");
             }
             else//默认为市级
             {
@@ -948,9 +948,9 @@ namespace LLSDA.Service
                     resultNum = _strikes.Where(r => r.City == _areaName).Count();
                     break;
                 case AdministrativeLevel.Village:
-                    throw new ArgumentOutOfRangeException("不存在比县更小的行政级别");
+                    throw new ArgumentOutOfRangeException("No administrative level smaller than county exists.");
                 default:
-                    throw new ArgumentOutOfRangeException("未知的行政区划级别");
+                    throw new ArgumentOutOfRangeException("Unknown administrative division level.");
             }
             return resultNum;
         }
@@ -995,7 +995,7 @@ namespace LLSDA.Service
                 return resultDictionaryList;
             }
             else
-                throw new ArgumentNullException("序列中不包含闪电。");
+                throw new ArgumentNullException("The strike sequence is empty or null.");
         }
 
         /// <summary>
@@ -1048,7 +1048,7 @@ namespace LLSDA.Service
             if (size != 0 && yearNum != 0)
                 return (double)strikesNumber / size / yearNum;
             else
-                throw new Exception("CalcuNg(long strikesNumber,double size,double yearNum)方法中年数和面积不能为0。");
+                throw new Exception("CalcuNg: year count and area size cannot be 0.");
         }
 
        

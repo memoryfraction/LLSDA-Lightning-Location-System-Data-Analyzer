@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -59,7 +59,7 @@ namespace LLSDA.Entities
                     size = CalcuRectangleSize(vertexArray);
                 }
                 else
-                    throw new InvalidOperationException("vertexArray中不包括任何元素");
+                    throw new InvalidOperationException("vertexArray contains no elements.");
             }
             else if (shapeType == ShapeType.Circle)
             {
@@ -69,7 +69,7 @@ namespace LLSDA.Entities
                     size = CalcuCircleSize(radius);
                 }
                 else
-                    throw new InvalidOperationException("圆的半径不能为0。");
+                    throw new InvalidOperationException("Circle radius cannot be 0.");
 
             }
             else if (shapeType == ShapeType.Polygon || shapeType == ShapeType.Polyline || shapeType == ShapeType.Triangle)
@@ -79,7 +79,7 @@ namespace LLSDA.Entities
                     size = CalcuPolygonSize(pathArray);
                 }
                 else
-                    throw new InvalidOperationException("pathArray中不包括任何元素");
+                    throw new InvalidOperationException("pathArray contains no elements.");
             }
             else
             {
@@ -102,7 +102,7 @@ namespace LLSDA.Entities
                     maxLatitude = vertexArray.Select(r => r.Lat).Max();
                 }
                 else
-                    throw new InvalidOperationException("vertexArray中不包括任何元素");
+                    throw new InvalidOperationException("vertexArray contains no elements.");
             }
             else if (shapeType == ShapeType.Circle)
             {
@@ -116,10 +116,10 @@ namespace LLSDA.Entities
                         maxLatitude = centerPoint.Lat + radius / Distance.DistanceOfPerLatitudeDegree();
                     }
                     else
-                        throw new InvalidOperationException("圆的半径不能为0。");
+                        throw new InvalidOperationException("Circle radius cannot be 0.");
                 }
                 else
-                    throw new InvalidOperationException("圆心不存在。");
+                    throw new InvalidOperationException("Circle center does not exist.");
             }
             else if (shapeType == ShapeType.Polygon || shapeType == ShapeType.Polyline || shapeType == ShapeType.Triangle)
             {
@@ -131,7 +131,7 @@ namespace LLSDA.Entities
                     maxLatitude = pathArray.Select(r => r.Lat).Max();
                 }
                 else
-                    throw new InvalidOperationException("pathArray中不包括任何元素");
+                    throw new InvalidOperationException("pathArray contains no elements.");
             }
             else
             {
@@ -194,7 +194,7 @@ namespace LLSDA.Entities
                 return size;
             }
             else
-                throw new Exception("矩形有且只有4个顶点");
+                throw new Exception("A rectangle must have exactly 4 vertices.");
         }
 
         #endregion

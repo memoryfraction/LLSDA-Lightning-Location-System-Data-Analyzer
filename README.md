@@ -6,7 +6,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![NuGet](https://img.shields.io/nuget/v/LightningLocationSystemDataAnalyzer-LLDSA.svg)](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/)
-[![Version](https://img.shields.io/badge/Version-1.4.1-brightgreen.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Version-v1.4.1-brightgreen.svg)](Documents/readme-en.md#changelog)
 [![.NET](https://img.shields.io/badge/.NET-Framework%204.8%20%7C%20Standard%202.0-green.svg)](https://dotnet.microsoft.com)
 
 > **An open-source, cross-platform class library for analyzing lightning location system data**
@@ -39,7 +39,7 @@ dotnet add package LightningLocationSystemDataAnalyzer-LLDSA
 
 | **Rong Fan / 樊荣** |
 |:--:|
-| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
+| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" alt="Rong Fan"> |
 | **Email**: [fanrong1985@126.com](mailto:fanrong1985@126.com) |
 | [百度学术](https://xueshu.baidu.com/scholarID/CN-BM75JUJJ) / [Google Scholar](https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en) |
 
@@ -47,7 +47,9 @@ dotnet add package LightningLocationSystemDataAnalyzer-LLDSA
 
 ## Screenshots / 截图
 
-![Main Form](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen---Lightning-Location-System-Data-Analyzer---Desktop-Application.png)
+<p align="center">
+  <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen---Lightning-Location-System-Data-Analyzer---Desktop-Application.png" alt="Main Application Form" style="max-width:100%;">
+</p>
 
 ---
 
