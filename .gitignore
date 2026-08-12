@@ -363,3 +363,6 @@ bin
 bin
 obj
 .vs
+# Exclude accidentally created duplicate files
+Code/LLDSA/Entities/LightningStrikeLibrary/LightningStrikes_China.cs
+Code/LLSDA.Client/MeteoInfoUserControl.cs
