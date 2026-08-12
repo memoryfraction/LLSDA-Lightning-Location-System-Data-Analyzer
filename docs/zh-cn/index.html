@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LLSDA - 闪电定位系统数据分析器 文档</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<div class="header"><div class="container"><h1>LLSDA 文档</h1><p>闪电定位系统数据分析器</p></div></div>
+<div class="navbar"><div class="container">
+<ul class="nav-links"><li><a href="#overview">概述</a></li><li><a href="#install">安装</a></li><li><a href="#quick-start">快速开始</a></li><li><a href="#pubs">学术发表</a></li></ul>
+<div class="lang-switch"><a href="../en/index.html">English</a><a href="#" class="active">中文</a></div>
+</div></div>
+<div class="section" id="overview"><div class="container">
+<h2>概述</h2>
+<p><strong>LLSDA</strong>（闪电定位系统数据分析器）是一个开源、跨平台的类库，用于分析闪电定位系统数据。</p>
+<h3>主要特性</h3>
+<ul>
+<li>跨平台 (.NET Framework 4.8 / .NET Standard 2.0)</li>
+<li>多格式闪电数据文件解析</li>
+<li>年/月/小时时间分布分析</li>
+<li>空间分布和雷击密度计算</li>
+<li>基于经纬度的点查询分析</li>
+<li>雷电玫瑰图和电流强度概率图</li>
+<li>GIS Shapefile 叠加与 MeteoInfo 集成</li>
+</ul></div></div>
+<div class="section" id="install"><div class="container">
+<h2>安装方法</h2>
+<pre><code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+<pre><code>dotnet add package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+</div></div>
+<div class="section" id="quick-start"><div class="container">
+<h2>快速开始</h2>
+<pre><code>using LLDSA;
+using LLDSA.Entities.FileOperator;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+var strikes = new List&lt;BaseStrikeChina&gt;();
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"data\2008_07_09.txt");
+
+if (File.Exists(srcFile1))
+{
+    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}</code></pre>
+<p style="margin-top:16px;"><a href="../" class="btn btn-outline">返回主页</a></p></div></div>
+<div class="section" id="pubs"><div class="container">
+<h2>学术发表</h2>
+<p>Fan, R.; Li, J.X.; Liu, M.Y. (2023). LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization. TechRxiv.</p>
+<p><a href="https://doi.org/10.36227/techrxiv.23615019.v1">DOI: 10.36227/techrxiv.23615019.v1</a></p>
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/%E6%91%98%E8%A6%81.png" alt="论文摘要" style="max-width:500px;border-radius:8px;">
+</div></div>
+<div class="footer"><p><a href="../">主页</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a></p>
+<p>&copy; 2019-2026 樊荣. GPL v3.0 / CC BY-NC 4.0.</p></div>
+</body></html>

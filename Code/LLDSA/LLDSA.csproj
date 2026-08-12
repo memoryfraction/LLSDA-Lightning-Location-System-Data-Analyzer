@@ -1,21 +1,31 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net48;netstandard2.0</TargetFrameworks>
-    <Description>
-LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# based on .NET Framework. It is the necessary part of all lightning time and spatial distribution analysis software.</Description>
-    <Version>1.4.0</Version>
-    <Authors>Rong Fan | 樊荣</Authors>
-    <Product>Lightning Location System Data Analyzer</Product>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://github.com/memoryfraction/LLSDA--LightningLocationSystemDataAnalyzer</RepositoryUrl>
-    <AssemblyVersion>1.4.0.0</AssemblyVersion>
+    <LangVersion>latest</LangVersion>
+    
+    <!-- NuGet Package Metadata -->
     <PackageId>LightningLocationSystemDataAnalyzer-LLDSA</PackageId>
-    <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <PackageIcon>LLSDA-Icon.png</PackageIcon>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Win32Resource></Win32Resource>
+    <Version>1.4.1</Version>
+    <Authors>Rong Fan | 樊荣</Authors>
     <Company>NUIST</Company>
+    <Product>Lightning Location System Data Analyzer</Product>
+    <Description>LLSDA (Lightning Location System Data Analyzer) is an open-source, cross-platform class library for analyzing lightning location system data. Provides statistical analysis and visualization of lightning time/space distribution. Supports .NET Framework 4.8 and .NET Standard 2.0.</Description>
+    <Summary>Cross-platform library for lightning location system data analysis and visualization</Summary>
+    <PackageTags>lightning;meteorology;thunderstorm;data-analysis;visualization;gis;.net-standard;.net-framework;weather</PackageTags>
+    <PackageProjectUrl>https://memoryfraction.github.io/LLSDA-Lightning-Location-System-Data-Analyzer/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <PackageIcon>LLSDA-Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    
+    <!-- Assembly Versioning -->
+    <AssemblyVersion>1.4.1.0</AssemblyVersion>
+    <FileVersion>1.4.1.0</FileVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,22 +34,21 @@ LLSDA(Lightning Location System Data Analyzer) is an cross platform class librar
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0-preview.7.21377.19" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.19" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <!-- NuGet Package Files -->
   <ItemGroup>
-    <None Update="license\license.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\Images\LLSDA-Icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="license\license.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <None Include="..\..\Images\LLSDA-Icon.png" Pack="true" PackagePath="" />
+    <None Include="license\license.txt" Pack="true" PackagePath="" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

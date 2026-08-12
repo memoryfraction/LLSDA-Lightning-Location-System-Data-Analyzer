@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LLSDA - Documentation</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body>
+<div class="header"><div class="container"><h1>LLSDA Documentation</h1><p>Lightning Location System Data Analyzer</p></div></div>
+<div class="navbar"><div class="container">
+<ul class="nav-links"><li><a href="#overview">Overview</a></li><li><a href="#install">Install</a></li><li><a href="#quick-start">Quick Start</a></li><li><a href="#pubs">Publications</a></li></ul>
+<div class="lang-switch"><a href="#" class="active">English</a><a href="../zh-cn/index.html">&#20013;&#25991;</a></div>
+</div></div>
+
+<div class="section" id="overview"><div class="container">
+<h2>Overview</h2>
+<p><strong>LLSDA</strong> (Lightning Location System Data Analyzer) is an open-source, cross-platform class library for analyzing lightning location system data.</p>
+<h3>Key Features</h3>
+<ul>
+<li>Cross-platform (.NET Framework 4.8 / .NET Standard 2.0)</li><li>Multiple lightning data file format parsing</li>
+<li>Year, month, hour distribution analysis</li><li>Spatial distribution and flash density calculation</li>
+<li>Point-based lat/lng query analysis</li><li>Rose diagram and intensity probability charts</li>
+<li>GIS Shapefile overlay with MeteoInfo integration</li>
+</ul></div></div>
+
+<div class="section" id="install"><div class="container">
+<h2>Installation</h2>
+<pre><code>Install-Package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+<pre><code>dotnet add package LightningLocationSystemDataAnalyzer-LLDSA</code></pre>
+</div></div>
+
+<div class="section" id="quick-start"><div class="container">
+<h2>Quick Start</h2>
+<pre><code>using LLDSA;
+using LLDSA.Entities.FileOperator;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+var strikes = new List&lt;BaseStrikeChina&gt;();
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"data\2008_07_09.txt");
+
+if (File.Exists(srcFile1))
+{
+    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}</code></pre>
+<p style="margin-top:16px;"><a href="../" class="btn btn-outline">Back to Home</a></p></div></div>
+
+<div class="section" id="pubs"><div class="container">
+<h2>Academic Publications</h2>
+<p>Fan, R.; Li, J.X.; Liu, M.Y. (2023). LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization. TechRxiv.</p>
+<p><a href="https://doi.org/10.36227/techrxiv.23615019.v1">DOI: 10.36227/techrxiv.23615019.v1</a></p>
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/Abstract.png" alt="Abstract" style="max-width:500px;border-radius:8px;">
+</div></div>
+
+<div class="footer"><p><a href="../">Home</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a></p>
+<p>&copy; 2019-2026 Rong Fan. GPL v3.0 / CC BY-NC 4.0.</p></div>
+</body></html>
