@@ -124,7 +124,7 @@ if (File.Exists(srcFile1))
 | **Rong Fan / 樊荣** |
 |:--:|
 | <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
-| **Email**: 1470269034@qq.com |
+| **Email**: fanrong1985@126.com |
 | [**百度学术 - 樊荣**](https://xueshu.baidu.com/scholarID/CN-BM75JUJJ) |
 | [**Google Scholar - Rong Fan**](https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en) |
 
@@ -266,7 +266,7 @@ if (File.Exists(srcFile1))
 | **樊荣 Rong Fan** |
 |:--:|
 | <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
-| **Email**: 1470269034@qq.com |
+| **Email**: fanrong1985@126.com |
 | [百度学术](https://xueshu.baidu.com/scholarID/CN-BM75JUJJ) / [Google Scholar](https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en) |
 
 ## 版本记录
@@ -303,7 +303,7 @@ if (File.Exists(srcFile1))
 
 ## 合作伙伴
 
-如您对雷电有兴趣，正在攻读相关学位，从事相关研究，或有意向成为项目的贡献者，欢迎联系我：**1470269034@qq.com**
+如您对雷电有兴趣，正在攻读相关学位，从事相关研究，或有意向成为项目的贡献者，欢迎联系我：**fanrong1985@126.com**
 
 ## 鸣谢
 
