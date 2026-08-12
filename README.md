@@ -6,6 +6,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![NuGet](https://img.shields.io/nuget/v/LightningLocationSystemDataAnalyzer-LLDSA.svg)](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/)
+[![Version](https://img.shields.io/badge/Version-1.4.1-brightgreen.svg)](CHANGELOG.md)
 [![.NET](https://img.shields.io/badge/.NET-Framework%204.8%20%7C%20Standard%202.0-green.svg)](https://dotnet.microsoft.com)
 
 > **An open-source, cross-platform class library for analyzing lightning location system data**
@@ -17,8 +18,8 @@
 
 | Language | Link | Description |
 |----------|------|-------------|
-| **English** | [📖 README.en.md](README.en.md) | Full documentation, installation guide, API quick start, changelog |
-| **中文** | [📖 README.zh-CN.md](README.zh-CN.md) | 完整文档、安装指南、快速开始、版本记录 |
+| **English** | [📖 README](Documents/readme-en.md) | Full documentation, installation guide, API quick start, changelog |
+| **中文** | [📖 README](Documents/readme-cn.md) | 完整文档、安装指南、快速开始、版本记录 |
 
 ---
 
@@ -46,14 +47,14 @@ dotnet add package LightningLocationSystemDataAnalyzer-LLDSA
 
 ## Screenshots / 截图
 
-[![Lightning Distribution](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen - Lightning Location System Data Analyzer - Desktop Application.png!https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen - Lightning Location System Data Analyzer - Desktop Application.png])
+![Main Form](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen---Lightning-Location-System-Data-Analyzer---Desktop-Application.png)
 
 ---
 
 ## Contributing / 贡献
 
-- **English**: See [README.en.md#contributing](README.en.md#contributing)
-- **中文**: 参见 [README.zh-CN.md#合作伙伴](README.zh-CN.md#合作伙伴)
+If you are interested in becoming a contributor, feel free to submit a PR directly or report issues.
+如果您有意向成为贡献者，欢迎直接提交 PR，或者在 [ISSUE](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues) 区提交问题。
 
 ---
 

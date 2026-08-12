@@ -1,0 +1,22 @@
+title: LLSDA - Lightning Location System Data Analyzer
+description: Open-source, cross-platform class library for analyzing lightning location system data
+show_downloads: "true"
+google_analytics: 
+theme: jekyll-theme-slate
+
+# Build settings
+encoding: utf-8
+markdown: kramdown
+
+# Exclude from processing
+exclude:
+  - .github
+  - README.md
+  - CODEOWNERS
+
+# Site settings
+url: "https://memoryfraction.github.io"
+baseurl: "/LLSDA-Lightning-Location-System-Data-Analyzer"
+author:
+  name: Rong Fan / 樊荣
+  email: fanrong1985@126.com
