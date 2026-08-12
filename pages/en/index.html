@@ -5,7 +5,7 @@
 <div class="header"><div class="container"><h1>LLSDA Documentation</h1><p>Lightning Location System Data Analyzer v1.4.1</p></div></div>
 <div class="navbar"><div class="container">
 <ul class="nav-links"><li><a href="#overview">Overview</a></li><li><a href="#install">Install</a></li><li><a href="#quick-start">Quick Start</a></li><li><a href="#pubs">Publications</a></li></ul>
-<div class="lang-switch"><a href="#" class="active">English</a><a href="../zh-cn/index.html">&#20013;&#25991;</a></div>
+<div class="lang-switch"><a href="#" class="active">English</a><a href="../zh-cn/index.html">中文</a></div>
 </div></div>
 
 <div class="section" id="overview"><div class="container">
@@ -28,28 +28,33 @@
 <div class="section" id="quick-start"><div class="container">
 <h2>Quick Start</h2>
 <pre><code>using LLDSA;
-using LLDSA.Entities.FileOperator;
+using LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-var strikes = new List&lt;BaseStrikeChina&gt;();
-var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"data\2008_07_09.txt");
+// 1. Point to a lightning data file (ADTD format)
+var processor = new ADTDFileProcessor();
+processor.SourceLlsFilePathName = @"data\2008_07_09.txt";
+processor.Province = "";
+processor.Encode = Encoding.UTF8;
 
-if (File.Exists(srcFile1))
-{
-    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
-    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-}</code></pre>
+// 2. Parse all records into strongly-typed objects
+List<BaseStrikeChina> strikes = processor.ReturnStrikesChinaByProcess().ToList();
+Console.WriteLine($"Parsed {strikes.Count} lightning strike records.");</code></pre>
 <p style="margin-top:16px;"><a href="../" class="btn btn-outline">Back to Home</a></p></div></div>
 
 <div class="section" id="pubs"><div class="container">
 <h2>Academic Publications</h2>
 <p>Fan, R.; Li, J.X.; Liu, M.Y. (2023). LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization. TechRxiv.</p>
 <p><a href="https://doi.org/10.36227/techrxiv.23615019.v1">DOI: 10.36227/techrxiv.23615019.v1</a></p>
+<div style="text-align:center; margin-top:20px;">
 <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Abstract.png" alt="Abstract" style="max-width:500px;border-radius:8px;">
+</div>
 <h3 style="margin-top:24px;">Architecture</h3>
-<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP Design" style="max-width:500px;border-radius:8px;margin-top:12px;">
+<div style="text-align:center; margin-top:16px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP Design" style="max-width:500px;border-radius:8px;">
+</div>
 </div></div>
 
 <div class="footer"><p><a href="../">Home</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a></p>

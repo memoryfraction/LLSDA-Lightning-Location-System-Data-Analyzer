@@ -13,11 +13,9 @@
 <h3>主要特性</h3>
 <ul>
 <li>跨平台 (.NET Framework 4.8 / .NET Standard 2.0)</li>
-<li>多格式闪电数据文件解析</li>
-<li>年/月/小时时间分布分析</li>
-<li>空间分布和雷击密度计算</li>
-<li>基于经纬度的点查询分析</li>
-<li>雷电玫瑰图和电流强度概率图</li>
+<li>多格式闪电数据文件解析 (ADTD/GLD360/WWLLN)</li>
+<li>年/月/小时时间分布分析</li><li>空间分布和雷击密度计算（方格网/同心圆）</li>
+<li>基于经纬度的点查询分析</li><li>雷电玫瑰图和电流强度概率图</li>
 <li>GIS Shapefile 叠加与 MeteoInfo 集成</li>
 </ul></div></div>
 <div class="section" id="install"><div class="container">
@@ -28,27 +26,32 @@
 <div class="section" id="quick-start"><div class="container">
 <h2>快速开始</h2>
 <pre><code>using LLDSA;
-using LLDSA.Entities.FileOperator;
+using LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-var strikes = new List&lt;BaseStrikeChina&gt;();
-var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"data\2008_07_09.txt");
+// 1. 创建文件处理器并指向数据文件 (ADTD格式)
+var processor = new ADTDFileProcessor();
+processor.SourceLlsFilePathName = @"data\2008_07_09.txt";
+processor.Province = "";
+processor.Encode = Encoding.UTF8;
 
-if (File.Exists(srcFile1))
-{
-    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
-    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-}</code></pre>
+// 2. 解析所有记录并返回强类型对象列表
+List<BaseStrikeChina> strikes = processor.ReturnStrikesChinaByProcess().ToList();
+Console.WriteLine($"成功解析 {strikes.Count} 条雷击记录。");</code></pre>
 <p style="margin-top:16px;"><a href="../" class="btn btn-outline">返回主页</a></p></div></div>
 <div class="section" id="pubs"><div class="container">
 <h2>学术发表</h2>
 <p>Fan, R.; Li, J.X.; Liu, M.Y. (2023). LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization. TechRxiv.</p>
 <p><a href="https://doi.org/10.36227/techrxiv.23615019.v1">DOI: 10.36227/techrxiv.23615019.v1</a></p>
+<div style="text-align:center; margin-top:20px;">
 <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/%E6%91%98%E8%A6%81.png" alt="论文摘要" style="max-width:500px;border-radius:8px;">
+</div>
 <h3 style="margin-top:24px;">架构设计</h3>
-<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP 设计" style="max-width:500px;border-radius:8px;margin-top:12px;">
+<div style="text-align:center; margin-top:16px;">
+<img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg" alt="OOP 设计" style="max-width:500px;border-radius:8px;">
+</div>
 </div></div>
 <div class="footer"><p><a href="../">主页</a> | <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">GitHub</a></p>
 <p>&copy; 2019-2026 樊荣. GPL v3.0 / CC BY-NC 4.0.</p></div>
