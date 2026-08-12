@@ -1,5 +1,5 @@
 <a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">
-  <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/LLSDA-Icon.png" align="right" width="96" height="96" alt="LLSDA Logo">
+  <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA-Icon.png" align="right" width="96" height="96" alt="LLSDA Logo">
 </a>
 
 # LLSDA - Lightning Location System Data Analyzer
@@ -15,7 +15,7 @@
 
 ## Demo Screenshots
 
-[![Lightning Distribution on Map](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)
+[![Lightning Distribution on Map](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)
 
 ## Brief Introduction
 
@@ -91,21 +91,21 @@ if (File.Exists(srcFile1))
 
 ### Object-Oriented Design
 
-![OOP Design](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/ObjectOrientedDesign.jpg)
+![OOP Design](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg)
 
 ### Software Architecture
 
-![Architecture](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/Architecture.png)
+![Architecture](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Architecture.png)
 
 ## Academic Publications
 
 ### Paper Abstracts
 
-[![Abstract 1](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/main/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
+[![Abstract 1](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
-[![Abstract 2](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/main/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
+[![Abstract 2](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
-[![TechRxiv](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
+[![TechRxiv](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
 
 ### Citation (BibTeX)
 
@@ -123,7 +123,7 @@ if (File.Exists(srcFile1))
 
 | **Rong Fan / 樊荣** |
 |:--:|
-| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
+| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
 | **Email**: 1470269034@qq.com |
 | [**百度学术 - 樊荣**](https://xueshu.baidu.com/scholarID/CN-BM75JUJJ) |
 | [**Google Scholar - Rong Fan**](https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en) |
@@ -169,7 +169,7 @@ if (File.Exists(srcFile1))
 
 ## 部分效果图
 
-[![闪电时间分布图](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)
+[![闪电时间分布图](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)
 
 ## 简介
 
@@ -233,21 +233,21 @@ if (File.Exists(srcFile1))
 
 ### OOP 设计图
 
-![OOP 设计](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/ObjectOrientedDesign.jpg)
+![OOP 设计](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg)
 
 ### 架构设计图
 
-![架构](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/Architecture.png)
+![架构](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Architecture.png)
 
 ## 学术支撑
 
 ### 论文摘要
 
-[![摘要1](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/%E6%91%98%E8%A6%81.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/main/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
+[![摘要1](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/%E6%91%98%E8%A6%81.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
-[![摘要2](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/main/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
+[![摘要2](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
-[![TechRxiv](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
+[![TechRxiv](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
 
 ### 引用格式 (BibTeX)
 
@@ -265,7 +265,7 @@ if (File.Exists(srcFile1))
 
 | **樊荣 Rong Fan** |
 |:--:|
-| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/main/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
+| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
 | **Email**: 1470269034@qq.com |
 | [百度学术](https://xueshu.baidu.com/scholarID/CN-BM75JUJJ) / [Google Scholar](https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en) |
 
