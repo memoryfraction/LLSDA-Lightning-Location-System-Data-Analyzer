@@ -1,4 +1,4 @@
-﻿/*****************************************************************
+/*****************************************************************
 
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
@@ -141,7 +141,7 @@ namespace LLSDA.Entities
                 return lightningStrikesDayResultList;
             }
             else
-                throw new ArgumentNullException("初始化LightningStrikeDays，序列中不包含闪电。");
+                throw new ArgumentNullException("Initialization of LightningStrikeDays: the strike sequence is empty or null.");
         }
 
         /// <summary>

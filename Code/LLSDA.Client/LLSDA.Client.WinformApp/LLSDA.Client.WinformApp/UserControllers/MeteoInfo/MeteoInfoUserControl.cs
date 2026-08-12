@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -266,7 +266,7 @@ namespace MeteoInfoControlLibrary
             AddLLSData(strikeStandard);
             stopwatch.Stop();
             loadingForm.Close();
-            Console.WriteLine("耗时：" + stopwatch.Elapsed.TotalSeconds + "秒，共有记录" + strikeStandard.Count + "条");
+            Console.WriteLine("Processing completed in " + stopwatch.Elapsed.TotalSeconds + " seconds, total records: " + strikeStandard.Count);
         }
 
         private void buttonDetail_Click(object sender, EventArgs e)

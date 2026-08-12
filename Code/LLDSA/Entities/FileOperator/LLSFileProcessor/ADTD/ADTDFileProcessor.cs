@@ -1,4 +1,4 @@
-﻿/*****************************************************************
+/*****************************************************************
 
 ** License Desc: https://creativecommons.org/licenses/by-nc/4.0/deed.zh
 ** Author|创建人:     Rong(Rex) Fan|樊荣
@@ -111,7 +111,7 @@ namespace LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD
                 sourceLlsFilePathName = _fulLlsPathFileName;
             }
             else
-                throw new FileNotFoundException("文件" + _fulLlsPathFileName + "不存在。");
+                throw new FileNotFoundException("Source LLS file does not exist: " + _fulLlsPathFileName);
         }
         #endregion
 
@@ -135,7 +135,7 @@ namespace LLDSA.Entities.FileOperator.LLSFileProcessor.ADTD
                 }
             }
             else
-                throw new FileNotFoundException("文件" + fulLlsPathFileName + "不存在。");
+                throw new FileNotFoundException("Source LLS file does not exist: " + fulLlsPathFileName);
         }
 
         /// <summary>

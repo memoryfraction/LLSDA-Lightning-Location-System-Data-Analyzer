@@ -1,4 +1,4 @@
-﻿/*****************************************************************
+/*****************************************************************
 
 
 ** Author|创建人:     Rong(Rex) Fan|樊荣
@@ -172,7 +172,7 @@ namespace LLSDA.Entities
         //        lightningBulletinDesc = StrikesDistributionStatistic.ProcessLightningBulletinDesc(strikes);
         //    }
         //    else
-        //        throw new ArgumentNullException("LightningStrikes_China中统计各属性的计算，序列中不包含任何闪电。");
+        //        throw new ArgumentNullException("LightningStrikes_China property statistics: the strike sequence is empty.");
         //}
 
 
