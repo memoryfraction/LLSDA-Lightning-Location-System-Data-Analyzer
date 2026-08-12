@@ -1,289 +1,313 @@
+<a href="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer">
+  <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA-Icon.png" align="right" width="96" height="96" alt="LLSDA Logo">
+</a>
+
 # LLSDA - Lightning Location System Data Analyzer
 
-Readme: English | [中文](#简介)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![NuGet](https://img.shields.io/nuget/v/LightningLocationSystemDataAnalyzer-LLDSA.svg)](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/)
+[![.NET](https://img.shields.io/badge/.NET-Framework%204.8%20%7C%20Standard%202.0-green.svg)](https://dotnet.microsoft.com)
 
-## Part of the Result | 部分效果图
+> **An open-source, cross-platform class library for analyzing lightning location system data**
+> providing statistical analysis and visualization of lightning time/space distribution.
 
-![image](/Images/LightningTimeDistributionChart-%E9%9B%B7%E7%94%B5%E6%97%B6%E9%97%B4%E5%88%86%E5%B8%83%E5%9B%BE.png)
+| [English](#brief-introduction) | [中文](#chinese-section) |
+
+## Demo Screenshots
+
+[![Lightning Distribution on Map](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)
 
 ## Brief Introduction
 
-LLSDA is a public benefit project helps lightning protection engineer and lightning scientist to analyze lightning distribution. 
-LLSDA(Lightning Location System Data Analyzer) is an cross platform class library for lightning location system using C# following .NET Standard. It is the necessary part of all lightning time and spatial distribution analysis software.
+**LLSDA** (*Lightning Location System Data Analyzer*) is an open-source, cross-platform class library
+for analyzing lightning location system data. It provides essential statistical analysis and
+visualization capabilities for lightning time and spatial distribution studies.
 
-## Introduction
+- Prevents duplication of effort across research groups
+- Improves development efficiency for lightning protection engineers and meteorologists
+- Contributes to the open-source community and the lightning protection industry
 
-Lightning is a violent and sudden electrostatic discharge where two electrically charged regions in the atmosphere temporarily equalize themselves, usually during a thunderstorm.
+## Table of Contents
 
-Lightning location meter, also known as lightning monitoring location meter, refers to the use of the sound, light, electromagnetic characteristics of the lightning return stroke radiation to telemetry lightning return stroke discharge parameters of an automatic weather detection equipment, it can detect the occurrence of lightning time, location, intensity, polarity, etc..People have been devoted to the research of lightning detection and early detection and prediction techniques and methods of thunderstorm disaster.
-
-Lightning location system data analyzer, is basic data analysis library. The data development based on lightning location system will depend on the basic class library development of lightning location system.In order to prevent duplication of efforts, improve development efficiency, and make personal contributions to the open source community and lightning protection industry. I contribute this library to open source community.
-
-Glad you like it.
+* [Features](#features)
+* [Installation](#installation)
+* [Quick Start](#quick-start)
+* [Design & Architecture](#design--architecture)
+* [Academic Publications](#academic-publications)
+* [Author](#author)
+* [Changelog](#changelog)
+* [License](#license)
 
 ## Features
 
-* Build passing
-* Based on .NET STANDARD 2.1 
-* Cross platform
+| Feature | Status |
+|---------|--------|
+| Cross-platform (.NET Framework 4.8 / .NET Standard 2.0) | :white_check_mark: |
+| Lightning file parsing (multiple formats) | :white_check_mark: |
+| Time distribution analysis (year/month/hour) | :white_check_mark: |
+| Spatial distribution statistics | :white_check_mark: |
+| Point analysis (lat/lng based queries) | :white_check_mark: |
+| User-defined analysis regions | :white_check_mark: |
+| Rose diagram chart | :white_check_mark: |
+| Intensity probability chart | :white_check_mark: |
+| GIS / Shapefile overlay support | :white_check_mark: |
 
-## Dependencies
+## Installation
 
-* .NET Standard 2.1
-* Newtonsoft
-* Nuget: System.Drawing.Common
+**Via NuGet Package Manager Console:**
 
-## How to use it
+```powershell
+Install-Package LightningLocationSystemDataAnalyzer-LLDSA
+```
 
-* [NugetUrl](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/1.2.2)
+**Via .NET CLI:**
 
-* Package Manager execute below command to install Nuget package<br>
-  ```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
+```bash
+dotnet add package LightningLocationSystemDataAnalyzer-LLDSA
+```
 
-* Code
-  
-  ```
-  var strikes = new List<BaseStrikeChina>();
-  var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
-  if (File.Exists(srcFile1))
-  {
-      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
-      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-  }
-  ```
+## Quick Start
 
-* for more statistical and visualization method，refer to codes in LLSDA.ClientWinform
+```csharp
+using LLDSA;
+using LLDSA.Entities.FileOperator;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
-## Change Log
+var strikes = new List<BaseStrikeChina>();
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"data\2008_07_09.txt");
 
-* V1.0.0(2019-6-4)
-  Lightning strike related classes
+if (File.Exists(srcFile1))
+{
+    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}
+```
 
-* V1.0.1(2019-6-5)
-  StrikesDistributionStatistic class added, which contains dozens of distribution statistic methods
+> For more examples, refer to [LLSDA.Client](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/tree/main/Code/LLSDA.Client).
 
-* V1.0.3(2019-6-10)
-  Add File Operator classes
+## Design & Architecture
 
-* V1.0.4(2019-6-11)
-  Add angle classes, shape, shapeType
+### Object-Oriented Design
 
-* V1.0.5(2019-6-13)
-  Add PointAnalysis
+![OOP Design](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg)
 
-* V1.0.6(2019-6-16)
-  Add UserDefinedAnalysis
+### Software Architecture
 
-* V1.0.7(2019-6-23)
-  Follow SOLID Principle to rely on Interfaces instead of Entities
+![Architecture](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Architecture.png)
 
-* V1.1.0(2019-6-24)
-  New added OOP Design and Architecture
+## Academic Publications
 
-* V1.2.0(2019-7-18)
-  Implemented Hour and month distribution
+### Paper Abstracts
 
-* V1.2.1(2019-7-23)
-  New added year distribution feature
+[![Abstract 1](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
-* V1.2.1(2020-5-22)
-  New added academic paper
+[![Abstract 2](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
-* V1.2.2(2020-12-06)
-  Updated to .net standard 2.1 and .NET 5.0
-  Added unit test project
+[![TechRxiv](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
 
-* V1.2.3(2021-01-06)
-  Added Intensity Probability Chart
-  Added Rose Diagram Chart
+### Citation (BibTeX)
 
-* V1.3.0(2021-09-05)
-  Added multiple target frameworks: .NET 4.8, and .NetStandard 2.0
-  Added WinformApplication, added MeteoInfo(GIS) reference
+```bibtex
+@misc{fan2023llsda,
+  author = {Rong Fan and JingXiao Li and MingYuan Liu},
+  title = {LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization},
+  year = {2023},
+  doi = {10.36227/techrxiv.23615019.v1},
+  publisher = {TechRxiv}
+}
+```
 
-* V1.4.0(2023-07-25)
- LLSDA Academic Paper published in TechRxiv
- DOI: https://doi.org/10.36227/techrxiv.23615019.v1
+## Author
 
+| **Rong Fan / 樊荣** |
+|:--:|
+| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
+| **Email**: 1470269034@qq.com |
+| [**百度学术 - 樊荣**](https://xueshu.baidu.com/scholarID/CN-BM75JUJJ) |
+| [**Google Scholar - Rong Fan**](https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en) |
 
-## OOP Design
+## Changelog
 
-![image](/Images/ObjectOrientedDesign.jpg)
-
-## Architecture
-
-![image](/Images/Architecture.png)
-
-## Reference & Academic support
-
-* Abstract
-  [![image](/Images/Abstract.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
-
-[![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
-
-[![image](/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
-
-Citation
-Fan, Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
+| Version | Date | Changes |
+|---------|------|---------|
+| v1.0.0 | 2019-06-04 | Initial release — Lightning strike related classes |
+| v1.0.1 | 2019-06-05 | Added StrikesDistributionStatistic class with time/spatial statistics |
+| v1.0.3 | 2019-06-10 | Added file operator classes for LLS database parsing |
+| v1.0.4 | 2019-06-11 | Added angle, shape, and shapeType classes |
+| v1.0.5 | 2019-06-13 | Added point analysis module |
+| v1.0.6 | 2019-06-16 | Added user-defined analysis module |
+| v1.0.7 | 2019-06-23 | Refactored to follow SOLID principle (interface-based) |
+| v1.1.0 | 2019-06-24 | New OOP design and architecture diagrams |
+| v1.2.0 | 2019-07-18 | Hour and month distribution charts |
+| v1.2.1 | 2019-07-23 | Year distribution feature |
+| v1.2.1 | 2020-05-22 | Academic paper added |
+| v1.2.2 | 2020-12-06 | Upgraded to .NET Standard 2.1 / .NET 5.0; unit tests added |
+| v1.2.3 | 2021-01-06 | Intensity probability chart; rose diagram chart |
+| v1.3.0 | 2021-09-05 | Multi-target: .NET 4.8 + .NET Standard 2.0; Winform app with GIS support |
+| v1.4.0 | 2023-07-25 | Academic paper on TechRxiv (DOI: [10.36227/techrxiv.23615019.v1](https://doi.org/10.36227/techrxiv.23615019.v1)) |
+| v1.4.1 | 2026-08-12 | README overhaul; System.Drawing.Common upgraded to stable; GitHub Pages deployed |
 
 ## License
 
-* For Non-Code parts: [Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
-* For Code parts: [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE)
+* **Code**: [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0)
+* **Non-code assets**: [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.en)
 
-## Donation
+## Acknowledgements
 
-* Paypal: rong.fan1031@gmail.com
-* You are welcome to buy me a coffee.
-
-## Google Scholar Citations
-
-https://scholar.google.com/citations?user=Zxn84ckAAAAJ
-
-## Thanks to
-
-* HongBing Chen, Xia Li, Yi Gao, Wen'an Xiao(Alphabetical Sorted by family name)
-* [Nanjing University of Information Science and Technology(NUIST)](https://en.nuist.edu.cn/)
+* Xiao Wen'an, Gao Yi, Chen Hongbing
+* [Nanjing University of Information Science & Technology (NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
-* [LeaderTech Co., Ltd](http://www.leader-tech.net)
+* [Nanjing Leader Technology Co., Ltd.](http://www.leader-tech.net)
+
+---
+
+<a name="chinese-section"></a>
+
+# 闪电定位系统数据分析器 (LLSDA) — 中文版
+
+## 部分效果图
+
+[![闪电时间分布图](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/PrintScreen%20-%20Lightning%20Location%20System%20Data%20Analyzer%20-%20Desktop%20Application.png)
 
 ## 简介
 
-闪电，在大气科学中指大气中的强放电现象。在夏季的雷雨天气，雷电现象较为常见。它的发生与云层中气流的运动强度有关。有资料显示，冬季下雪时也可能发生雷电现象，即雷雪，但是发生机会相当微小。若有严重的火山爆发时，或是原子弹爆炸产生蘑菇云时，空中可能因短路而发生闪电。
+**LLSDA** (*Lightning Location System Data Analyzer*) 是一个开源、跨平台的类库，用于分析闪电定位系统数据。
+它提供了闪电时空分布统计分析和可视化的核心功能。
 
-闪电定位仪又称雷电监测定位仪，是指利用闪电回击辐射的声、光、电磁场特性来遥测闪电回击放电参数的一种监测雷电发生的自动化的气象探测设备，它可检测雷电发生的时间、位置、强度、极性等。人们一直在致力于闪电探测设各与雷暴灾害早期检侧、预报技术和方法的研究。
-
-LLSDA(闪电定位系统数据分析器), 一款服务于雷电相关工作者的数据分析的基础类库。 基于闪电定位系统的数据开发的软件将必不可少的依赖于闪电定位系统的基础类库开发。 可以大幅度提高开发效率、避免重复劳动。
+- **避免重复劳动**：为不同研究团队提供统一的基础分析库
+- **提高开发效率**：防雷工程师和气象学者可快速集成
+- **开源贡献**：回馈开源社区和防雷行业
 
 ## 特性
 
-* 编译通过
-* 基于 .NET STANDARD 2.1 
-* 跨平台: MAC/LINUX/WINDOWS
+| 特性 | 状态 |
+|------|------|
+| 跨平台 (.NET Framework 4.8 / .NET Standard 2.0) | :white_check_mark: |
+| 多格式闪电文件解析 | :white_check_mark: |
+| 时间分布分析（年/月/时） | :white_check_mark: |
+| 空间分布统计 | :white_check_mark: |
+| 基于经纬度的点分析 | :white_check_mark: |
+| 自定义区域分析 | :white_check_mark: |
+| 雷电玫瑰图 | :white_check_mark: |
+| 电流强度概率图 | :white_check_mark: |
+| GIS / Shapefile 叠加支持 | :white_check_mark: |
 
-## 依赖项
+## 安装方法
 
-* .NET Core 2.1版本及以上
-* Newtonsoft
-* Nuget: System.Drawing.Common
+**NuGet Package Manager Console:**
 
-## 使用方法
+```powershell
+Install-Package LightningLocationSystemDataAnalyzer-LLDSA
+```
 
-* [NugetUrl](https://www.nuget.org/packages/LightningLocationSystemDataAnalyzer-LLDSA/1.2.2)
+.NET CLI:
 
-* Package Manager 中执行以下命令以安装Nuget包<br>
-  ```Install-Package LightningLocationSystemDataAnalyzer-LLDSA -Version 1.2.2```
+```bash
+dotnet add package LightningLocationSystemDataAnalyzer-LLDSA
+```
 
-* 代码
-  
-  ```
-  var strikes = new List<BaseStrikeChina>();
-  var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory , @"data\2008_07_09.txt");
-  if (File.Exists(srcFile1))
-  {
-      var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
-      strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
-  }
-  ```
+## 快速开始
 
-* 更多统计分析、出图方法，请参考LLSDA.ClientWinform中的代码
+```csharp
+using LLDSA;
+using LLDSA.Entities.FileOperator;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
-## 版本
+var strikes = new List<BaseStrikeChina>();
+var srcFile1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"data\2008_07_09.txt");
 
-* V1.0.0(2019-6-4)
-  新增LightningStrike相关类;
+if (File.Exists(srcFile1))
+{
+    var fileProcessor = new LlsFileProcessor(srcFile1, Encoding.UTF8);
+    strikes.AddRange(fileProcessor.ReturnStrikesChinaByProcess());
+}
+```
 
-* V1.0.1(2019-6-5)
-  新增StrikesDistributionStatistic 类, 内含多种时间、空间统计方法;
+> 更多示例请参考 [LLSDA.Client](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/tree/main/Code/LLSDA.Client)。
 
-* V1.0.3(2019-6-10)
-  新增文件操作类，用于识别LLS数据库文件; 和持久化内存数据到硬盘;
+## 面向对象设计与架构
 
-* V1.0.4(2019-6-11)
-  添加以下类: angle classes, shape 和 shapeType;
+### OOP 设计图
 
-* V1.0.5(2019-6-13)
-  新增点分析相关类。 点分析，用于输入经纬度点后得到相关分析结果;
+![OOP 设计](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/ObjectOrientedDesign.jpg)
 
-* V1.0.6(2019-6-16)
-  新增 UserDefinedAnalysis;
+### 架构设计图
 
-* V1.0.7(2019-6-23)
-  遵循SOLID原则，依赖于接口，而不是依赖于实体。 有利于解耦和开发、维护
-
-* V1.1.0(2019-6-24)
-  新增面向对象设计图和架构设计图;
-
-* V1.2.0(2019-7-18)
-  实现了时分布、月分布图
-
-* V1.2.1(2019-7-23)
-  新增年分布功能
-
-* V1.2.1(2020-5-22)
-  新增论文
-
-* V1.2.2(2020-12-06)
-  升级到 .net standard 2.1和 .NET 5.0
-  添加了单元测试项目
-
-* V1.2.3(2021-01-06)
-  范例项目新增雷电流累计概率分布图
-  范例项目新增雷电玫瑰分布图
-
-* V1.3.0(2021-09-05)
-  添加了多框架支持，同时支持以下框架: .NET 4.8, and .NetStandard 2.0
-  升级了Window桌面客户端，该客户端添加 MeteoInfo(GIS)的引用，允许闪电与GIS地图(*.shp格式)的叠加，效果图见Readme顶部
-
-* V1.4.0(2023-07-25)
- LLSDA Academic Paper published in TechRxiv
- DOI: https://doi.org/10.36227/techrxiv.23615019.v1
-
+![架构](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Architecture.png)
 
 ## 学术支撑
 
-* Abstract
-  [![image](/Images/%E6%91%98%E8%A6%81.png)](/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
+### 论文摘要
 
-[![image](/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
+[![摘要1](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/%E6%91%98%E8%A6%81.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Calculation%20and%20Software%20Implementation%20of%20Ground%20Lightning-Flash%20Density-%E9%9B%B7%E5%87%BB%E5%A4%A7%E5%9C%B0%E5%AF%86%E5%BA%A6%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%8E%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0-Rong%20Fan-%E6%A8%8A%E8%8D%A3.pdf)
 
-[![image](/Images/LLSDA TechRxiv paper abstract.png)][![image](/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
+[![摘要2](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data--Abstract.png)](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/blob/master/Documents/Design%20and%20Implementation%20of%20Lightning%20Analysis%20Software%20Based%20on%20Lightning%20Location%20System%20Data.pdf)
 
-引用
-Rong; Li, JingXiao; Liu, MingYuan (2023). LLSDA: Design and implementation of lightning location data analysis, and visualization. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.23615019.v1
+[![TechRxiv](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/LLSDA%20TechRxiv%20paper%20abstract.png)](https://www.techrxiv.org/articles/preprint/LLSDA_Design_and_implementation_of_lightning_location_data_analysis_and_visualization/23615019)
 
+### 引用格式 (BibTeX)
 
-## 百度学术引用
+```bibtex
+@misc{fan2023llsda,
+  author = {Rong Fan and JingXiao Li and MingYuan Liu},
+  title = {LLSDA: Design and Implementation of Lightning Location Data Analysis and Visualization},
+  year = {2023},
+  doi = {10.36227/techrxiv.23615019.v1},
+  publisher = {TechRxiv}
+}
+```
 
-https://xueshu.baidu.com/scholarID/CN-BM75JUJJ
+## 作者
+
+| **樊荣 Rong Fan** |
+|:--:|
+| <img src="https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/raw/master/Images/avatar-rong-fan.jpg" width="128" height="150" alt="Rong Fan"> |
+| **Email**: 1470269034@qq.com |
+| [百度学术](https://xueshu.baidu.com/scholarID/CN-BM75JUJJ) / [Google Scholar](https://scholar.google.com/citations?user=Zxn84ckAAAAJ&hl=en) |
+
+## 版本记录
+
+| 版本 | 日期 | 更新内容 |
+|------|------|----------|
+| v1.0.0 | 2019-06-04 | 初始发布 — 雷电击相关类 |
+| v1.0.1 | 2019-06-05 | 新增 StrikesDistributionStatistic 类，含多种时空统计方法 |
+| v1.0.3 | 2019-06-10 | 新增文件操作类，用于识别 LLS 数据库文件 |
+| v1.0.4 | 2019-06-11 | 添加角度、形状相关类 |
+| v1.0.5 | 2019-06-13 | 新增点分析模块 |
+| v1.0.6 | 2019-06-16 | 新增自定义分析模块 |
+| v1.0.7 | 2019-06-23 | 遵循 SOLID 原则，重构为接口驱动 |
+| v1.1.0 | 2019-06-24 | 新增面向对象设计图和架构设计图 |
+| v1.2.0 | 2019-07-18 | 实现小时分布和月分布图 |
+| v1.2.1 | 2019-07-23 | 新增年分布功能 |
+| v1.2.1 | 2020-05-22 | 新增学术论文 |
+| v1.2.2 | 2020-12-06 | 升级到 .NET Standard 2.1 / .NET 5.0；添加单元测试 |
+| v1.2.3 | 2021-01-06 | 新增雷电流累计概率分布图、雷电玫瑰分布图 |
+| v1.3.0 | 2021-09-05 | 多框架支持 (.NET 4.8 + .NET Standard 2.0)；Winform 客户端集成 MeteoInfo GIS |
+| v1.4.0 | 2023-07-25 | TechRxiv 学术论文发表 (DOI: [10.36227/techrxiv.23615019.v1](https://doi.org/10.36227/techrxiv.23615019.v1)) |
+| v1.4.1 | 2026-08-12 | README 大修；System.Drawing.Common 升级至稳定版；部署 GitHub Pages |
 
 ## 知识产权
 
-* 非代码部分: [署名-非商业性使用 4.0 国际 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
-
-* 解释: [谈谈创作共用许可证（Creative Commons licenses）- 阮一峰](http://www.ruanyifeng.com/blog/2008/04/creative_commons_licenses.html)
-
-* 代码部分: [GNU GENERAL PUBLIC LICENSE Version 3](/LICENSE)
-
+* **代码部分**: [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0)
+* **非代码部分**: [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ## 声明
 
-由于知识有限，精力有限，不对开源版本提供任何使用质量保障和服务。
-欢迎在[Issue](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues)区提出。
-
-## 捐赠与支持
-
-[支付宝二维码](/Images/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%BA%8C%E7%BB%B4%E7%A0%81.JPG)
-如本项目对您的研究、工作有帮助，请在参考文献中添加本文作为引用。
+由于知识有限、精力有限，不对开源版本提供任何使用质量保障和服务。
+欢迎在 [Issue](https://github.com/memoryfraction/LLSDA-Lightning-Location-System-Data-Analyzer/issues) 区提出。
 
 ## 合作伙伴
 
-如您对雷电有兴趣， 正在攻读相关学位，从事相关研究，相关行业从业人员或有意向成为项目的贡献者， 欢迎联系我: 1470269034@qq.com
+如您对雷电有兴趣，正在攻读相关学位，从事相关研究，或有意向成为项目的贡献者，欢迎联系我：**1470269034@qq.com**
 
 ## 鸣谢
 
 * 肖稳安、高燚、陈鸿兵
-* [南京信息工程大学(NUIST)](https://en.nuist.edu.cn/)
+* [南京信息工程大学 (NUIST)](https://en.nuist.edu.cn/)
 * [Maharishi University of Management](https://www.mum.edu/)
 * [南京雷德尔信息科技有限公司](http://www.leader-tech.net)
